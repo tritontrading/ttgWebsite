@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export const metadata: Metadata = {
@@ -54,10 +55,11 @@ const CAREERS = [
 
 export default function AdvisoryMembersPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="relative min-h-screen overflow-hidden bg-cream">
+      <AdvisoryBackground />
       <Nav />
 
-      <section className="border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+      <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
             <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
@@ -92,7 +94,7 @@ export default function AdvisoryMembersPage() {
         </div>
       </section>
 
-      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">AREAS OF WORK</span>
@@ -122,7 +124,7 @@ export default function AdvisoryMembersPage() {
         </div>
       </section>
 
-      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
@@ -159,7 +161,7 @@ export default function AdvisoryMembersPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
           <div>
             <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">SKILLS MEMBERS DEVELOP</span>
@@ -189,7 +191,7 @@ export default function AdvisoryMembersPage() {
         </div>
       </section>
 
-      <section className="border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
             <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">Interested in the advisory track?</h2>
@@ -201,7 +203,9 @@ export default function AdvisoryMembersPage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </main>
   )
 }

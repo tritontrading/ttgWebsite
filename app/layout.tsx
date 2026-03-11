@@ -4,12 +4,17 @@ import { LenisProvider } from '@/components/providers/LenisProvider'
 import { GSAPProvider } from '@/components/providers/GSAPProvider'
 
 export const metadata: Metadata = {
-  title: 'Triton Trading Group — UCSD',
+  title: 'Triton Trading Group - UCSD',
   description:
     'Triton Trading Group is UCSD\'s premier student-run finance organization, operating across Asset Management, FP&A Consulting, and Quantitative Finance.',
   keywords: ['finance', 'trading', 'UCSD', 'quantitative', 'investing', 'student organization'],
+  icons: {
+    icon: '/images/brand/logo.png',
+    shortcut: '/images/brand/logo.png',
+    apple: '/images/brand/logo.png',
+  },
   openGraph: {
-    title: 'Triton Trading Group — UCSD',
+    title: 'Triton Trading Group - UCSD',
     description: 'Where UCSD\'s sharpest minds trade, model, and analyze.',
     type: 'website',
   },
@@ -24,9 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <LenisProvider>
-          <GSAPProvider>
-            {children}
-          </GSAPProvider>
+          <GSAPProvider>{children}</GSAPProvider>
         </LenisProvider>
       </body>
     </html>

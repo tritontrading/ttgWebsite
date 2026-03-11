@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
@@ -41,19 +42,18 @@ const PATHS = [
 
 export default function AdvisoryHubPage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="relative min-h-screen overflow-hidden bg-cream">
+      <AdvisoryBackground />
       <Nav />
 
-      <section className="border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+      <section className="relative z-10 border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
           <div>
             <span className="mb-6 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
               FINANCIAL ADVISORY
             </span>
             <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
-              Advisory Built
-              <br />
-              For Two Audiences
+                Financial Advisory
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
               TTG&apos;s advisory work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
@@ -71,7 +71,7 @@ export default function AdvisoryHubPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="PATHS"
@@ -128,7 +128,7 @@ export default function AdvisoryHubPage() {
         </div>
       </section>
 
-      <section className="border-t border-[#080808]/15 px-5 py-16 md:px-12 md:py-20">
+      <section className="relative z-10 border-t border-[#080808]/15 px-5 py-16 md:px-12 md:py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f7f8ef] p-6 md:grid-cols-3 md:p-8">
           <div>
             <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
@@ -157,7 +157,9 @@ export default function AdvisoryHubPage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </main>
   )
 }

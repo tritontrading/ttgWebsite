@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
@@ -71,10 +72,11 @@ const CONTACT_POINTS = [
 
 export default function AdvisoryHirePage() {
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="relative min-h-screen overflow-hidden bg-cream">
+      <AdvisoryBackground />
       <Nav />
 
-      <section className="border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+      <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
             <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
@@ -117,7 +119,7 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="WHY US"
@@ -137,7 +139,7 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <section className="border-t border-[#080808]/10 px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 border-t border-[#080808]/10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="space-y-6 text-sm leading-8 text-[#080808]/60 md:text-base">
             <p>
@@ -153,7 +155,7 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="PROCESS"
@@ -176,7 +178,7 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <section id="services" className="border-t border-[#080808]/10 px-5 py-20 md:px-12 md:py-24">
+      <section id="services" className="relative z-10 border-t border-[#080808]/10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="SERVICES"
@@ -203,7 +205,7 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-12 md:py-24">
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f4f5ec] p-6 md:grid-cols-[1.1fr_.9fr] md:p-10">
           <div>
             <span className="mb-4 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
@@ -251,7 +253,9 @@ export default function AdvisoryHirePage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </main>
   )
 }
