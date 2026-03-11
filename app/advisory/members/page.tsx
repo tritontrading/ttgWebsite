@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
@@ -59,9 +60,9 @@ export default function AdvisoryMembersPage() {
       <section className="border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
-            <a href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
-              ← Back To Advisory Paths
-            </a>
+            <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
+              {'<-'} Back To Advisory Paths
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">

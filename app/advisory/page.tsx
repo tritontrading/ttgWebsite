@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
   title: 'Financial Advisory - Triton Trading Group',
@@ -22,7 +23,6 @@ const PATHS = [
       'Application details and expected skills',
     ],
     cta: 'Explore The Program',
-    accent: 'bg-[#fafbf3]',
   },
   {
     href: '/advisory/hire',
@@ -36,7 +36,6 @@ const PATHS = [
       'Direct inquiry path for new engagements',
     ],
     cta: 'View Service Offerings',
-    accent: 'bg-[#f0f1e8]',
   },
 ]
 
@@ -46,27 +45,49 @@ export default function AdvisoryHubPage() {
       <Nav />
 
       <section className="border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 max-w-3xl">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+          <div>
             <span className="mb-6 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
               FINANCIAL ADVISORY
             </span>
             <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
-              Two Advisory
+              Advisory Built
               <br />
-              Entry Points
+              For Two Audiences
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
-              The advisory side of TTG serves two very different audiences. Choose the path that matches what you need: joining the program as a member, or working with TTG as a client.
+              TTG&apos;s advisory work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
             </p>
           </div>
 
+          <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
+            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+              HOW TO NAVIGATE THIS
+            </span>
+            <p className="text-sm leading-7 text-[#080808]/60">
+              If you are a student evaluating TTG, start with the member track. If you are a founder, startup, or operator exploring support, go to the services page.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            label="PATHS"
+            title="Choose Your Entry Point"
+            description="The structure is simple on purpose: one route explains the internal member experience, and the other explains the external client offering."
+            className="mb-10 md:mb-16"
+          />
+
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {PATHS.map((path) => (
+            {PATHS.map((path, index) => (
               <Link
                 key={path.href}
                 href={path.href}
-                className={`group relative overflow-hidden border border-[#080808]/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#080808]/40 md:p-8 ${path.accent}`}
+                className={`group border border-[#080808]/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#080808]/40 md:p-8 ${
+                  index === 0 ? 'bg-cream' : 'bg-[#f0f1e8]'
+                }`}
               >
                 <div className="mb-10 flex items-start justify-between gap-4">
                   <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
@@ -98,7 +119,7 @@ export default function AdvisoryHubPage() {
                     {path.cta}
                   </span>
                   <span className="text-lg text-[#080808]/40 transition-transform duration-300 group-hover:translate-x-1">
-                    →
+                    -
                   </span>
                 </div>
               </Link>
@@ -107,7 +128,7 @@ export default function AdvisoryHubPage() {
         </div>
       </section>
 
-      <section className="px-5 py-16 md:px-12 md:py-20">
+      <section className="border-t border-[#080808]/15 px-5 py-16 md:px-12 md:py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f7f8ef] p-6 md:grid-cols-3 md:p-8">
           <div>
             <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
