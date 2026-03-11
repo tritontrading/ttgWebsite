@@ -163,26 +163,26 @@ export const DEPARTMENTS: Department[] = [
 
 export const TIMELINE_STEPS = [
     {
-        year: "Q1",
+        year: "1",
         title: "Recruitment",
         description:
             "Applications open. Written test, technical interview, and fit interview evaluate candidates across all three departments.",
     },
     {
-        year: "Q2",
+        year: "2",
         title: "Training Program",
         description:
             "Eight-week curriculum covering financial modeling, Python, valuation frameworks, and quantitative methods.",
     },
     {
-        year: "Q3",
+        year: "3",
         title: "Research Teams",
         description:
             "Members join department teams, produce original research, and present findings to the full group.",
         image: "/images/meetings/image1.png",
     },
     {
-        year: "Q4",
+        year: "4",
         title: "Live Projects",
         description:
             "Client-facing consulting work, live portfolio management, and algorithmic strategy deployment.",
@@ -192,7 +192,7 @@ export const TIMELINE_STEPS = [
         year: "BEYOND",
         title: "Industry Careers",
         description:
-            "Alumni place at Goldman Sachs, JP Morgan, Bain, PwC, and top quant funds. Network persists post-graduation.",
+            "Enter the industry ready to face any career in consulting or finance",
     },
 ];
 

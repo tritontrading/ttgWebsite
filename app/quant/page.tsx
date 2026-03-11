@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export const metadata: Metadata = {
   title: 'Quantitative Finance - Triton Trading Group',
@@ -46,67 +47,67 @@ const CAREERS = [
 
 export default function QuantPage() {
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="min-h-screen bg-cream">
       <Nav />
 
-      <section className="pt-40 pb-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-6">
+              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
                 03 - QUANTITATIVE FINANCE
               </span>
-              <h1 className="font-serif text-5xl md:text-7xl font-bold text-[#080808] leading-none mb-6">
+              <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
                 Data-Driven
                 <br />
                 Investing
               </h1>
-              <p className="text-[#080808]/60 text-base leading-relaxed max-w-lg">
+              <p className="max-w-lg text-base leading-relaxed text-[#080808]/60">
                 The Quantitative Finance department focuses on data-driven investing and algorithmic trading strategies. Members develop systematic investment models using Python, QuantConnect, Alpaca, and statistical research workflows - combining finance, mathematics, and computer science to analyze markets and develop automated strategies.
               </p>
             </div>
-            <div className="border-2 border-[#080808]/20 overflow-hidden">
+            <div className="overflow-hidden border-2 border-[#080808]/20">
               <Image
                 src="/images/tabling/image3.png"
                 alt="Quantitative Finance"
                 width={700}
                 height={420}
-                className="w-full h-auto object-cover"
+                className="h-auto w-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
+      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">AREAS OF WORK</span>
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">AREAS OF WORK</span>
             <div className="border-t-2 border-[#080808]/20" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#080808]/15">
+          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-3">
             {AREAS.map((area) => (
-              <div key={area.label} className="bg-cream p-8 flex flex-col gap-3">
-                <h3 className="font-serif font-bold text-[#080808] text-base leading-tight">{area.label}</h3>
-                <p className="text-[#080808]/50 text-sm leading-relaxed">{area.desc}</p>
+              <div key={area.label} className="flex flex-col gap-3 bg-cream p-6 md:p-8">
+                <h3 className="font-serif text-base font-bold leading-tight text-[#080808]">{area.label}</h3>
+                <p className="text-sm leading-relaxed text-[#080808]/50">{area.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">TOOLS & TECH STACK</span>
-              <div className="border-t-2 border-[#080808]/20 mb-8" />
-              <div className="border-2 border-[#080808]/20 divide-y-2 divide-[#080808]/15">
+              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">TOOLS & TECH STACK</span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
                 {TOOLS.map((tool) => (
-                  <div key={tool.name} className="px-6 py-5 flex items-start gap-4">
-                    <span className="font-mono text-[10px] text-[#0066ff] tracking-widest uppercase mt-0.5 w-4 shrink-0">{'->'}</span>
+                  <div key={tool.name} className="flex items-start gap-4 px-5 py-5 md:px-6">
+                    <span className="mt-0.5 w-4 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#0066ff]">{'->'}</span>
                     <div>
-                      <span className="font-serif font-bold text-[#080808] text-sm block mb-0.5">{tool.name}</span>
+                      <span className="mb-0.5 block font-serif text-sm font-bold text-[#080808]">{tool.name}</span>
                       <span className="font-mono text-[10px] text-[#080808]/40">{tool.note}</span>
                     </div>
                   </div>
@@ -114,15 +115,15 @@ export default function QuantPage() {
               </div>
             </div>
             <div>
-              <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">IN PRACTICE</span>
-              <div className="border-t-2 border-[#080808]/20 mb-8" />
-              <div className="border-2 border-[#080808]/20 overflow-hidden">
+              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">IN PRACTICE</span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <div className="overflow-hidden border-2 border-[#080808]/20">
                 <Image
                   src="/images/meetings/image2.png"
                   alt="Quant team at work"
                   width={600}
                   height={420}
-                  className="w-full h-auto object-cover"
+                  className="h-auto w-full object-cover"
                 />
               </div>
             </div>
@@ -130,28 +131,28 @@ export default function QuantPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
           <div>
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">SKILLS MEMBERS DEVELOP</span>
-            <div className="border-t-2 border-[#080808]/20 mb-8" />
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">SKILLS MEMBERS DEVELOP</span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
             <div className="space-y-3">
               {SKILLS.map((skill) => (
                 <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
-                  <span className="w-1 h-1 bg-[#0066ff] shrink-0" />
+                  <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
                   {skill}
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">CAREER OUTCOMES</span>
-            <div className="border-t-2 border-[#080808]/20 mb-8" />
-            <div className="border-2 border-[#080808]/20 divide-y-2 divide-[#080808]/15">
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">CAREER OUTCOMES</span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
+            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
               {CAREERS.map((c) => (
-                <div key={c.firm} className="flex items-center justify-between px-5 py-4">
-                  <span className="font-serif font-bold text-[#080808] text-sm">{c.firm}</span>
-                  <span className="font-mono text-[10px] text-[#080808]/40">{c.note}</span>
+                <div key={c.firm} className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <span className="font-serif text-sm font-bold text-[#080808]">{c.firm}</span>
+                  <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">{c.note}</span>
                 </div>
               ))}
             </div>
@@ -159,18 +160,15 @@ export default function QuantPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 border-t-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] mb-2">Interested in Quant?</h2>
-            <p className="text-[#080808]/50 text-sm">Python experience helpful but not required. We train from the ground up.</p>
+            <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">Interested in Quant?</h2>
+            <p className="text-sm text-[#080808]/50">Python experience helpful but not required. We train from the ground up.</p>
           </div>
-          <a
-            href="/#recruitment"
-            className="font-mono text-sm tracking-widest uppercase border-2 border-[#080808] text-[#080808] px-10 py-4 hover:bg-[#080808] hover:text-cream transition-all duration-200 shrink-0"
-          >
+          <ApplyNowLink className="w-full shrink-0 border-2 border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream sm:w-auto">
             Apply Now
-          </a>
+          </ApplyNowLink>
         </div>
       </section>
 

@@ -10,14 +10,14 @@ interface ToolCardProps {
 
 export function ToolCard({ name, logo, description }: ToolCardProps) {
   return (
-    <div className="border-2 border-[#080808]/15 bg-cream p-8 flex flex-col items-center gap-4">
+    <div className="border-2 border-[#080808]/15 bg-cream p-6 md:p-8 flex flex-col items-center gap-4">
       <div className="h-16 w-full flex items-center justify-center">
         <Image
           src={logo}
           alt={name}
           width={140}
           height={48}
-          className="h-12 w-auto max-w-[160px] object-contain"
+          className="h-10 md:h-12 w-auto max-w-[160px] object-contain"
         />
       </div>
 

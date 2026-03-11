@@ -2,20 +2,21 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export const metadata: Metadata = {
-  title: 'Financial Advisory — Triton Trading Group',
+  title: 'Financial Advisory - Triton Trading Group',
   description:
     'TTG\'s Financial Planning & Analysis department provides hands-on consulting experience with companies, startups, and organizations across finance, operations, and strategy.',
 }
 
 const AREAS = [
-  { label: 'Financial Analysis & Forecasting',         desc: 'Build financial models, conduct variance analysis, and develop multi-year forecasting frameworks for client organizations.' },
-  { label: 'Market Research & Competitive Analysis',   desc: 'Conduct industry research, map competitive landscapes, and surface market intelligence to inform strategy.' },
-  { label: 'Business Strategy Development',            desc: 'Structure and facilitate strategic planning engagements, from go-to-market planning to growth roadmapping.' },
-  { label: 'Operational Improvements',                 desc: 'Identify inefficiencies in business processes and design solutions to improve throughput and reduce cost.' },
-  { label: 'Technology Consulting & Implementation',   desc: 'Advise on digital infrastructure, workflow automation, and system implementation for growing organizations.' },
-  { label: 'AI Integration & API Systems',             desc: 'Design and implement AI-driven workflows, API integrations, and data automation pipelines.' },
+  { label: 'Financial Analysis & Forecasting', desc: 'Build financial models, conduct variance analysis, and develop multi-year forecasting frameworks for client organizations.' },
+  { label: 'Market Research & Competitive Analysis', desc: 'Conduct industry research, map competitive landscapes, and surface market intelligence to inform strategy.' },
+  { label: 'Business Strategy Development', desc: 'Structure and facilitate strategic planning engagements, from go-to-market planning to growth roadmapping.' },
+  { label: 'Operational Improvements', desc: 'Identify inefficiencies in business processes and design solutions to improve throughput and reduce cost.' },
+  { label: 'Technology Consulting & Implementation', desc: 'Advise on digital infrastructure, workflow automation, and system implementation for growing organizations.' },
+  { label: 'AI Integration & API Systems', desc: 'Design and implement AI-driven workflows, API integrations, and data automation pipelines.' },
 ]
 
 const ADDITIONAL = [
@@ -26,10 +27,10 @@ const ADDITIONAL = [
 ]
 
 const ROLES = [
-  { title: 'Engagement Lead',    desc: 'Manages the project and client relationship. Sets deliverables, timelines, and communication cadence.' },
-  { title: 'Senior Consultant',  desc: 'Leads analysis and project coordination. Owns the core work product and guides junior team members.' },
-  { title: 'Consultant',         desc: 'Conducts research and develops insights. Builds models, slide decks, and analytical frameworks.' },
-  { title: 'Analyst',            desc: 'Supports data gathering and analysis. Executes research tasks and contributes to deliverables.' },
+  { title: 'Engagement Lead', desc: 'Manages the project and client relationship. Sets deliverables, timelines, and communication cadence.' },
+  { title: 'Senior Consultant', desc: 'Leads analysis and project coordination. Owns the core work product and guides junior team members.' },
+  { title: 'Consultant', desc: 'Conducts research and develops insights. Builds models, slide decks, and analytical frameworks.' },
+  { title: 'Analyst', desc: 'Supports data gathering and analysis. Executes research tasks and contributes to deliverables.' },
 ]
 
 const SKILLS = [
@@ -42,70 +43,70 @@ const SKILLS = [
 ]
 
 const CAREERS = [
-  { firm: 'Management Consulting',   note: 'McKinsey, Bain, BCG, Deloitte' },
-  { firm: 'Venture Capital',         note: 'Early-stage and growth investing' },
-  { firm: 'Corporate Strategy',      note: 'In-house strategy & finance roles' },
-  { firm: 'Entrepreneurship',        note: 'Founding and operating startups' },
-  { firm: 'Investment Banking',      note: 'Advisory and M&A execution' },
-  { firm: 'Private Equity',          note: 'Portfolio operations & value creation' },
+  { firm: 'Management Consulting', note: 'McKinsey, Bain, BCG, Deloitte' },
+  { firm: 'Venture Capital', note: 'Early-stage and growth investing' },
+  { firm: 'Corporate Strategy', note: 'In-house strategy & finance roles' },
+  { firm: 'Entrepreneurship', note: 'Founding and operating startups' },
+  { firm: 'Investment Banking', note: 'Advisory and M&A execution' },
+  { firm: 'Private Equity', note: 'Portfolio operations & value creation' },
 ]
 
 export default function AdvisoryPage() {
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="min-h-screen bg-cream">
       <Nav />
 
-      {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="pt-40 pb-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-6">
-                02 — FINANCIAL PLANNING & ANALYSIS
+              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+                02 - FINANCIAL PLANNING & ANALYSIS
               </span>
-              <h1 className="font-serif text-5xl md:text-7xl font-bold text-[#080808] leading-none mb-6">
-                Real-World<br />Advisory Work
+              <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
+                Real-World
+                <br />
+                Advisory Work
               </h1>
-              <p className="text-[#080808]/60 text-base leading-relaxed max-w-lg">
-                The FP&A department provides students with hands-on experience working directly with companies, startups, and organizations. Members participate in real consulting-style projects — helping organizations analyze financial performance, improve operations, and develop strategic solutions.
+              <p className="max-w-lg text-base leading-relaxed text-[#080808]/60">
+                The FP&A department provides students with hands-on experience working directly with companies, startups, and organizations. Members participate in real consulting-style projects - helping organizations analyze financial performance, improve operations, and develop strategic solutions.
               </p>
             </div>
-            <div className="border-2 border-[#080808]/20 overflow-hidden">
+            <div className="overflow-hidden border-2 border-[#080808]/20">
               <Image
                 src="/images/tabling/image2.png"
                 alt="FP&A Advisory Work"
                 width={700}
                 height={420}
-                className="w-full h-auto object-cover"
+                className="h-auto w-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── What we do ────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
+      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">AREAS OF WORK</span>
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">AREAS OF WORK</span>
             <div className="border-t-2 border-[#080808]/20" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#080808]/15">
+          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-3">
             {AREAS.map((area) => (
-              <div key={area.label} className="bg-cream p-8 flex flex-col gap-3">
-                <h3 className="font-serif font-bold text-[#080808] text-base leading-tight">{area.label}</h3>
-                <p className="text-[#080808]/50 text-sm leading-relaxed">{area.desc}</p>
+              <div key={area.label} className="flex flex-col gap-3 bg-cream p-6 md:p-8">
+                <h3 className="font-serif text-base font-bold leading-tight text-[#080808]">{area.label}</h3>
+                <p className="text-sm leading-relaxed text-[#080808]/50">{area.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 border-2 border-[#080808]/20 p-8">
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">
+          <div className="mt-12 border-2 border-[#080808]/20 p-5 md:p-8">
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
               MEMBERS MAY ALSO ASSIST COMPANIES WITH
             </span>
             <div className="flex flex-wrap gap-3">
               {ADDITIONAL.map((item) => (
-                <span key={item} className="font-mono text-[11px] text-[#080808]/60 border border-[#080808]/20 px-3 py-1.5">
+                <span key={item} className="border border-[#080808]/20 px-3 py-1.5 font-mono text-[11px] text-[#080808]/60">
                   {item}
                 </span>
               ))}
@@ -114,36 +115,35 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
-      {/* ── Photo + Project structure ──────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 border-b-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">PROJECT STRUCTURE</span>
-              <div className="border-t-2 border-[#080808]/20 mb-8" />
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#080808] mb-4">
+              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">PROJECT STRUCTURE</span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
                 How Projects Work
               </h2>
-              <p className="text-[#080808]/60 text-sm leading-relaxed mb-8">
-                Projects are typically conducted by small, focused teams. Each engagement mirrors the structure of a professional consulting firm — with defined roles, clear deliverables, and direct client interaction.
+              <p className="mb-8 text-sm leading-relaxed text-[#080808]/60">
+                Projects are typically conducted by small, focused teams. Each engagement mirrors the structure of a professional consulting firm - with defined roles, clear deliverables, and direct client interaction.
               </p>
-              <div className="border-2 border-[#080808]/20 overflow-hidden mb-8">
+              <div className="mb-8 overflow-hidden border-2 border-[#080808]/20">
                 <Image
                   src="/images/socials/image1.png"
                   alt="TTG members at work"
                   width={600}
                   height={360}
-                  className="w-full h-auto object-cover"
+                  className="h-auto w-full object-cover"
                 />
               </div>
             </div>
             <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
               {ROLES.map((role, i) => (
-                <div key={role.title} className="p-6 flex gap-4">
-                  <span className="font-mono text-[11px] text-[#080808]/25 mt-0.5 shrink-0 w-5">{`0${i + 1}`}</span>
+                <div key={role.title} className="flex gap-4 p-5 md:p-6">
+                  <span className="mt-0.5 w-5 shrink-0 font-mono text-[11px] text-[#080808]/25">{`0${i + 1}`}</span>
                   <div>
-                    <h4 className="font-serif font-bold text-[#080808] mb-1">{role.title}</h4>
-                    <p className="text-[#080808]/50 text-sm leading-relaxed">{role.desc}</p>
+                    <h4 className="mb-1 font-serif font-bold text-[#080808]">{role.title}</h4>
+                    <p className="text-sm leading-relaxed text-[#080808]/50">{role.desc}</p>
                   </div>
                 </div>
               ))}
@@ -152,16 +152,15 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
-      {/* ── Skills + Careers ──────────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
           <div>
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">SKILLS MEMBERS DEVELOP</span>
-            <div className="border-t-2 border-[#080808]/20 mb-8" />
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">SKILLS MEMBERS DEVELOP</span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
             <div className="space-y-3">
               {SKILLS.map((skill) => (
                 <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
-                  <span className="w-1 h-1 bg-[#0066ff] shrink-0" />
+                  <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
                   {skill}
                 </div>
               ))}
@@ -169,13 +168,13 @@ export default function AdvisoryPage() {
           </div>
 
           <div>
-            <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">CAREER OUTCOMES</span>
-            <div className="border-t-2 border-[#080808]/20 mb-8" />
-            <div className="border-2 border-[#080808]/20 divide-y-2 divide-[#080808]/15">
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">CAREER OUTCOMES</span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
+            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
               {CAREERS.map((c) => (
-                <div key={c.firm} className="flex items-center justify-between px-5 py-4">
-                  <span className="font-serif font-bold text-[#080808] text-sm">{c.firm}</span>
-                  <span className="font-mono text-[10px] text-[#080808]/40">{c.note}</span>
+                <div key={c.firm} className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <span className="font-serif text-sm font-bold text-[#080808]">{c.firm}</span>
+                  <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">{c.note}</span>
                 </div>
               ))}
             </div>
@@ -183,19 +182,15 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 border-t-2 border-[#080808]/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] mb-2">Interested in FP&A?</h2>
-            <p className="text-[#080808]/50 text-sm">Applications open each academic quarter. All majors welcome.</p>
+            <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">Interested in FP&A?</h2>
+            <p className="text-sm text-[#080808]/50">Applications open each academic quarter. All majors welcome.</p>
           </div>
-          <a
-            href="/#recruitment"
-            className="font-mono text-sm tracking-widest uppercase border-2 border-[#080808] text-[#080808] px-10 py-4 hover:bg-[#080808] hover:text-cream transition-all duration-200 shrink-0"
-          >
+          <ApplyNowLink className="w-full shrink-0 border-2 border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream sm:w-auto">
             Apply Now
-          </a>
+          </ApplyNowLink>
         </div>
       </section>
 

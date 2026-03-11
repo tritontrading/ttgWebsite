@@ -1,25 +1,25 @@
 'use client'
 
 import Image from 'next/image'
+import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export function Recruitment() {
   return (
-    <section id="recruitment" className="bg-cream py-32 px-6 md:px-12 border-t border-[#080808]/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="recruitment" className="border-t border-[#080808]/20 bg-cream px-5 py-20 md:px-12 md:py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-6">
-          <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase">
+          <span className="font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
             RECRUITMENT
           </span>
         </div>
-        <div className="border-t border-[#080808]/20 mb-16" />
+        <div className="mb-10 border-t border-[#080808]/20 md:mb-16" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left */}
+        <div className="grid grid-cols-1 items-start gap-10 md:gap-16 lg:grid-cols-2">
           <div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#080808] tracking-tight mb-6">
+            <h2 className="mb-6 font-serif text-4xl font-bold tracking-tight text-[#080808] md:text-5xl">
               Join Triton Trading Group
             </h2>
-            <p className="text-[#080808]/60 text-sm leading-relaxed mb-10 max-w-md">
+            <p className="mb-10 max-w-md text-sm leading-relaxed text-[#080808]/60">
               Triton Trading Group recruits students each academic quarter who are interested in finance, markets, technology, and business strategy. We welcome students from all majors and academic backgrounds.
             </p>
 
@@ -30,41 +30,37 @@ export function Recruitment() {
                 'Members then specialize in Asset Management, FP&A, or Quantitative Finance.',
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-3 text-sm text-[#080808]/60">
-                  <span className="font-mono text-[#0066ff] text-[10px] mt-1 shrink-0">0{i + 1}</span>
+                  <span className="mt-1 shrink-0 font-mono text-[10px] text-[#0066ff]">0{i + 1}</span>
                   <span>{step}</span>
                 </div>
               ))}
             </div>
 
-            <a
-              href="#"
-              className="inline-block font-mono text-sm tracking-widest uppercase border border-[#080808] text-[#080808] px-10 py-4 hover:bg-[#080808] hover:text-white transition-all duration-200"
-            >
+            <ApplyNowLink className="inline-block w-full border border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white sm:w-auto">
               Apply Next Quarter
-            </a>
+            </ApplyNowLink>
           </div>
 
-          {/* Right — Photo */}
           <div className="relative">
-            <div className="border border-[#080808]/20 overflow-hidden relative">
+            <div className="relative overflow-hidden border border-[#080808]/20">
               <Image
                 src="/images/brand/group_photoshoot.png"
                 alt="TTG Group Photo"
                 width={700}
                 height={500}
-                className="w-full h-auto object-cover"
+                className="h-auto w-full object-cover"
               />
               <div className="absolute inset-0 bg-cream/10" />
             </div>
 
-            <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2">
+            <div className="absolute right-3 bottom-3 left-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {[
                 { label: 'Acceptance Rate', value: '~10%' },
                 { label: 'All Majors', value: 'Welcome' },
               ].map((stat, i) => (
-                <div key={i} className="bg-cream/90 border border-[#080808]/20 p-3 backdrop-blur-sm">
-                  <span className="font-mono text-[10px] text-[#080808]/40 block">{stat.label}</span>
-                  <span className="font-bold text-[#080808] text-lg">{stat.value}</span>
+                <div key={i} className="border border-[#080808]/20 bg-cream/90 p-3 backdrop-blur-sm">
+                  <span className="block font-mono text-[10px] text-[#080808]/40">{stat.label}</span>
+                  <span className="text-lg font-bold text-[#080808]">{stat.value}</span>
                 </div>
               ))}
             </div>

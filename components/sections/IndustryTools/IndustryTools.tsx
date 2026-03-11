@@ -52,16 +52,16 @@ export function IndustryTools() {
   }, [reducedMotion])
 
   return (
-    <section id="tools" className="bg-cream py-32 px-6 md:px-12 border-t border-[#080808]/20">
+    <section id="tools" className="bg-cream px-5 py-20 md:px-12 md:py-32 border-t border-[#080808]/20">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6">
           <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase">
             INDUSTRY PARTNERS
           </span>
         </div>
-        <div className="border-t border-[#080808]/20 mb-12" />
+        <div className="border-t border-[#080808]/20 mb-10 md:mb-12" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-16 items-end">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#080808] tracking-tight">
             Who We Work With
           </h2>
@@ -70,7 +70,7 @@ export function IndustryTools() {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#080808]/15">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#080808]/15">
           {SPONSORS.map((sponsor) => (
             <div key={sponsor.slug} className="tool-card-wrapper">
               <ToolCard
