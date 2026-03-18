@@ -16,7 +16,7 @@ export function StatCounter({ value, suffix, label }: StatCounterProps) {
   const reducedMotion = useReducedMotion()
 
   useLayoutEffect(() => {
-    const el  = numRef.current
+    const el = numRef.current
     const box = boxRef.current
     if (!el || !box) return
 
@@ -42,11 +42,11 @@ export function StatCounter({ value, suffix, label }: StatCounterProps) {
   }, [value, suffix, reducedMotion])
 
   return (
-    <div ref={boxRef} className="p-8 flex flex-col gap-2">
-      <span className="font-mono text-[10px] text-[#080808]/30 tracking-widest uppercase">
+    <div ref={boxRef} className="flex flex-col gap-2 p-8">
+      <span className="font-mono text-xs tracking-[0.22em] uppercase text-[#c79a3b]">
         {label}
       </span>
-      <span className="text-4xl font-bold text-[#080808] tracking-tight">
+      <span className="text-4xl font-bold tracking-tight text-[#0d1b3d]">
         <span ref={numRef}>{value}{suffix}</span>
       </span>
     </div>

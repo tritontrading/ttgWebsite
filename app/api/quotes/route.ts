@@ -1,3 +1,5 @@
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import path from 'node:path'
 import { NextResponse } from 'next/server'
 
 const STOCK_SYMBOLS = [
@@ -7,9 +9,13 @@ const STOCK_SYMBOLS = [
 
 const CRYPTO_SYMBOLS = ['BTC', 'ETH'] as const
 
-// 15 symbols total — well within the 25/day limit.
-// Cache for 23 hours so one refetch per calendar day with headroom.
-const CACHE_TTL_MS = 23 * 60 * 60 * 1_000
+const DAY_IN_SECONDS = 24 * 60 * 60
+const CACHE_TTL_MS = DAY_IN_SECONDS * 1_000
+const REQUEST_DELAY_MS = 1_000
+const CACHE_DIR = path.join(process.cwd(), '.cache')
+const CACHE_FILE = path.join(CACHE_DIR, 'quotes.json')
+const CACHE_CONTROL_HEADER =
+  `public, max-age=${DAY_IN_SECONDS}, s-maxage=${DAY_IN_SECONDS}, stale-while-revalidate=${DAY_IN_SECONDS}`
 
 export interface Quote {
   symbol: string
@@ -17,10 +23,13 @@ export interface Quote {
   changePercent: number
 }
 
-// Module-level in-memory cache — persists across requests within the same
-// server process. Only refreshes once per CACHE_TTL_MS window regardless
-// of how many clients hit the endpoint.
-let _cache: { quotes: Quote[]; fetchedAt: number } | null = null
+interface QuoteCache {
+  quotes: Quote[]
+  fetchedAt: number
+}
+
+let memoryCache: QuoteCache | null = null
+let inFlightRefresh: Promise<Quote[]> | null = null
 
 function alphaUrl(params: Record<string, string>) {
   return `https://www.alphavantage.co/query?${new URLSearchParams(params).toString()}`
@@ -30,7 +39,6 @@ async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url, {
     headers: { Accept: 'application/json' },
     signal: AbortSignal.timeout(10_000),
-    // No next.revalidate — we manage caching ourselves above.
     cache: 'no-store',
   })
 
@@ -43,6 +51,39 @@ async function fetchJson<T>(url: string): Promise<T> {
 
 function delay(ms: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, ms))
+}
+
+function isFresh(cache: QuoteCache | null): cache is QuoteCache {
+  return cache !== null && Date.now() - cache.fetchedAt < CACHE_TTL_MS
+}
+
+async function readPersistentCache(): Promise<QuoteCache | null> {
+  try {
+    const raw = await readFile(CACHE_FILE, 'utf8')
+    const parsed = JSON.parse(raw) as Partial<QuoteCache>
+
+    if (!Array.isArray(parsed.quotes) || typeof parsed.fetchedAt !== 'number') {
+      return null
+    }
+
+    const quotes = parsed.quotes.filter((quote): quote is Quote => (
+      Boolean(quote)
+      && typeof quote.symbol === 'string'
+      && typeof quote.price === 'number'
+      && Number.isFinite(quote.price)
+      && typeof quote.changePercent === 'number'
+      && Number.isFinite(quote.changePercent)
+    ))
+
+    return { quotes, fetchedAt: parsed.fetchedAt }
+  } catch {
+    return null
+  }
+}
+
+async function writePersistentCache(cache: QuoteCache) {
+  await mkdir(CACHE_DIR, { recursive: true })
+  await writeFile(CACHE_FILE, JSON.stringify(cache), 'utf8')
 }
 
 async function fetchStockQuote(symbol: string, apiKey: string): Promise<Quote | null> {
@@ -102,7 +143,7 @@ async function fetchCryptoQuote(symbol: string, apiKey: string): Promise<Quote |
   if (!series) return null
 
   const [d0, d1] = Object.keys(series).sort((a, b) => b.localeCompare(a))
-  const latest   = Number.parseFloat(series[d0]?.['4a. close (USD)'] ?? '')
+  const latest = Number.parseFloat(series[d0]?.['4a. close (USD)'] ?? '')
   const previous = Number.parseFloat(series[d1]?.['4a. close (USD)'] ?? '')
 
   if (!Number.isFinite(latest) || !Number.isFinite(previous) || previous === 0) return null
@@ -114,32 +155,50 @@ async function fetchCryptoQuote(symbol: string, apiKey: string): Promise<Quote |
   }
 }
 
-// Fetch all symbols sequentially with a small gap between calls to stay well
-// under Alpha Vantage's 5 requests/minute per-minute limit.
 async function fetchAllQuotes(apiKey: string): Promise<Quote[]> {
   const results: Quote[] = []
 
   for (const symbol of STOCK_SYMBOLS) {
     try {
-      const q = await fetchStockQuote(symbol, apiKey)
-      if (q) results.push(q)
+      const quote = await fetchStockQuote(symbol, apiKey)
+      if (quote) results.push(quote)
     } catch (err) {
       console.warn(`[/api/quotes] stock ${symbol} failed:`, err)
     }
-    await delay(300) // ~3 req/s — safe under 5/min cap
+
+    await delay(REQUEST_DELAY_MS)
   }
 
   for (const symbol of CRYPTO_SYMBOLS) {
     try {
-      const q = await fetchCryptoQuote(symbol, apiKey)
-      if (q) results.push(q)
+      const quote = await fetchCryptoQuote(symbol, apiKey)
+      if (quote) results.push(quote)
     } catch (err) {
       console.warn(`[/api/quotes] crypto ${symbol} failed:`, err)
     }
-    await delay(300)
+
+    await delay(REQUEST_DELAY_MS)
   }
 
   return results
+}
+
+async function refreshQuotes(apiKey: string) {
+  const quotes = await fetchAllQuotes(apiKey)
+
+  if (quotes.length > 0) {
+    const nextCache = { quotes, fetchedAt: Date.now() }
+    memoryCache = nextCache
+    await writePersistentCache(nextCache)
+  }
+
+  return quotes
+}
+
+function jsonResponse(quotes: Quote[]) {
+  return NextResponse.json(quotes, {
+    headers: { 'Cache-Control': CACHE_CONTROL_HEADER },
+  })
 }
 
 export async function GET() {
@@ -150,31 +209,38 @@ export async function GET() {
     return NextResponse.json([], { status: 200 })
   }
 
-  // Serve from memory cache if fresh.
-  if (_cache && Date.now() - _cache.fetchedAt < CACHE_TTL_MS) {
-    return NextResponse.json(_cache.quotes, {
-      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' },
-    })
+  const freshMemoryCache = memoryCache
+  if (isFresh(freshMemoryCache)) {
+    return jsonResponse(freshMemoryCache.quotes)
+  }
+
+  const persistentCache = await readPersistentCache()
+  const freshPersistentCache = persistentCache
+  if (isFresh(freshPersistentCache)) {
+    memoryCache = freshPersistentCache
+    return jsonResponse(freshPersistentCache.quotes)
   }
 
   try {
-    const quotes = await fetchAllQuotes(apiKey)
-
-    if (quotes.length > 0) {
-      _cache = { quotes, fetchedAt: Date.now() }
+    if (!inFlightRefresh) {
+      inFlightRefresh = refreshQuotes(apiKey).finally(() => {
+        inFlightRefresh = null
+      })
     }
 
-    return NextResponse.json(quotes, {
-      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' },
-    })
+    const quotes = await inFlightRefresh
+    return jsonResponse(quotes.length > 0 ? quotes : (persistentCache?.quotes ?? []))
   } catch (err) {
     console.error('[/api/quotes]', err)
 
-    // Return stale cache if we have it rather than nothing.
-    if (_cache) {
-      return NextResponse.json(_cache.quotes, {
-        headers: { 'Cache-Control': 'public, s-maxage=0, stale-while-revalidate=86400' },
-      })
+    if (memoryCache) {
+      const staleQuotes = memoryCache.quotes
+      return jsonResponse(staleQuotes)
+    }
+
+    if (persistentCache) {
+      const staleQuotes = persistentCache.quotes
+      return jsonResponse(staleQuotes)
     }
 
     return NextResponse.json([], { status: 200 })

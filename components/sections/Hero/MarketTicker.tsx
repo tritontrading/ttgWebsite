@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import type { Quote } from "@/app/api/quotes/route";
 
-// Static fallback shown before the first fetch resolves.
 const FALLBACK: Quote[] = [
     { symbol: "SPY", price: 0, changePercent: 0.4 },
     { symbol: "QQQ", price: 0, changePercent: -0.2 },
@@ -62,7 +61,7 @@ export function MarketTicker() {
     const items = [...quotes, ...quotes];
 
     return (
-        <div className="border-t-2 border-b-2 border-[#080808]/20 overflow-hidden py-2 bg-[#f0f1e8]">
+        <div className="overflow-hidden border-y border-[#c79a3b]/45 bg-[#0d1b3d] py-3 shadow-[inset_0_1px_0_rgba(239,216,164,0.22)]">
             <div className="flex gap-12 animate-ticker whitespace-nowrap">
                 {items.map((q, i) => {
                     const pos = q.changePercent >= 0;
@@ -70,8 +69,8 @@ export function MarketTicker() {
                     return (
                         <span
                             key={i}
-                            className={`font-mono text-xs tracking-wider shrink-0 ${
-                                pos ? "text-[#00994d]" : "text-[#cc2222]"
+                            className={`shrink-0 font-mono text-sm tracking-[0.16em] ${
+                                pos ? "text-[#efd8a4]" : "text-[#ff9f7d]"
                             }`}
                         >
                             {fmt(q)}
@@ -84,8 +83,8 @@ export function MarketTicker() {
                     return (
                         <span
                             key={i}
-                            className={`font-mono text-xs tracking-wider shrink-0 ${
-                                pos ? "text-[#00994d]" : "text-[#cc2222]"
+                            className={`shrink-0 font-mono text-sm tracking-[0.16em] ${
+                                pos ? "text-[#efd8a4]" : "text-[#ff9f7d]"
                             }`}
                         >
                             {fmt(q)}

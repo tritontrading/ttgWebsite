@@ -19,7 +19,7 @@ const DEPTS = [
       'Monitor portfolio positions and performance',
     ],
     careersLabel: 'CAREERS',
-    careers: 'Asset management · Hedge funds · Investment banking',
+    careers: 'Asset management, hedge funds, investment banking',
     photo: '/images/meetings/image1.png',
   },
   {
@@ -35,7 +35,7 @@ const DEPTS = [
       'AI integration and API systems',
     ],
     careersLabel: 'CAREERS',
-    careers: 'Consulting · Venture capital · Corporate strategy · Entrepreneurship',
+    careers: 'Consulting, venture capital, corporate strategy, entrepreneurship',
     photo: '/images/tabling/image1.png',
   },
   {
@@ -51,7 +51,7 @@ const DEPTS = [
       'Machine learning applications in finance',
     ],
     careersLabel: 'CAREERS',
-    careers: 'Quant trading · Hedge funds · Fintech · Data science',
+    careers: 'Quant trading, hedge funds, fintech, data science',
     photo: '/images/meetings/image2.png',
   },
 ]
@@ -60,32 +60,34 @@ function TextPanel({ dept }: { dept: typeof DEPTS[0] }) {
   return (
     <div className="flex h-full flex-col items-start justify-center gap-6">
       <div className="space-y-1">
-        <span className="font-mono text-[11px] tracking-widest uppercase text-[#080808]/40">
-          {dept.num} - {dept.label}
+        <span className="font-mono text-xs tracking-[0.22em] uppercase">
+          <span className="text-[#1f5eff]">{dept.num}</span>
+          <span className="text-[#102347]/50"> — </span>
+          <span className="text-[#c79a3b]">{dept.label}</span>
         </span>
-        <h3 className="font-serif text-3xl font-bold leading-tight text-[#080808] lg:text-4xl">
+        <h3 className="font-serif text-3xl font-bold leading-tight text-[#0d1b3d] lg:text-4xl">
           {dept.subtitle}
         </h3>
       </div>
 
-      <p className="max-w-sm text-sm leading-relaxed text-[#080808]/60">
+      <p className="max-w-sm text-base leading-relaxed text-[#102347]/82">
         {dept.body}
       </p>
 
       <ul className="space-y-2">
         {dept.items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-[#080808]">
-            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-none bg-blue" />
+          <li key={item} className="flex items-start gap-2.5 text-base text-[#0d1b3d]">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-none bg-[#c79a3b]" />
             {item}
           </li>
         ))}
       </ul>
 
       <div>
-        <span className="mb-1 block font-mono text-[10px] tracking-widest uppercase text-[#080808]/30">
+        <span className="mb-1 block font-mono text-xs tracking-[0.22em] uppercase text-[#c79a3b]">
           {dept.careersLabel}
         </span>
-        <span className="font-mono text-[11px] text-[#080808]/50">{dept.careers}</span>
+        <span className="font-mono text-sm text-[#102347]/78">{dept.careers}</span>
       </div>
     </div>
   )
@@ -106,7 +108,7 @@ export function Departments() {
           trigger: container,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 1.5,
+          scrub: 0.8,
         },
       })
 
@@ -116,46 +118,49 @@ export function Departments() {
         return
       }
 
+      // Dept 1 — enter
       tl.to('.dept-text-am', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' })
       tl.to('.dept-graphic-wrap', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '<')
+      // Hold (shortened from 2.5 → 1.2 so each viewport-height of scroll feels active)
+      tl.to('.dept-text-am', { opacity: 1, duration: 1.2 })
 
-      tl.to('.dept-text-am', { opacity: 1, duration: 2.5 })
-
+      // Transition to dept 2
       tl.to('.dept-text-am', { opacity: 0, x: -40, duration: 0.5, ease: 'power2.in' })
       tl.to('.dept-graphic-wrap', { left: '0%', duration: 2.2, ease: 'power2.inOut' }, '<')
       tl.to('.dept-photo-am', { opacity: 0, duration: 0.6 }, '<+=0.8')
       tl.to('.dept-photo-fpa', { opacity: 1, duration: 0.6 }, '<')
       tl.to('.dept-text-fpa', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, '<+=0.5')
+      // Hold dept 2
+      tl.to('.dept-text-fpa', { opacity: 1, duration: 1.2 })
 
-      tl.to('.dept-text-fpa', { opacity: 1, duration: 2.5 })
-
+      // Transition to dept 3
       tl.to('.dept-text-fpa', { opacity: 0, x: 40, duration: 0.5, ease: 'power2.in' })
       tl.to('.dept-graphic-wrap', { left: '50%', duration: 2.2, ease: 'power2.inOut' }, '<')
       tl.to('.dept-photo-fpa', { opacity: 0, duration: 0.6 }, '<+=0.8')
       tl.to('.dept-photo-quant', { opacity: 1, duration: 0.6 }, '<')
       tl.to('.dept-text-quant', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, '<+=0.5')
-
-      tl.to('.dept-text-quant', { opacity: 1, duration: 2.5 })
+      // Hold dept 3
+      tl.to('.dept-text-quant', { opacity: 1, duration: 1.2 })
     }, container)
 
     return () => ctx.revert()
   }, [reducedMotion])
 
   return (
-    <section id="departments" className="border-t border-[#080808]/20 bg-cream">
+    <section id="departments" className="border-t border-[#c79a3b]/40 bg-cream">
       <div className="px-5 py-20 md:px-12 lg:hidden">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
-            <span className="font-mono text-[11px] tracking-widest uppercase text-[#080808]/35">
+            <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
               DEPARTMENTS
             </span>
           </div>
-          <div className="mb-10 border-t border-[#080808]/20" />
+          <div className="mb-10 border-t border-[#c79a3b]/35" />
 
           <div className="space-y-6">
             {DEPTS.map((dept) => (
-              <article key={dept.num} className="border border-[#080808]/20 bg-[#f7f8ef]">
-                <div className="relative aspect-[4/3] overflow-hidden border-b border-[#080808]/15">
+              <article key={dept.num} className="border border-[#c79a3b]/35 bg-[#fff8ea] shadow-[0_18px_40px_rgba(13,27,61,0.06)]">
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-[#c79a3b]/30">
                   <Image
                     src={dept.photo}
                     alt={dept.label}
@@ -176,16 +181,19 @@ export function Departments() {
       <section
         ref={containerRef}
         className="relative hidden bg-cream lg:block"
-        style={{ height: '600vh' }}
+        style={{ height: '480vh' }}
       >
         <div className="sticky top-0 h-screen overflow-hidden bg-cream">
-          <div className="absolute top-0 left-0 right-0 z-20 flex h-16 items-center border-b border-[#080808]/20 bg-cream px-8 md:px-14">
-            <span className="font-mono text-[11px] tracking-widest uppercase text-[#080808]/35">
+          <div className="absolute top-0 left-0 right-0 z-20 flex h-16 items-center border-b border-[#c79a3b]/35 bg-[#fbf4e4]/90 px-8 backdrop-blur-sm md:px-14">
+            <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
               DEPARTMENTS
             </span>
-            <div className="ml-auto flex gap-8 font-mono text-[11px] tracking-wider text-[#080808]/25">
+            <div className="ml-auto flex gap-8 font-mono text-xs tracking-[0.16em] text-[#102347]/50">
               {DEPTS.map((d) => (
-                <span key={d.num}>{d.num} - {d.label}</span>
+                <span key={d.num}>
+                  <span className="text-[#1f5eff]/50">{d.num}</span>
+                  {' - '}{d.label}
+                </span>
               ))}
             </div>
           </div>
@@ -215,7 +223,7 @@ export function Departments() {
             className="dept-graphic-wrap absolute top-16 bottom-0 w-1/2"
             style={{ left: '50%' }}
           >
-            <div className="absolute inset-x-6 inset-y-8 overflow-hidden border-2 border-[#080808]/20 bg-[#f0f1e8]">
+            <div className="absolute inset-x-6 inset-y-8 overflow-hidden border border-[#c79a3b]/40 bg-[#efe1bd] p-2 shadow-[0_28px_60px_rgba(13,27,61,0.1)]">
               <div className="dept-photo-am absolute inset-0">
                 <Image
                   src={DEPTS[0].photo}
@@ -246,11 +254,6 @@ export function Departments() {
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="dept-progress-dot h-1.5 w-1.5 bg-[#080808]/20" />
-            ))}
-          </div>
         </div>
       </section>
     </section>

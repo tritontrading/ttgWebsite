@@ -7,22 +7,22 @@ import { SPONSORS } from '@/lib/constants'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 const TOOL_DESCRIPTIONS: Record<string, string> = {
-  amazon:        'Brand and technology sponsor.',
-  amazonkdp:     'Publishing and creator platform partner.',
-  apple:         'Technology sponsor and recruiting brand.',
-  goldmansachs:  'Recruiting partner. Alumni placed in IBD, S&T, and Markets.',
+  amazon: 'Brand and technology sponsor.',
+  amazonkdp: 'Publishing and creator platform partner.',
+  apple: 'Technology sponsor and recruiting brand.',
+  goldmansachs: 'Recruiting partner. Alumni placed in IBD, S&T, and Markets.',
   jpmorganchase: 'Recruiting partner. Full-time and internship pipeline.',
-  bainandcompany:'Strategy consulting partner. Case prep and recruiting.',
-  ochyoconsulting:'Consulting partner supporting member development.',
-  pinterest:     'Technology sponsor and recruiting brand.',
-  pwc:           'Audit, advisory, and deals practice recruiting.',
-  quantconnect:  'Specific sponsor of the quant team for algorithmic trading research and backtesting.',
+  bainandcompany: 'Strategy consulting partner. Case prep and recruiting.',
+  ochyoconsulting: 'Consulting partner supporting member development.',
+  pinterest: 'Technology sponsor and recruiting brand.',
+  pwc: 'Audit, advisory, and deals practice recruiting.',
+  quantconnect: 'Specific sponsor of the quant team for algorithmic trading research and backtesting.',
   socialpremiermarketing: 'Marketing partner supporting outreach and brand growth.',
-  stanford:      'Academic brand represented in the TTG network.',
+  stanford: 'Academic brand represented in the TTG network.',
   ucsdradyschooolofmgmt: 'Campus academic partner supporting business education.',
-  marketcrunchai:'AI-powered market analysis platform. Member access provided.',
-  upennwharton:  'Academic partnership for quantitative finance curriculum.',
-  zum:           'Technology and operations sponsor.',
+  marketcrunchai: 'AI-powered market analysis platform. Member access provided.',
+  upennwharton: 'Academic partnership for quantitative finance curriculum.',
+  zum: 'Technology and operations sponsor.',
 }
 
 export function IndustryTools() {
@@ -52,25 +52,25 @@ export function IndustryTools() {
   }, [reducedMotion])
 
   return (
-    <section id="tools" className="bg-cream px-5 py-20 md:px-12 md:py-32 border-t border-[#080808]/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="tools" className="border-t border-[#c79a3b]/40 bg-cream px-5 py-20 md:px-12 md:py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-6">
-          <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase">
+          <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
             INDUSTRY PARTNERS
           </span>
         </div>
-        <div className="border-t border-[#080808]/20 mb-10 md:mb-12" />
+        <div className="mb-10 border-t border-[#c79a3b]/35 md:mb-12" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-16 items-end">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#080808] tracking-tight">
+        <div className="mb-12 grid grid-cols-1 items-end gap-8 md:mb-16 md:gap-16 lg:grid-cols-2">
+          <h2 className="font-serif text-4xl font-bold tracking-tight text-[#0d1b3d] md:text-5xl">
             Who We Work With
           </h2>
-          <p className="text-[#080808]/50 text-sm leading-relaxed">
+          <p className="text-base leading-relaxed text-[#102347]/80">
             Triton Trading Group works with industry platforms that provide members with access to professional tools and financial technology used in the investment industry. Recruiting partnerships, sponsored tools, and academic collaborations with leading firms.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#080808]/15">
+        <div ref={gridRef} className="grid grid-cols-1 gap-px bg-[#c79a3b]/28 sm:grid-cols-2 md:grid-cols-3">
           {SPONSORS.map((sponsor) => (
             <div key={sponsor.slug} className="tool-card-wrapper">
               <ToolCard

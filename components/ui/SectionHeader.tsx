@@ -10,15 +10,15 @@ interface SectionHeaderProps {
 export function SectionHeader({ label, title, description, className }: SectionHeaderProps) {
   return (
     <div className={cn('mb-16', className)}>
-      <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase block mb-4">
+      <span className="mb-4 block font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
         {label}
       </span>
-      <div className="border-t border-[#080808]/10 mb-6" />
-      <h2 className="text-4xl md:text-5xl font-bold text-[#080808] tracking-tight mb-4">
+      <div className="mb-6 border-t border-[#c79a3b]/35" />
+      <h2 className="mb-4 text-4xl font-bold tracking-tight text-[#0d1b3d] md:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="text-[#080808]/50 text-sm leading-relaxed max-w-2xl">
+        <p className="max-w-2xl text-base leading-relaxed text-[#102347]/78">
           {description}
         </p>
       )}

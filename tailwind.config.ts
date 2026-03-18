@@ -9,10 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black:       '#080808',
-        cream:       '#fafbf3',
-        navy:        '#0a0e1a',
-        blue:        '#0066ff',
+        black:       '#102347',
+        cream:       '#f8f1df',
+        navy:        '#0d1b3d',
+        blue:        '#1f5eff',
+        gold:        '#c79a3b',
         green:       '#00ff88',
         'blue-dim':  '#003d99',
         'green-dim': '#00994d',

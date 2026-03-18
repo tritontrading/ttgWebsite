@@ -42,13 +42,14 @@ export function Hero() {
       >
         <div className="flex flex-1 flex-col items-start">
           <div className="hero-reveal mb-5 opacity-0 md:mb-6">
-            <span className="border border-[#080808]/25 px-3 py-1 font-mono text-xs tracking-widest uppercase text-[#080808]/40">
+            <span className="border border-[#1f5eff]/35 bg-[#1f5eff]/6 px-3 py-1 font-mono text-xs tracking-[0.24em] uppercase text-[#1f5eff] shadow-[0_6px_18px_rgba(31,94,255,0.10)]">
               University of California, San Diego
             </span>
           </div>
 
+          <div className="hero-reveal mb-3 h-px w-16 bg-gradient-to-r from-[#1f5eff]/60 to-[#c79a3b]/60 opacity-0" />
           <h1
-            className="hero-reveal mb-4 font-serif text-[#080808] opacity-0 tracking-tight leading-[0.98] md:mb-5"
+            className="hero-reveal mb-4 font-serif leading-[0.98] tracking-tight text-[#0d1b3d] opacity-0 md:mb-5"
             style={{ fontSize: 'clamp(2.85rem, 13vw, 5.5rem)' }}
           >
             Triton Trading
@@ -56,34 +57,35 @@ export function Hero() {
             Group
           </h1>
 
-          <p className="hero-reveal mb-3 max-w-md text-base leading-relaxed text-[#080808]/60 opacity-0">
+          <p className="hero-reveal mb-3 max-w-md text-lg leading-relaxed text-[#102347]/86 opacity-0">
             Asset management, quantitative finance, and real-world business advisory.
           </p>
-          <p className="hero-reveal mb-8 max-w-sm font-mono text-xs tracking-wide text-[#080808]/35 opacity-0 md:mb-10">
+          <p className="hero-reveal mb-8 max-w-sm font-mono text-sm tracking-[0.08em] text-[#102347]/74 opacity-0 md:mb-10">
             A student-run nonprofit bridging academic learning and professional practice at UCSD.
           </p>
 
           <div className="hero-reveal flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row sm:flex-wrap md:gap-4">
-            <ApplyNowLink className="border-2 border-[#080808] px-6 py-3 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream">
+            <ApplyNowLink className="border-2 border-[#0d1b3d] bg-[#0d1b3d] px-6 py-3 text-center font-mono text-sm tracking-[0.24em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]">
               Apply Now
             </ApplyNowLink>
             <a
               href="#about"
-              className="border-2 border-[#080808]/25 px-6 py-3 text-center font-mono text-sm tracking-widest uppercase text-[#080808]/50 transition-all duration-200 hover:border-[#080808]/60 hover:text-[#080808]"
+              className="border-2 border-[#c79a3b]/65 bg-[#fff8ea]/80 px-6 py-3 text-center font-mono text-sm tracking-[0.24em] uppercase text-[#0d1b3d] transition-all duration-200 hover:border-[#0d1b3d] hover:bg-[#fff2d2]"
             >
               Learn More
             </a>
           </div>
         </div>
 
-        <div className="hero-reveal w-full max-w-xl flex-1 self-stretch opacity-0 lg:self-auto">
-          <div className="overflow-hidden border-2 border-[#080808]/20">
+        <div className="hero-reveal relative w-full max-w-xl flex-1 self-stretch opacity-0 lg:self-auto">
+          <div className="absolute -inset-3 rounded-none bg-gradient-to-br from-[#1f5eff]/10 via-transparent to-[#c79a3b]/14 blur-2xl pointer-events-none" />
+          <div className="relative overflow-hidden border border-[#c79a3b]/45 bg-[#efe1bd] p-2 shadow-[0_30px_80px_rgba(13,27,61,0.16)]">
             <Image
               src="/images/brand/group_photoshoot.png"
               alt="Triton Trading Group"
               width={700}
               height={480}
-              className="h-auto w-full object-cover"
+              className="h-auto w-full border border-[#0d1b3d]/10 object-cover"
               priority
             />
           </div>
