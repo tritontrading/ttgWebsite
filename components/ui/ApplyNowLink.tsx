@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 
 const APPLICATION_FORM_URL =
-  'https://docs.google.com/forms/u/1/d/e/1FAIpQLSei_EqEyZJOGVKNz8doncU0EjD538COcgBJNkw-fxrdkmFe6g/viewform'
+  'https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform'
 
 type ApplyNowLinkProps = {
   children?: React.ReactNode

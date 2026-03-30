@@ -61,7 +61,7 @@ export function Hero() {
             Asset management, quantitative finance, and real-world business advisory.
           </p>
           <p className="hero-reveal mb-8 max-w-sm font-mono text-sm tracking-[0.08em] text-[#102347]/74 opacity-0 md:mb-10">
-            A student-run nonprofit bridging academic learning and professional practice at UCSD.
+            A student-run organization bridging academic learning and professional practice at UCSD.
           </p>
 
           <div className="hero-reveal flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row sm:flex-wrap md:gap-4">

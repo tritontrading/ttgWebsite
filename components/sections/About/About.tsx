@@ -17,7 +17,7 @@ export function About() {
         <div className="mb-14 grid grid-cols-1 gap-10 md:mb-24 md:gap-16 lg:grid-cols-2">
           <div>
             <TextReveal
-              text="Triton Trading Group is a student-run nonprofit organization dedicated to advancing financial education, investment literacy, and professional development at UC San Diego."
+              text="Triton Trading Group is a student-run organization dedicated to advancing financial education, investment literacy, and professional development at UC San Diego."
               className="font-serif text-2xl font-bold leading-snug text-[#0d1b3d] md:text-3xl"
             />
           </div>
