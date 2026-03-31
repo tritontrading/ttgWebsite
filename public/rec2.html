@@ -1,848 +1,1011 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triton Trading Group | Spring 2026 Recruitment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Triton Trading Group | Spring 2026 Recruitment</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <style>
-        :root {
-            --black:       #0b0b0e;
-            --felt:        #0e1c17;
-            --gold:        #d4a843;
-            --gold-light:  #e8c97a;
-            --cream:       #f4efe0;
-            --muted:       #8a8070;
-            --red:         #9b2335;
-            --red-bright:  #c0392b;
-            --border:      rgba(212, 168, 67, 0.25);
-            --card-bg:     #111417;
-        }
+        <style>
+            :root {
+                --black: #0b0b0e;
+                --felt: #0e1c17;
+                --gold: #d4a843;
+                --gold-light: #e8c97a;
+                --cream: #f4efe0;
+                --muted: #8a8070;
+                --red: #9b2335;
+                --red-bright: #c0392b;
+                --border: rgba(212, 168, 67, 0.25);
+                --card-bg: #111417;
+            }
 
-        *, *::before, *::after {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-        }
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        html { scroll-behavior: smooth; }
+            html {
+                scroll-behavior: smooth;
+            }
 
-        body {
-            background-color: var(--black);
-            color: var(--cream);
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            overflow-x: hidden;
-        }
+            body {
+                background-color: var(--black);
+                color: var(--cream);
+                font-family: "Cormorant Garamond", Georgia, serif;
+                overflow-x: hidden;
+            }
 
-        /* ─── TEXTURE OVERLAY ─── */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                repeating-linear-gradient(
+            /* ─── TEXTURE OVERLAY ─── */
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-image: repeating-linear-gradient(
                     0deg,
                     transparent,
                     transparent 2px,
-                    rgba(255,255,255,0.012) 2px,
-                    rgba(255,255,255,0.012) 4px
+                    rgba(255, 255, 255, 0.012) 2px,
+                    rgba(255, 255, 255, 0.012) 4px
                 );
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ─── NAV ─── */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            z-index: 999;
-            padding: 0 60px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(11, 11, 14, 0.96);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(12px);
-        }
-
-        .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.35rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .logo span { color: var(--cream); }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-        }
-
-        .nav-links a {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover { color: var(--gold); }
-
-        .nav-apply {
-            color: var(--cream) !important;
-            background: var(--red);
-            padding: 8px 20px;
-            border-radius: 2px;
-            border: 1px solid var(--red-bright);
-            transition: background 0.2s, color 0.2s !important;
-        }
-
-        .nav-apply:hover {
-            background: transparent !important;
-            color: var(--red-bright) !important;
-            border-color: var(--red-bright);
-        }
-
-        /* ─── HERO ─── */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 40px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Background card-fan SVG pattern */
-        header::before {
-            content: '♠ ♥ ♦ ♣';
-            position: absolute;
-            font-size: 22rem;
-            letter-spacing: -2rem;
-            color: rgba(212, 168, 67, 0.03);
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        .hero-eyebrow {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 28px;
-        }
-
-        header h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.5rem, 9vw, 8rem);
-            letter-spacing: 6px;
-            line-height: 0.95;
-            color: var(--cream);
-            margin-bottom: 20px;
-        }
-
-        header h1 em {
-            font-style: normal;
-            color: var(--gold);
-        }
-
-        .hero-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.4rem;
-            color: var(--muted);
-            margin-bottom: 50px;
-            letter-spacing: 1px;
-        }
-
-        .countdown-wrap {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid var(--border);
-            padding: 20px 40px;
-            background: rgba(212, 168, 67, 0.04);
-            margin-bottom: 50px;
-        }
-
-        .countdown-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
-
-        #timer {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 3px;
-        }
-
-        .hero-cta {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--muted);
-            text-decoration: none;
-            border-bottom: 1px solid var(--red);
-            padding-bottom: 3px;
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .hero-cta:hover {
-            color: var(--gold);
-            border-color: var(--gold);
-        }
-
-        /* ─── DIVIDER ─── */
-        .suit-divider {
-            text-align: center;
-            font-size: 1.1rem;
-            letter-spacing: 12px;
-            color: var(--border);
-            padding: 0 50px;
-            margin: 0 auto;
-        }
-
-        .suit-divider span { color: var(--gold); opacity: 0.35; }
-
-        /* ─── SECTIONS ─── */
-        section {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 110px 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 72px;
-            text-align: center;
-        }
-
-        .section-eyebrow {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 14px;
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            letter-spacing: 4px;
-            color: var(--cream);
-            line-height: 1;
-        }
-
-        /* ─── PLAYING CARD SCHEDULE ─── */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        /* Each schedule item is a playing card */
-        .play-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-            transition: transform 0.35s cubic-bezier(.22,.68,0,1.2),
-                        border-color 0.3s,
-                        box-shadow 0.3s;
-            min-height: 240px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .play-card:hover {
-            transform: translateY(-8px) rotate(-0.8deg);
-            border-color: var(--gold);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,168,67,0.15);
-        }
-
-        /* Corner pip — top-left */
-        .pip-tl {
-            position: absolute;
-            top: 14px; left: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1;
-        }
-
-        /* Corner pip — bottom-right (rotated) */
-        .pip-br {
-            position: absolute;
-            bottom: 14px; right: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1;
-            transform: rotate(180deg);
-        }
-
-        .pip-rank {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.95rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .pip-suit {
-            font-size: 0.85rem;
-            line-height: 1.2;
-        }
-
-        /* Suit colors */
-        .red-suit .pip-rank,
-        .red-suit .pip-suit { color: var(--red-bright); }
-
-        .black-suit .pip-rank,
-        .black-suit .pip-suit { color: var(--cream); }
-
-        /* Large center suit watermark */
-        .card-center-suit {
-            position: absolute;
-            bottom: -18px;
-            right: -10px;
-            font-size: 9rem;
-            opacity: 0.04;
-            line-height: 1;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        /* Card content */
-        .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 50px 24px 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-day-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 4px;
-        }
-
-        .card-date-big {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
-        .card-event-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--cream);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .card-time-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--muted);
-        }
-
-        /* Special cards */
-        .card-app-due {
-            border-color: var(--gold);
-            background: linear-gradient(135deg, #111417 60%, rgba(212,168,67,0.05) 100%);
-        }
-
-        .card-app-due::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 6px;
-            box-shadow: inset 0 0 30px rgba(212,168,67,0.06);
-        }
-
-        .app-due-badge {
-            margin-top: 14px;
-            display: inline-block;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid rgba(212,168,67,0.4);
-            padding: 4px 10px;
-            border-radius: 2px;
-        }
-
-        .invite-badge {
-            margin-top: 14px;
-            display: inline-block;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: white;
-            background: var(--red);
-            padding: 4px 10px;
-            border-radius: 2px;
-        }
-
-        /* ─── REQUIREMENTS ─── */
-        .req-panel {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: start;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .req-panel::after {
-            content: '♠';
-            position: absolute;
-            right: -30px;
-            bottom: -40px;
-            font-size: 18rem;
-            color: rgba(212,168,67,0.025);
-            line-height: 1;
-            pointer-events: none;
-        }
-
-        .req-label-col {
-            position: relative;
-            z-index: 1;
-        }
-
-        .req-role-tag {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-
-        .req-role-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.4rem;
-            letter-spacing: 2px;
-            line-height: 1.05;
-            color: var(--cream);
-        }
-
-        .req-list-col { position: relative; z-index: 1; }
-
-        .req-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-
-        .req-list li {
-            display: flex;
-            gap: 18px;
-            align-items: flex-start;
-            font-size: 1.1rem;
-            color: #a09888;
-            line-height: 1.55;
-        }
-
-        .req-list li .suit-marker {
-            color: var(--gold);
-            font-size: 1rem;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .req-list li strong { color: var(--cream); }
-
-        /* ─── FOOTER ─── */
-        footer {
-            border-top: 1px solid var(--border);
-            background: var(--black);
-            padding: 80px 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .footer-col-title {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-
-        .footer-col p,
-        .footer-col a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            color: var(--muted);
-            text-decoration: none;
-            line-height: 1.9;
-            display: block;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover { color: var(--cream); }
-
-        .apply-btn {
-            display: inline-block;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 4px;
-            background: var(--red);
-            color: white;
-            text-decoration: none;
-            padding: 14px 36px;
-            border: 2px solid var(--red-bright);
-            border-radius: 3px;
-            transition: background 0.25s, color 0.25s;
-            box-shadow: 0 6px 24px rgba(155, 35, 53, 0.4);
-        }
-
-        .apply-btn:hover {
-            background: transparent;
-            color: var(--red-bright);
-        }
-
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 48px auto 0;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(138,128,112,0.4);
-        }
-
-        .footer-suits {
-            font-size: 1rem;
-            letter-spacing: 8px;
-            color: rgba(212,168,67,0.2);
-        }
-
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 900px) {
-            nav { padding: 0 24px; }
-
-            section { padding: 80px 24px; }
-
-            .req-panel {
-                grid-template-columns: 1fr;
-                gap: 36px;
-                padding: 36px 28px;
+                pointer-events: none;
+                z-index: 0;
             }
 
-            .footer-inner {
-                grid-template-columns: 1fr;
+            /* ─── NAV ─── */
+            nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 999;
+                padding: 0 60px;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: rgba(11, 11, 14, 0.96);
+                border-bottom: 1px solid var(--border);
+                backdrop-filter: blur(12px);
+            }
+
+            .logo {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 1.35rem;
+                letter-spacing: 3px;
+                color: var(--gold);
+                text-decoration: none;
+            }
+
+            .logo span {
+                color: var(--cream);
+            }
+
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 36px;
+            }
+
+            .nav-links a {
+                font-family: "Space Mono", monospace;
+                font-size: 0.7rem;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                color: var(--muted);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+            .nav-links a:hover {
+                color: var(--gold);
+            }
+
+            .nav-apply {
+                color: var(--cream) !important;
+                background: var(--red);
+                padding: 8px 20px;
+                border-radius: 2px;
+                border: 1px solid var(--red-bright);
+                transition:
+                    background 0.2s,
+                    color 0.2s !important;
+            }
+
+            .nav-apply:hover {
+                background: transparent !important;
+                color: var(--red-bright) !important;
+                border-color: var(--red-bright);
+            }
+
+            /* ─── HERO ─── */
+            header {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 100px 40px 80px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Background grid */
+            .hero-grid {
+                position: absolute;
+                inset: -10%;
+                opacity: 0.18;
+                background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+                background-size: 64px 64px;
+                pointer-events: none;
+                will-change: transform;
+                transition: transform 0.12s ease-out;
+            }
+
+            /* Background card-fan SVG pattern */
+            header::before {
+                content: "♠ ♥ ♦ ♣";
+                position: absolute;
+                font-size: 22rem;
+                letter-spacing: -2rem;
+                color: rgba(212, 168, 67, 0.03);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            .hero-eyebrow {
+                font-family: "Space Mono", monospace;
+                font-size: 0.7rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 28px;
+            }
+
+            header h1 {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: clamp(3.5rem, 9vw, 8rem);
+                letter-spacing: 6px;
+                line-height: 0.95;
+                color: var(--cream);
+                margin-bottom: 20px;
+            }
+
+            header h1 em {
+                font-style: normal;
+                color: var(--gold);
+            }
+
+            .hero-sub {
+                font-family: "Cormorant Garamond", serif;
+                font-style: italic;
+                font-size: 1.4rem;
+                color: var(--muted);
+                margin-bottom: 50px;
+                letter-spacing: 1px;
+            }
+
+            .countdown-wrap {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                border: 1px solid var(--border);
+                padding: 20px 40px;
+                background: rgba(212, 168, 67, 0.04);
+                margin-bottom: 50px;
+            }
+
+            .countdown-label {
+                font-family: "Space Mono", monospace;
+                font-size: 0.62rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin-bottom: 8px;
+            }
+
+            #timer {
+                font-family: "Space Mono", monospace;
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--gold);
+                letter-spacing: 3px;
+            }
+
+            .hero-cta {
+                font-family: "Space Mono", monospace;
+                font-size: 0.65rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--muted);
+                text-decoration: none;
+                border-bottom: 1px solid var(--red);
+                padding-bottom: 3px;
+                transition:
+                    color 0.2s,
+                    border-color 0.2s;
+            }
+
+            .hero-cta:hover {
+                color: var(--gold);
+                border-color: var(--gold);
+            }
+
+            /* ─── DIVIDER ─── */
+            .suit-divider {
+                text-align: center;
+                font-size: 1.1rem;
+                letter-spacing: 12px;
+                color: var(--border);
+                padding: 0 50px;
+                margin: 0 auto;
+            }
+
+            .suit-divider span {
+                color: var(--gold);
+                opacity: 0.35;
+            }
+
+            /* ─── SECTIONS ─── */
+            section {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 110px 60px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .section-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 72px;
                 text-align: center;
             }
 
-            .footer-col-title { text-align: center; }
+            .section-eyebrow {
+                font-family: "Space Mono", monospace;
+                font-size: 0.62rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 14px;
+            }
+
+            .section-title {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: clamp(2.2rem, 5vw, 4rem);
+                letter-spacing: 4px;
+                color: var(--cream);
+                line-height: 1;
+            }
+
+            /* ─── PLAYING CARD SCHEDULE ─── */
+            .cards-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 24px;
+            }
+
+            /* Each schedule item is a playing card */
+            .play-card {
+                background: var(--card-bg);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+                cursor: default;
+                transition:
+                    transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+                    border-color 0.3s,
+                    box-shadow 0.3s;
+                min-height: 240px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .play-card:hover {
+                transform: translateY(-8px) rotate(-0.8deg);
+                border-color: var(--gold);
+                box-shadow:
+                    0 20px 50px rgba(0, 0, 0, 0.6),
+                    0 0 0 1px rgba(212, 168, 67, 0.15);
+            }
+
+            /* Corner pip — top-left */
+            .pip-tl {
+                position: absolute;
+                top: 14px;
+                left: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 1;
+            }
+
+            /* Corner pip — bottom-right (rotated) */
+            .pip-br {
+                position: absolute;
+                bottom: 14px;
+                right: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 1;
+                transform: rotate(180deg);
+            }
+
+            .pip-rank {
+                font-family: "Space Mono", monospace;
+                font-size: 0.95rem;
+                font-weight: 700;
+                line-height: 1;
+            }
+
+            .pip-suit {
+                font-size: 0.85rem;
+                line-height: 1.2;
+            }
+
+            /* Suit colors */
+            .red-suit .pip-rank,
+            .red-suit .pip-suit {
+                color: var(--red-bright);
+            }
+
+            .black-suit .pip-rank,
+            .black-suit .pip-suit {
+                color: var(--cream);
+            }
+
+            /* Large center suit watermark */
+            .card-center-suit {
+                position: absolute;
+                bottom: -18px;
+                right: -10px;
+                font-size: 9rem;
+                opacity: 0.04;
+                line-height: 1;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            /* Card content */
+            .card-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 50px 24px 40px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .card-day-label {
+                font-family: "Space Mono", monospace;
+                font-size: 0.6rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin-bottom: 4px;
+            }
+
+            .card-date-big {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+                color: var(--gold);
+                line-height: 1;
+                margin-bottom: 16px;
+            }
+
+            .card-event-name {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: var(--cream);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+            }
+
+            .card-time-label {
+                font-family: "Space Mono", monospace;
+                font-size: 0.7rem;
+                color: var(--muted);
+            }
+
+            /* Special cards */
+            .card-app-due {
+                border-color: var(--gold);
+                background: linear-gradient(
+                    135deg,
+                    #111417 60%,
+                    rgba(212, 168, 67, 0.05) 100%
+                );
+            }
+
+            .card-app-due::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 6px;
+                box-shadow: inset 0 0 30px rgba(212, 168, 67, 0.06);
+            }
+
+            .app-due-badge {
+                margin-top: 14px;
+                display: inline-block;
+                font-family: "Space Mono", monospace;
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--gold);
+                border: 1px solid rgba(212, 168, 67, 0.4);
+                padding: 4px 10px;
+                border-radius: 2px;
+            }
+
+            .invite-badge {
+                margin-top: 14px;
+                display: inline-block;
+                font-family: "Space Mono", monospace;
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: white;
+                background: var(--red);
+                padding: 4px 10px;
+                border-radius: 2px;
+            }
+
+            /* ─── REQUIREMENTS ─── */
+            .req-panel {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 60px;
+                align-items: start;
+                background: var(--card-bg);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 60px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .req-panel::after {
+                content: "♠";
+                position: absolute;
+                right: -30px;
+                bottom: -40px;
+                font-size: 18rem;
+                color: rgba(212, 168, 67, 0.025);
+                line-height: 1;
+                pointer-events: none;
+            }
+
+            .req-label-col {
+                position: relative;
+                z-index: 1;
+            }
+
+            .req-role-tag {
+                font-family: "Space Mono", monospace;
+                font-size: 0.62rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 16px;
+            }
+
+            .req-role-title {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 2.4rem;
+                letter-spacing: 2px;
+                line-height: 1.05;
+                color: var(--cream);
+            }
+
+            .req-list-col {
+                position: relative;
+                z-index: 1;
+            }
+
+            .req-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            .req-list li {
+                display: flex;
+                gap: 18px;
+                align-items: flex-start;
+                font-size: 1.1rem;
+                color: #a09888;
+                line-height: 1.55;
+            }
+
+            .req-list li .suit-marker {
+                color: var(--gold);
+                font-size: 1rem;
+                flex-shrink: 0;
+                margin-top: 3px;
+            }
+
+            .req-list li strong {
+                color: var(--cream);
+            }
+
+            /* ─── FOOTER ─── */
+            footer {
+                border-top: 1px solid var(--border);
+                background: var(--black);
+                padding: 80px 60px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .footer-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 40px;
+                align-items: start;
+            }
+
+            .footer-col-title {
+                font-family: "Space Mono", monospace;
+                font-size: 0.62rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 16px;
+            }
+
+            .footer-col p,
+            .footer-col a {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1rem;
+                color: var(--muted);
+                text-decoration: none;
+                line-height: 1.9;
+                display: block;
+                transition: color 0.2s;
+            }
+
+            .footer-col a:hover {
+                color: var(--cream);
+            }
+
+            .apply-btn {
+                display: inline-block;
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 1.1rem;
+                letter-spacing: 4px;
+                background: var(--red);
+                color: white;
+                text-decoration: none;
+                padding: 14px 36px;
+                border: 2px solid var(--red-bright);
+                border-radius: 3px;
+                transition:
+                    background 0.25s,
+                    color 0.25s;
+                box-shadow: 0 6px 24px rgba(155, 35, 53, 0.4);
+            }
+
+            .apply-btn:hover {
+                background: transparent;
+                color: var(--red-bright);
+            }
 
             .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
+                max-width: 1100px;
+                margin: 48px auto 0;
+                padding-top: 32px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
 
-            header h1 { font-size: 3.5rem; }
-        }
-
-        @media (max-width: 600px) {
-            .nav-links { gap: 16px; }
-            .cards-container { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- NAV -->
-    <nav>
-        <a href="#" class="logo">Triton <span>Trading Group</span></a>
-        <div class="nav-links">
-            <a href="#schedule">Schedule</a>
-            <a href="#requirements">Requirements</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform" class="nav-apply">Apply Now</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header>
-        <p class="hero-eyebrow">Spring 2026 Recruitment</p>
-        <h1>Triton<br><em>Trading</em><br>Group</h1>
-        <p class="hero-sub">Empowering the next generation of AI-powered investing, mentorship, and community</p>
-
-        <div class="countdown-wrap">
-            <p class="countdown-label">Applications Close In</p>
-            <span id="timer">Loading...</span>
-        </div>
-
-        <a href="#schedule" class="hero-cta">View Schedule ↓</a>
-    </header>
-
-    <div class="suit-divider">
-        <span>♠ &nbsp; ♥ &nbsp; ♦ &nbsp; ♣</span>
-    </div>
-
-    <!-- SCHEDULE -->
-    <section id="schedule">
-        <div class="section-header">
-            <p class="section-eyebrow">Spring Quarter · 2026</p>
-            <h2 class="section-title">Recruitment Schedule</h2>
-        </div>
-
-        <div class="cards-container">
-
-            <!-- Tabling cards use alternating suits: ♠ ♣ (black) -->
-            <div class="play-card black-suit">
-                <div class="pip-tl"><span class="pip-rank">3</span><span class="pip-suit">♠</span></div>
-                <div class="pip-br"><span class="pip-rank">3</span><span class="pip-suit">♠</span></div>
-                <span class="card-center-suit">♠</span>
-                <div class="card-body">
-                    <div class="card-day-label">Monday</div>
-                    <div class="card-date-big">3/30</div>
-                    <div class="card-event-name">Tabling</div>
-                    <div class="card-time-label">Library Walk · 10 – 5</div>
-                </div>
-            </div>
-
-            <div class="play-card black-suit">
-                <div class="pip-tl"><span class="pip-rank">3</span><span class="pip-suit">♣</span></div>
-                <div class="pip-br"><span class="pip-rank">3</span><span class="pip-suit">♣</span></div>
-                <span class="card-center-suit">♣</span>
-                <div class="card-body">
-                    <div class="card-day-label">Tuesday</div>
-                    <div class="card-date-big">3/31</div>
-                    <div class="card-event-name">Tabling</div>
-                    <div class="card-time-label">Library Walk · 10 – 5</div>
-                </div>
-            </div>
-
-            <div class="play-card black-suit">
-                <div class="pip-tl"><span class="pip-rank">4</span><span class="pip-suit">♠</span></div>
-                <div class="pip-br"><span class="pip-rank">4</span><span class="pip-suit">♠</span></div>
-                <span class="card-center-suit">♠</span>
-                <div class="card-body">
-                    <div class="card-day-label">Wednesday</div>
-                    <div class="card-date-big">4/1</div>
-                    <div class="card-event-name">Tabling</div>
-                    <div class="card-time-label">Library Walk · 10 – 5</div>
-                </div>
-            </div>
-
-            <div class="play-card black-suit">
-                <div class="pip-tl"><span class="pip-rank">4</span><span class="pip-suit">♣</span></div>
-                <div class="pip-br"><span class="pip-rank">4</span><span class="pip-suit">♣</span></div>
-                <span class="card-center-suit">♣</span>
-                <div class="card-body">
-                    <div class="card-day-label">Friday</div>
-                    <div class="card-date-big">4/3</div>
-                    <div class="card-event-name">Tabling</div>
-                    <div class="card-time-label">Library Walk · 10 – 5</div>
-                </div>
-            </div>
-
-            <!-- GBM Info Night — gold highlighted, Ace of Hearts -->
-            <div class="play-card red-suit card-app-due">
-                <div class="pip-tl"><span class="pip-rank">A</span><span class="pip-suit">♥</span></div>
-                <div class="pip-br"><span class="pip-rank">A</span><span class="pip-suit">♥</span></div>
-                <span class="card-center-suit" style="opacity:0.06;color:var(--red-bright);">♥</span>
-                <div class="card-body">
-                    <div class="card-day-label">Monday</div>
-                    <div class="card-date-big">4/6</div>
-                    <div class="card-event-name">GBM 1 — Info Night</div>
-                    <div class="card-time-label">8 – 10 PM</div>
-                    <div class="app-due-badge">Applications Due · 11:59 PM</div>
-                </div>
-            </div>
-
-            <!-- Meet the Team -->
-            <div class="play-card red-suit">
-                <div class="pip-tl"><span class="pip-rank">K</span><span class="pip-suit">♦</span></div>
-                <div class="pip-br"><span class="pip-rank">K</span><span class="pip-suit">♦</span></div>
-                <span class="card-center-suit">♦</span>
-                <div class="card-body">
-                    <div class="card-day-label">Tuesday</div>
-                    <div class="card-date-big">4/7</div>
-                    <div class="card-event-name">Meet the Team</div>
-                </div>
-            </div>
-
-            <!-- Stock Pitch Night — invite only -->
-            <div class="play-card red-suit">
-                <div class="pip-tl"><span class="pip-rank">Q</span><span class="pip-suit">♥</span></div>
-                <div class="pip-br"><span class="pip-rank">Q</span><span class="pip-suit">♥</span></div>
-                <span class="card-center-suit">♥</span>
-                <div class="card-body">
-                    <div class="card-day-label">Wednesday</div>
-                    <div class="card-date-big">4/8</div>
-                    <div class="card-event-name">Stock Pitch Night</div>
-                    <div class="card-time-label">8 – 10 PM</div>
-                    <div class="invite-badge">Invite Only</div>
-                </div>
-            </div>
-
-            <!-- Social Night — invite only -->
-            <div class="play-card red-suit">
-                <div class="pip-tl"><span class="pip-rank">J</span><span class="pip-suit">♦</span></div>
-                <div class="pip-br"><span class="pip-rank">J</span><span class="pip-suit">♦</span></div>
-                <span class="card-center-suit">♦</span>
-                <div class="card-body">
-                    <div class="card-day-label">Thursday</div>
-                    <div class="card-date-big">4/9</div>
-                    <div class="card-event-name">Social Night</div>
-                    <div class="invite-badge">Invite Only</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- REQUIREMENTS -->
-    <section id="requirements">
-        <div class="section-header">
-            <p class="section-eyebrow">Open Position</p>
-            <h2 class="section-title">What We're Looking For</h2>
-        </div>
-
-        <div class="req-panel">
-            <div class="req-label-col">
-                <p class="req-role-tag">Division</p>
-                <h3 class="req-role-title">Financial Planning<br>&amp; Analysis</h3>
-            </div>
-            <div class="req-list-col">
-                <ul class="req-list">
-                    <li>
-                        <span class="suit-marker">♦</span>
-                        Experience in finance, consulting, startups, or related fields/coursework preferred
-                    </li>
-                    <li>
-                        <span class="suit-marker">♦</span>
-                        Strong Excel/Google Sheets and presentation skills preferred
-                    </li>
-                    <li>
-                        <span class="suit-marker">♦</span>
-                        Analytical thinking, professionalism, and communication required
-                    </li>
-                    <li>
-                        <span class="suit-marker">♦</span>
-                        Financial modeling, market research, or forecasting a plus
-                    </li>
-                    <li>
-                        <span class="suit-marker">♦</span>
-                        No FP&amp;A experience needed — ownership, reliability, and willingness to learn matter <strong>most</strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="apply">
-        <div class="footer-inner">
-            <div class="footer-col">
-                <p class="footer-col-title">Contact</p>
-                <a href="mailto:tritontrading@ucsd.edu">tritontrading@ucsd.edu</a>
-            </div>
-            <div class="footer-col">
-                <p class="footer-col-title">Social Media</p>
-                <a href="https://instagram.com/tritontradingucsd" target="_blank">Instagram · @tritontradingucsd</a>
-                <a href="https://linkedin.com/company/tritontradinggroup" target="_blank">LinkedIn · @tritontradinggroup</a>
-            </div>
-            <div class="footer-col">
-                <p class="footer-col-title">Ready to play?</p>
-                <button href="https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform" class="apply-btn">Submit Application</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Triton Trading Group · UC San Diego</p>
-            <span class="footer-suits">♠ ♥ ♦ ♣</span>
-        </div>
-    </footer>
-
-    <script>
-        const deadline = new Date("Apr 6, 2026 23:59:00").getTime();
-
-        const x = setInterval(() => {
-            const now  = Date.now();
-            const dist = deadline - now;
-
-            if (dist <= 0) {
-                clearInterval(x);
-                document.getElementById("timer").textContent = "APPLICATIONS CLOSED";
-                return;
+            .footer-bottom p {
+                font-family: "Space Mono", monospace;
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: rgba(138, 128, 112, 0.4);
             }
 
-            const d = Math.floor(dist / 86400000);
-            const h = Math.floor((dist % 86400000) / 3600000);
-            const m = Math.floor((dist % 3600000)  / 60000);
-            const s = Math.floor((dist % 60000)    / 1000);
+            .footer-suits {
+                font-size: 1rem;
+                letter-spacing: 8px;
+                color: rgba(212, 168, 67, 0.2);
+            }
 
-            document.getElementById("timer").textContent =
-                `${d}d  ${String(h).padStart(2,'0')}h  ${String(m).padStart(2,'0')}m  ${String(s).padStart(2,'0')}s`;
-        }, 1000);
-    </script>
-</body>
+            /* ─── RESPONSIVE ─── */
+            @media (max-width: 900px) {
+                nav {
+                    padding: 0 24px;
+                }
+
+                section {
+                    padding: 80px 24px;
+                }
+
+                .req-panel {
+                    grid-template-columns: 1fr;
+                    gap: 36px;
+                    padding: 36px 28px;
+                }
+
+                .footer-inner {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+
+                .footer-col-title {
+                    text-align: center;
+                }
+
+                .footer-bottom {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+
+                header h1 {
+                    font-size: 3.5rem;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .nav-links {
+                    gap: 16px;
+                }
+                .cards-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- NAV -->
+        <nav>
+            <a href="#" class="logo">Triton <span>Trading Group</span></a>
+            <div class="nav-links">
+                <a href="#schedule">Schedule</a>
+                <a href="#requirements">Requirements</a>
+                <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform"
+                    class="nav-apply"
+                    >Apply Now</a
+                >
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <header>
+            <div class="hero-grid"></div>
+            <p class="hero-eyebrow">Spring 2026 Recruitment</p>
+            <h1>Triton<br /><em>Trading</em><br />Group</h1>
+            <p class="hero-sub">
+                Empowering the next generation of AI-powered investing,
+                mentorship, and community
+            </p>
+
+            <div class="countdown-wrap">
+                <p class="countdown-label">Applications Close In</p>
+                <span id="timer">Loading...</span>
+            </div>
+
+            <a href="#schedule" class="hero-cta">View Schedule ↓</a>
+        </header>
+
+        <div class="suit-divider">
+            <span>♠ &nbsp; ♥ &nbsp; ♦ &nbsp; ♣</span>
+        </div>
+
+        <!-- SCHEDULE -->
+        <section id="schedule">
+            <div class="section-header">
+                <p class="section-eyebrow">Spring Quarter · 2026</p>
+                <h2 class="section-title">Recruitment Schedule</h2>
+            </div>
+
+            <div class="cards-container">
+                <!-- Tabling cards use alternating suits: ♠ ♣ (black) -->
+                <div class="play-card black-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">3</span
+                        ><span class="pip-suit">♠</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">3</span
+                        ><span class="pip-suit">♠</span>
+                    </div>
+                    <span class="card-center-suit">♠</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Monday</div>
+                        <div class="card-date-big">3/30</div>
+                        <div class="card-event-name">Tabling</div>
+                        <div class="card-time-label">Library Walk · 10 – 5</div>
+                    </div>
+                </div>
+
+                <div class="play-card black-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">3</span
+                        ><span class="pip-suit">♣</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">3</span
+                        ><span class="pip-suit">♣</span>
+                    </div>
+                    <span class="card-center-suit">♣</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Tuesday</div>
+                        <div class="card-date-big">3/31</div>
+                        <div class="card-event-name">Tabling</div>
+                        <div class="card-time-label">Library Walk · 10 – 5</div>
+                    </div>
+                </div>
+
+                <div class="play-card black-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">4</span
+                        ><span class="pip-suit">♠</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">4</span
+                        ><span class="pip-suit">♠</span>
+                    </div>
+                    <span class="card-center-suit">♠</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Wednesday</div>
+                        <div class="card-date-big">4/1</div>
+                        <div class="card-event-name">Tabling</div>
+                        <div class="card-time-label">Library Walk · 10 – 5</div>
+                    </div>
+                </div>
+
+                <div class="play-card black-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">4</span
+                        ><span class="pip-suit">♣</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">4</span
+                        ><span class="pip-suit">♣</span>
+                    </div>
+                    <span class="card-center-suit">♣</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Friday</div>
+                        <div class="card-date-big">4/3</div>
+                        <div class="card-event-name">Tabling</div>
+                        <div class="card-time-label">Library Walk · 10 – 5</div>
+                    </div>
+                </div>
+
+                <!-- GBM Info Night — gold highlighted, Ace of Hearts -->
+                <div class="play-card red-suit card-app-due">
+                    <div class="pip-tl">
+                        <span class="pip-rank">A</span
+                        ><span class="pip-suit">♥</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">A</span
+                        ><span class="pip-suit">♥</span>
+                    </div>
+                    <span
+                        class="card-center-suit"
+                        style="opacity: 0.06; color: var(--red-bright)"
+                        >♥</span
+                    >
+                    <div class="card-body">
+                        <div class="card-day-label">Monday</div>
+                        <div class="card-date-big">4/6</div>
+                        <div class="card-event-name">GBM 1 — Info Night</div>
+                        <div class="card-time-label">8 – 10 PM</div>
+                        <div class="app-due-badge">
+                            Applications Due · 11:59 PM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meet the Team -->
+                <div class="play-card red-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">K</span
+                        ><span class="pip-suit">♦</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">K</span
+                        ><span class="pip-suit">♦</span>
+                    </div>
+                    <span class="card-center-suit">♦</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Tuesday</div>
+                        <div class="card-date-big">4/7</div>
+                        <div class="card-event-name">Meet the Team</div>
+                    </div>
+                </div>
+
+                <!-- Stock Pitch Night — invite only -->
+                <div class="play-card red-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">Q</span
+                        ><span class="pip-suit">♥</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">Q</span
+                        ><span class="pip-suit">♥</span>
+                    </div>
+                    <span class="card-center-suit">♥</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Wednesday</div>
+                        <div class="card-date-big">4/8</div>
+                        <div class="card-event-name">Stock Pitch Night</div>
+                        <div class="card-time-label">8 – 10 PM</div>
+                        <div class="invite-badge">Invite Only</div>
+                    </div>
+                </div>
+
+                <!-- Social Night — invite only -->
+                <div class="play-card red-suit">
+                    <div class="pip-tl">
+                        <span class="pip-rank">J</span
+                        ><span class="pip-suit">♦</span>
+                    </div>
+                    <div class="pip-br">
+                        <span class="pip-rank">J</span
+                        ><span class="pip-suit">♦</span>
+                    </div>
+                    <span class="card-center-suit">♦</span>
+                    <div class="card-body">
+                        <div class="card-day-label">Thursday</div>
+                        <div class="card-date-big">4/9</div>
+                        <div class="card-event-name">Social Night</div>
+                        <div class="invite-badge">Invite Only</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUIREMENTS -->
+        <section id="requirements">
+            <div class="section-header">
+                <p class="section-eyebrow">Open Position</p>
+                <h2 class="section-title">What We're Looking For</h2>
+            </div>
+
+            <div class="req-panel">
+                <div class="req-label-col">
+                    <p class="req-role-tag">Division</p>
+                    <h3 class="req-role-title">
+                        Financial Planning<br />&amp; Analysis
+                    </h3>
+                </div>
+                <div class="req-list-col">
+                    <ul class="req-list">
+                        <li>
+                            <span class="suit-marker">♦</span>
+                            Experience in finance, consulting, startups, or
+                            related fields/coursework preferred
+                        </li>
+                        <li>
+                            <span class="suit-marker">♦</span>
+                            Strong Excel/Google Sheets and presentation skills
+                            preferred
+                        </li>
+                        <li>
+                            <span class="suit-marker">♦</span>
+                            Analytical thinking, professionalism, and
+                            communication required
+                        </li>
+                        <li>
+                            <span class="suit-marker">♦</span>
+                            Financial modeling, market research, or forecasting
+                            a plus
+                        </li>
+                        <li>
+                            <span class="suit-marker">♦</span>
+                            No FP&amp;A experience needed — ownership,
+                            reliability, and willingness to learn matter
+                            <strong>most</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="apply">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <p class="footer-col-title">Contact</p>
+                    <a href="mailto:tritontrading@ucsd.edu"
+                        >tritontrading@ucsd.edu</a
+                    >
+                </div>
+                <div class="footer-col">
+                    <p class="footer-col-title">Social Media</p>
+                    <a
+                        href="https://instagram.com/tritontradingucsd"
+                        target="_blank"
+                        >Instagram · @tritontradingucsd</a
+                    >
+                    <a
+                        href="https://linkedin.com/company/tritontradinggroup"
+                        target="_blank"
+                        >LinkedIn · @tritontradinggroup</a
+                    >
+                </div>
+                <div class="footer-col">
+                    <p class="footer-col-title">Ready to play?</p>
+                    <button
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform"
+                        class="apply-btn"
+                    >
+                        Submit Application
+                    </button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Triton Trading Group · UC San Diego</p>
+                <span class="footer-suits">♠ ♥ ♦ ♣</span>
+            </div>
+        </footer>
+
+        <script>
+            const deadline = new Date("Apr 6, 2026 23:59:00").getTime();
+
+            const x = setInterval(() => {
+                const now = Date.now();
+                const dist = deadline - now;
+
+                if (dist <= 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").textContent =
+                        "APPLICATIONS CLOSED";
+                    return;
+                }
+
+                const d = Math.floor(dist / 86400000);
+                const h = Math.floor((dist % 86400000) / 3600000);
+                const m = Math.floor((dist % 3600000) / 60000);
+                const s = Math.floor((dist % 60000) / 1000);
+
+                document.getElementById("timer").textContent =
+                    `${d}d  ${String(h).padStart(2, "0")}h  ${String(m).padStart(2, "0")}m  ${String(s).padStart(2, "0")}s`;
+            }, 1000);
+        </script>
+
+        <script>
+            const grid = document.querySelector('.hero-grid');
+            document.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth / 2;
+                const cy = window.innerHeight / 2;
+                const dx = (e.clientX - cx) / cx;   // -1 to 1
+                const dy = (e.clientY - cy) / cy;   // -1 to 1
+                const maxShift = window.innerWidth * 0.02; // 2% each side = 4% total range
+                grid.style.transform = `translate(${dx * maxShift}px, ${dy * maxShift}px)`;
+            });
+        </script>
+    </body>
 </html>
