@@ -81,10 +81,10 @@ export function Hero() {
           <div className="absolute -inset-3 rounded-none bg-gradient-to-br from-[#1f5eff]/10 via-transparent to-[#c79a3b]/14 blur-2xl pointer-events-none" />
           <div className="relative overflow-hidden border border-[#c79a3b]/45 bg-[#efe1bd] p-2 shadow-[0_30px_80px_rgba(13,27,61,0.16)]">
             <Image
-              src="/images/brand/group_photoshoot.png"
-              alt="Triton Trading Group"
-              width={700}
-              height={480}
+              src="/images/big_group_picture-2.png"
+              alt="Triton Trading Group members together"
+              width={900}
+              height={620}
               className="h-auto w-full border border-[#0d1b3d]/10 object-cover"
               priority
             />
