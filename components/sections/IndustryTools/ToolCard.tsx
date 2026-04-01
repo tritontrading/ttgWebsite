@@ -25,11 +25,11 @@ export function ToolCard({ name, logo, description }: ToolCardProps) {
         {name}
       </span>
 
-      {description && (
+      {/*{description && (
         <p className="mt-auto w-full border-t border-[#c79a3b]/20 pt-3 text-center font-mono text-sm leading-[1.55] text-[#102347]/76">
           {description}
         </p>
-      )}
+      )}*/}
     </div>
   )
 }

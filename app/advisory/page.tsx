@@ -6,9 +6,9 @@ import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackg
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Financial Advisory - Triton Trading Group',
+  title: 'FP&A - Triton Trading Group',
   description:
-    'Choose the Triton Trading Group financial advisory path that fits you: prospective members exploring the program or organizations looking to hire student advisory services.',
+    'Choose the Triton Trading Group FP&A path that fits you: prospective members exploring the program or organizations looking to hire student finance and strategy support.',
 }
 
 const PATHS = [
@@ -17,7 +17,7 @@ const PATHS = [
     eyebrow: 'FOR STUDENTS',
     title: 'Prospective Members',
     body:
-      'Learn how TTG members train inside the FP&A track, what projects they work on, and how the advisory program prepares students for consulting, strategy, and finance roles.',
+      'Learn how TTG members train inside the FP&A track, what projects they work on, and how the program prepares students for consulting, strategy, and finance roles.',
     bullets: [
       'Real client-style project experience',
       'Structured analyst-to-lead progression',
@@ -30,10 +30,10 @@ const PATHS = [
     eyebrow: 'FOR FOUNDERS & TEAMS',
     title: 'Hire Our Services',
     body:
-      'See how TTG supports early-stage companies with finance, operations, growth strategy, and technical implementation through focused student advisory engagements.',
+      'See how TTG supports early-stage companies with finance, operations, growth strategy, and technical implementation through focused student FP&A engagements.',
     bullets: [
       'Research-driven deliverables',
-      'Scoped advisory for startups and operators',
+      'Scoped FP&A support for startups and operators',
       'Direct inquiry path for new engagements',
     ],
     cta: 'View Service Offerings',
@@ -50,13 +50,13 @@ export default function AdvisoryHubPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
           <div>
             <span className="mb-6 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
-              FINANCIAL ADVISORY
+              FP&A
             </span>
             <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
-                Financial Advisory
+                FP&A
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
-              TTG&apos;s advisory work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
+              TTG&apos;s FP&A work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
             </p>
           </div>
 

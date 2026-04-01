@@ -68,15 +68,15 @@ export function Nav() {
       }`}
     >
       <div className="flex h-16 w-full items-center gap-4">
-        <Link href="/" className="mr-auto flex items-center gap-3">
+        <Link href="/" className="mr-auto flex items-center gap-3.5">
           <Image
             src="/images/brand/logo.png"
             alt="TTG"
-            width={24}
-            height={24}
-            className="h-6 w-auto"
+            width={40}
+            height={40}
+            className="h-10 w-auto"
           />
-          <span className="font-mono text-sm font-semibold tracking-[0.22em] text-[#0d1b3d]">TTG</span>
+          <span className="font-mono text-base font-semibold tracking-[0.22em] text-[#0d1b3d]">TTG</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -86,7 +86,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-mono text-xs tracking-[0.24em] uppercase transition-colors duration-200 ${
+                className={`font-mono text-sm tracking-[0.24em] uppercase transition-colors duration-200 ${
                   active
                     ? 'text-[#1f5eff]'
                     : 'text-[#0d1b3d]/72 hover:text-[#c79a3b]'
@@ -98,7 +98,7 @@ export function Nav() {
           })}
           <Link
             href="/#recruitment"
-            className="border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-1.5 font-mono text-xs tracking-[0.24em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
+            className="border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-2 font-mono text-sm tracking-[0.24em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
           >
             APPLY
           </Link>
@@ -128,7 +128,7 @@ export function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-1 py-3 font-mono text-xs tracking-[0.22em] uppercase transition-colors duration-200 ${
+                  className={`px-1 py-3 font-mono text-sm tracking-[0.22em] uppercase transition-colors duration-200 ${
                     active ? 'text-[#0d1b3d]' : 'text-[#0d1b3d]/72'
                   }`}
                   onClick={() => setMenuOpen(false)}
@@ -139,7 +139,7 @@ export function Nav() {
             })}
             <Link
               href="/#recruitment"
-              className="mt-2 inline-flex w-full items-center justify-center border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
+              className="mt-2 inline-flex w-full items-center justify-center border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-3 font-mono text-sm tracking-[0.22em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
               onClick={() => setMenuOpen(false)}
             >
               Apply

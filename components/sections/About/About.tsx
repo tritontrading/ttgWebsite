@@ -2,6 +2,12 @@
 
 import { StatCounter } from './StatCounter'
 import { TextReveal } from './TextReveal'
+import { ToolCard } from '@/components/sections/IndustryTools/ToolCard'
+import { SPONSORS } from '@/lib/constants'
+
+const FEATURED_SPONSORS = SPONSORS.filter((sponsor) =>
+  ['quantconnect', 'marketcrunchai'].includes(sponsor.slug)
+)
 
 export function About() {
   return (
@@ -43,6 +49,32 @@ export function About() {
           {/*<div className="border-t border-[#c79a3b]/30 md:border-l md:border-t-0">
             <StatCounter value={2025} suffix="" label="Founded" />
           </div>*/}
+        </div>
+
+        <div className="mt-14 border border-[#c79a3b]/28 bg-[#fff9ef]/80 p-6 md:mt-20 md:p-8">
+          <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <span className="mb-3 block font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
+                OUR SPONSORS
+              </span>
+              <h3 className="font-serif text-3xl font-bold tracking-tight text-[#0d1b3d] md:text-4xl">
+                Featured Sponsors
+              </h3>
+            </div>
+            <p className="text-base leading-relaxed text-[#102347]/80">
+              QuantConnect and MarketCrunch directly support TTG members with tools and infrastructure used in research, market analysis, and quantitative development.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-px bg-[#c79a3b]/18 md:grid-cols-2">
+            {FEATURED_SPONSORS.map((sponsor) => (
+              <ToolCard
+                key={sponsor.slug}
+                name={sponsor.name}
+                logo={sponsor.logo}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

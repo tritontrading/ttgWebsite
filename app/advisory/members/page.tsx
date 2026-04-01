@@ -7,9 +7,9 @@ import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackg
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export const metadata: Metadata = {
-  title: 'Advisory For Members - Triton Trading Group',
+  title: 'FP&A For Members - Triton Trading Group',
   description:
-    'Learn how TTG members train and operate inside the Financial Planning & Analysis advisory track.',
+    'Learn how TTG members train and operate inside the Financial Planning & Analysis track.',
 }
 
 const AREAS = [
@@ -49,7 +49,7 @@ const CAREERS = [
   { firm: 'Venture Capital', note: 'Early-stage and growth investing' },
   { firm: 'Corporate Strategy', note: 'In-house strategy & finance roles' },
   { firm: 'Entrepreneurship', note: 'Founding and operating startups' },
-  { firm: 'Investment Banking', note: 'Advisory and M&A execution' },
+  { firm: 'Investment Banking', note: 'M&A and transaction execution' },
   { firm: 'Private Equity', note: 'Portfolio operations & value creation' },
 ]
 
@@ -63,7 +63,7 @@ export default function AdvisoryMembersPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
             <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
-              {'<-'} Back To Advisory Paths
+              {'<-'} Back To FP&A Paths
             </Link>
           </div>
 
@@ -73,12 +73,12 @@ export default function AdvisoryMembersPage() {
                 FOR PROSPECTIVE MEMBERS
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
-                Advisory As
+                FP&A As
                 <br />
                 A Training Ground
               </h1>
               <p className="max-w-lg text-base leading-relaxed text-[#080808]/60">
-                The FP&A advisory track gives TTG members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution. Members learn by working through real business questions with clear deliverables and accountability.
+                The FP&A track gives TTG members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution. Members learn by working through real business questions with clear deliverables and accountability.
               </p>
             </div>
             <div className="overflow-hidden border-2 border-[#080808]/20">
@@ -194,8 +194,8 @@ export default function AdvisoryMembersPage() {
       <section className="relative z-10 border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">Interested in the advisory track?</h2>
-            <p className="text-sm text-[#080808]/50">Applications open each academic quarter. All majors welcome.</p>
+            <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">Interested in the FP&A track?</h2>
+            <p className="text-sm text-[#080808]/50">Applications open each academic quarter.</p>
           </div>
           <ApplyNowLink className="w-full shrink-0 border-2 border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream sm:w-auto">
             Apply Now

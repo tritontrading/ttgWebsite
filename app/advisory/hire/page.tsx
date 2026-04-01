@@ -6,9 +6,9 @@ import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackg
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Hire TTG Advisory - Triton Trading Group',
+  title: 'Hire TTG FP&A - Triton Trading Group',
   description:
-    'Explore TTG advisory services for early-stage teams across operations, strategy, growth, finance, and technology.',
+    'Explore TTG FP&A services for early-stage teams across operations, strategy, growth, finance, and technology.',
 }
 
 const WHY_US = [
@@ -80,7 +80,7 @@ export default function AdvisoryHirePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
             <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
-              {'<-'} Back To Advisory Paths
+              {'<-'} Back To FP&A Paths
             </Link>
           </div>
 
@@ -90,7 +90,7 @@ export default function AdvisoryHirePage() {
                 FOR FOUNDERS & TEAMS
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.96] text-[#080808] sm:text-5xl md:text-7xl">
-                Advisory That
+                FP&A That
                 <br />
                 Fits Early-Stage
                 <br />
@@ -109,10 +109,10 @@ export default function AdvisoryHirePage() {
                 If you are evaluating a scoped engagement, send a short overview of your team, stage, and the decision or system you need help with.
               </p>
               <a
-                href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20Advisory%20Inquiry"
+                href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
                 className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
               >
-                Email TTG Advisory
+                Email TTG FP&A
               </a>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function AdvisoryHirePage() {
           <SectionHeader
             label="SERVICES"
             title="What We Can Help With"
-            description="Scoped advisory work across operations, growth, finance, and technical systems."
+            description="Scoped FP&A work across operations, growth, finance, and technical systems."
             className="mb-10 md:mb-16"
           />
 
@@ -236,13 +236,13 @@ export default function AdvisoryHirePage() {
               Start The Conversation
             </h3>
             <p className="mb-6 text-sm leading-7 text-[#080808]/60">
-              Email TTG with a short overview of your business, timeline, and advisory need.
+              Email TTG with a short overview of your business, timeline, and FP&A need.
             </p>
             <a
-              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20Advisory%20Inquiry"
+              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
               className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
             >
-              Email TTG Advisory
+              Email TTG FP&A
             </a>
             <div className="mt-6 border-t border-[#080808]/10 pt-5">
               <p className="font-mono text-[11px] leading-6 text-[#080808]/35">

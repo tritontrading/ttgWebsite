@@ -6,6 +6,10 @@ import { ToolCard } from './ToolCard'
 import { SPONSORS } from '@/lib/constants'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
+const NETWORK_SPONSORS = SPONSORS.filter(
+  (sponsor) => !['quantconnect', 'marketcrunchai'].includes(sponsor.slug)
+)
+
 const TOOL_DESCRIPTIONS: Record<string, string> = {
   amazon: 'Brand and technology sponsor.',
   amazonkdp: 'Publishing and creator platform partner.',
@@ -56,22 +60,22 @@ export function IndustryTools() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6">
           <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
-            INDUSTRY PARTNERS
+            OUR NETWORK
           </span>
         </div>
         <div className="mb-10 border-t border-[#c79a3b]/35 md:mb-12" />
 
         <div className="mb-12 grid grid-cols-1 items-end gap-8 md:mb-16 md:gap-16 lg:grid-cols-2">
           <h2 className="font-serif text-4xl font-bold tracking-tight text-[#0d1b3d] md:text-5xl">
-            Who We Work With
+            Our Network
           </h2>
           <p className="text-base leading-relaxed text-[#102347]/80">
-            Triton Trading Group works with industry platforms that provide members with access to professional tools and financial technology used in the investment industry. Recruiting partnerships, sponsored tools, and academic collaborations with leading firms.
+            Triton Trading Group works with firms, platforms, and academic partners that shape member development through recruiting relationships, educational access, and real exposure to the broader finance ecosystem.
           </p>
         </div>
 
         <div ref={gridRef} className="grid grid-cols-1 gap-px bg-[#c79a3b]/28 sm:grid-cols-2 md:grid-cols-3">
-          {SPONSORS.map((sponsor) => (
+          {NETWORK_SPONSORS.map((sponsor) => (
             <div key={sponsor.slug} className="tool-card-wrapper">
               <ToolCard
                 name={sponsor.name}

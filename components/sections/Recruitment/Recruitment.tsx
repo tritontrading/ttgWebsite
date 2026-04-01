@@ -20,7 +20,7 @@ export function Recruitment() {
               Join Triton Trading Group
             </h2>
             <p className="mb-10 max-w-md text-base leading-relaxed text-[#102347]/82">
-              Triton Trading Group recruits students each academic quarter who are interested in finance, markets, technology, and business strategy. We welcome students from all majors and academic backgrounds.
+              Triton Trading Group recruits students each academic quarter who are interested in finance, markets, technology, and business strategy.
             </p>
 
             <div className="mb-10 space-y-3">
@@ -51,18 +51,6 @@ export function Recruitment() {
                 className="h-auto w-full border border-[#0d1b3d]/10 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b3d]/10 to-transparent" />
-            </div>
-
-            <div className="absolute right-3 bottom-3 left-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {[
-                { label: 'Acceptance Rate', value: '~10%' },
-                { label: 'All Majors', value: 'Welcome' },
-              ].map((stat, i) => (
-                <div key={i} className="border border-[#c79a3b]/35 bg-[#0d1b3d]/92 p-3 text-[#f8f1df] backdrop-blur-sm">
-                  <span className="block font-mono text-xs text-[#efd8a4]">{stat.label}</span>
-                  <span className="text-lg font-bold text-[#f8f1df]">{stat.value}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
