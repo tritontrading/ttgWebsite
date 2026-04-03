@@ -1,14 +1,11 @@
-'use client'
-
-import { useLayoutEffect, useRef } from 'react'
-import { gsap } from '@/lib/gsap'
+import Link from 'next/link'
 import Image from 'next/image'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 const DEPTS = [
   {
     num: '01',
     label: 'Asset Management',
+    href: '/asset-management',
     subtitle: 'Student Managed Investment Fund',
     body: 'The Asset Management department manages TTG\'s student-led investment portfolio. Members conduct equity research, develop financial models, and present investment ideas through a structured investment committee process. The portfolio follows a disciplined investment framework focused on risk management, diversification, and long-term value creation.',
     items: [
@@ -25,6 +22,7 @@ const DEPTS = [
   {
     num: '02',
     label: 'Financial Planning & Analysis',
+    href: '/advisory',
     subtitle: 'Real-World Experience with Companies',
     body: 'The FP&A department provides hands-on experience working directly with companies, startups, and organizations. Members participate in real consulting-style projects where they help organizations analyze financial performance, improve operations, and develop strategic solutions. This department combines elements of corporate finance, consulting, and operational strategy.',
     items: [
@@ -41,6 +39,7 @@ const DEPTS = [
   {
     num: '03',
     label: 'Quantitative Finance',
+    href: '/quant',
     subtitle: 'Data-Driven Investing & Algorithmic Trading',
     body: 'The Quantitative Finance department focuses on data-driven investing and algorithmic trading strategies. Members develop systematic investment models using Python, QuantConnect, Alpaca, and statistical research workflows. The quant team is specifically sponsored by QuantConnect and combines finance, mathematics, and computer science to analyze markets and develop automated trading strategies.',
     items: [
@@ -56,206 +55,90 @@ const DEPTS = [
   },
 ]
 
-function TextPanel({ dept }: { dept: typeof DEPTS[0] }) {
+function DepartmentCard({ dept }: { dept: (typeof DEPTS)[number] }) {
   return (
-    <div className="flex h-full flex-col items-start justify-center gap-6">
-      <div className="space-y-1">
-        <span className="font-mono text-xs tracking-[0.22em] uppercase">
-          <span className="text-[#1f5eff]">{dept.num}</span>
-          <span className="text-[#102347]/50"> — </span>
-          <span className="text-[#c79a3b]">{dept.label}</span>
-        </span>
-        <h3 className="font-serif text-3xl font-bold leading-tight text-[#0d1b3d] lg:text-4xl">
-          {dept.subtitle}
-        </h3>
+    <Link
+      href={dept.href}
+      className="group flex h-full flex-col overflow-hidden border border-[#c79a3b]/35 bg-[#fff8ea] shadow-[0_18px_40px_rgba(13,27,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c79a3b]/70 hover:shadow-[0_28px_60px_rgba(13,27,61,0.12)]"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden border-b border-[#c79a3b]/30">
+        <Image
+          src={dept.photo}
+          alt={dept.label}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          sizes="(min-width: 1024px) 33vw, 100vw"
+        />
       </div>
 
-      <p className="max-w-sm text-base leading-relaxed text-[#102347]/82">
-        {dept.body}
-      </p>
+      <div className="flex h-full flex-col gap-6 p-5 md:p-7">
+        <div className="space-y-1">
+          <span className="font-mono text-xs tracking-[0.22em] uppercase">
+            <span className="text-[#1f5eff]">{dept.num}</span>
+            <span className="text-[#102347]/50"> - </span>
+            <span className="text-[#c79a3b]">{dept.label}</span>
+          </span>
+          <h3 className="font-serif text-3xl font-bold leading-tight text-[#0d1b3d]">
+            {dept.subtitle}
+          </h3>
+        </div>
 
-      <ul className="space-y-2">
-        {dept.items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-base text-[#0d1b3d]">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-none bg-[#c79a3b]" />
-            {item}
-          </li>
-        ))}
-      </ul>
+        <p className="text-base leading-relaxed text-[#102347]/82">{dept.body}</p>
 
-      <div>
-        <span className="mb-1 block font-mono text-xs tracking-[0.22em] uppercase text-[#c79a3b]">
-          {dept.careersLabel}
-        </span>
-        <span className="font-mono text-sm text-[#102347]/78">{dept.careers}</span>
+        <ul className="space-y-2">
+          {dept.items.map((item) => (
+            <li key={item} className="flex items-start gap-2.5 text-base text-[#0d1b3d]">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-none bg-[#c79a3b]" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-auto border-t border-[#c79a3b]/25 pt-5">
+          <span className="mb-1 block font-mono text-xs tracking-[0.22em] uppercase text-[#c79a3b]">
+            {dept.careersLabel}
+          </span>
+          <span className="block font-mono text-sm text-[#102347]/78">{dept.careers}</span>
+        </div>
+
+        <div className="flex items-center justify-between border-t border-[#c79a3b]/25 pt-5 font-mono text-xs tracking-[0.22em] uppercase text-[#0d1b3d]">
+          <span>Visit Branch Page</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1">-</span>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
 export function Departments() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const reducedMotion = useReducedMotion()
-
-  useLayoutEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-    if (window.matchMedia('(max-width: 1023px)').matches) return
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.8,
-        },
-      })
-
-      if (reducedMotion) {
-        gsap.set('.dept-text-am', { opacity: 1, x: 0 })
-        gsap.set('.dept-graphic-wrap', { left: '50%' })
-        return
-      }
-
-      // Dept 1 — enter
-      tl.to('.dept-text-am', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' })
-      tl.to('.dept-graphic-wrap', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '<')
-      // Hold (shortened from 2.5 → 1.2 so each viewport-height of scroll feels active)
-      tl.to('.dept-text-am', { opacity: 1, duration: 1.2 })
-
-      // Transition to dept 2
-      tl.to('.dept-text-am', { opacity: 0, x: -40, duration: 0.5, ease: 'power2.in' })
-      tl.to('.dept-graphic-wrap', { left: '0%', duration: 2.2, ease: 'power2.inOut' }, '<')
-      tl.to('.dept-photo-am', { opacity: 0, duration: 0.6 }, '<+=0.8')
-      tl.to('.dept-photo-fpa', { opacity: 1, duration: 0.6 }, '<')
-      tl.to('.dept-text-fpa', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, '<+=0.5')
-      // Hold dept 2
-      tl.to('.dept-text-fpa', { opacity: 1, duration: 1.2 })
-
-      // Transition to dept 3
-      tl.to('.dept-text-fpa', { opacity: 0, x: 40, duration: 0.5, ease: 'power2.in' })
-      tl.to('.dept-graphic-wrap', { left: '50%', duration: 2.2, ease: 'power2.inOut' }, '<')
-      tl.to('.dept-photo-fpa', { opacity: 0, duration: 0.6 }, '<+=0.8')
-      tl.to('.dept-photo-quant', { opacity: 1, duration: 0.6 }, '<')
-      tl.to('.dept-text-quant', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, '<+=0.5')
-      // Hold dept 3
-      tl.to('.dept-text-quant', { opacity: 1, duration: 1.2 })
-    }, container)
-
-    return () => ctx.revert()
-  }, [reducedMotion])
-
   return (
     <section id="departments" className="border-t border-[#c79a3b]/40 bg-cream">
-      <div className="px-5 py-20 md:px-12 lg:hidden">
+      <div className="px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-6">
-            <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
-              DEPARTMENTS
-            </span>
+          <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
+                DEPARTMENTS
+              </span>
+              <h2 className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[0.95] text-[#0d1b3d] md:text-6xl">
+                Three branches. Three distinct operating environments.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-relaxed text-[#102347]/68 md:text-base">
+              Each branch now has its own dedicated page. Explore the investment process in Asset Management,
+              the operating work inside FP&amp;A, and the systematic research stack behind Quant.
+            </p>
           </div>
+
           <div className="mb-10 border-t border-[#c79a3b]/35" />
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {DEPTS.map((dept) => (
-              <article key={dept.num} className="border border-[#c79a3b]/35 bg-[#fff8ea] shadow-[0_18px_40px_rgba(13,27,61,0.06)]">
-                <div className="relative aspect-[4/3] overflow-hidden border-b border-[#c79a3b]/30">
-                  <Image
-                    src={dept.photo}
-                    alt={dept.label}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                  />
-                </div>
-                <div className="p-5">
-                  <TextPanel dept={dept} />
-                </div>
-              </article>
+              <DepartmentCard key={dept.num} dept={dept} />
             ))}
           </div>
         </div>
       </div>
-
-      <section
-        ref={containerRef}
-        className="relative hidden bg-cream lg:block"
-        style={{ height: '480vh' }}
-      >
-        <div className="sticky top-0 h-screen overflow-hidden bg-cream">
-          <div className="absolute top-0 left-0 right-0 z-20 flex h-16 items-center border-b border-[#c79a3b]/35 bg-[#fbf4e4]/90 px-8 backdrop-blur-sm md:px-14">
-            <span className="font-mono text-xs tracking-[0.24em] uppercase text-[#c79a3b]">
-              DEPARTMENTS
-            </span>
-            <div className="ml-auto flex gap-8 font-mono text-xs tracking-[0.16em] text-[#102347]/50">
-              {DEPTS.map((d) => (
-                <span key={d.num}>
-                  <span className="text-[#1f5eff]/50">{d.num}</span>
-                  {' - '}{d.label}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div
-            className="dept-text-am pointer-events-none absolute top-16 bottom-0 left-0 flex w-1/2 items-center px-8 md:px-14"
-            style={{ opacity: 0, transform: 'translateX(-40px)' }}
-          >
-            <TextPanel dept={DEPTS[0]} />
-          </div>
-
-          <div
-            className="dept-text-fpa pointer-events-none absolute top-16 right-0 bottom-0 flex w-1/2 items-center px-8 md:px-14"
-            style={{ opacity: 0, transform: 'translateX(40px)' }}
-          >
-            <TextPanel dept={DEPTS[1]} />
-          </div>
-
-          <div
-            className="dept-text-quant pointer-events-none absolute top-16 bottom-0 left-0 flex w-1/2 items-center px-8 md:px-14"
-            style={{ opacity: 0, transform: 'translateX(-40px)' }}
-          >
-            <TextPanel dept={DEPTS[2]} />
-          </div>
-
-          <div
-            className="dept-graphic-wrap absolute top-16 bottom-0 w-1/2"
-            style={{ left: '50%' }}
-          >
-            <div className="absolute inset-x-6 inset-y-8 overflow-hidden border border-[#c79a3b]/40 bg-[#efe1bd] p-2 shadow-[0_28px_60px_rgba(13,27,61,0.1)]">
-              <div className="dept-photo-am absolute inset-0">
-                <Image
-                  src={DEPTS[0].photo}
-                  alt={DEPTS[0].label}
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
-              </div>
-              <div className="dept-photo-fpa absolute inset-0" style={{ opacity: 0 }}>
-                <Image
-                  src={DEPTS[1].photo}
-                  alt={DEPTS[1].label}
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
-              </div>
-              <div className="dept-photo-quant absolute inset-0" style={{ opacity: 0 }}>
-                <Image
-                  src={DEPTS[2].photo}
-                  alt={DEPTS[2].label}
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
     </section>
   )
 }

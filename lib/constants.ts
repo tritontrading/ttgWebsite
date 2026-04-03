@@ -1,7 +1,9 @@
 export const NAV_LINKS = [
     { label: "ABOUT", href: "/#about", anchor: true },
+    { label: "ASSET MGMT", href: "/asset-management", anchor: false },
     { label: "FP&A", href: "/advisory", anchor: false },
     { label: "QUANT", href: "/quant", anchor: false },
+    { label: "COMMUNITY", href: "/community", anchor: false },
     { label: "TEAM", href: "/team", anchor: false },
 ];
 
