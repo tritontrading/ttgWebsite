@@ -41,40 +41,30 @@ const PHOTO_GRID = [
   {
     src: '/images/socials/image1.png',
     alt: 'TTG members at a community event',
-    title: 'Member Socials',
-    note: 'The club stays active outside formal meetings.',
     span: 'md:col-span-2 md:row-span-2',
     height: 'min-h-[20rem] md:min-h-[30rem]',
   },
   {
     src: '/images/socials/image2.png',
     alt: 'TTG members together as a group',
-    title: 'Cross-Branch Community',
-    note: 'Asset Management, FP&A, and Quant stay connected.',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
     src: '/images/socials/image1.png',
     alt: 'TTG community photo',
-    title: 'Quarterly Events',
-    note: 'Programming, hangouts, and member-facing events.',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
     src: '/images/socials/image2.png',
     alt: 'TTG members networking together',
-    title: 'Mentorship Network',
-    note: 'Older members help newer analysts ramp quickly.',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
     src: '/images/socials/image1.png',
     alt: 'TTG social gathering',
-    title: 'Recruiting Support',
-    note: 'A stronger process is easier with a real peer group.',
     span: 'md:col-span-2 md:row-span-1',
     height: 'min-h-[18rem]',
   },
@@ -170,9 +160,9 @@ export default function CommunityPage() {
           <div className="mb-12 border-t-2 border-[#080808]/20" />
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[12rem]">
-            {PHOTO_GRID.map((photo) => (
+            {PHOTO_GRID.map((photo, index) => (
               <article
-                key={`${photo.title}-${photo.note}`}
+                key={`${photo.src}-${index}`}
                 className={`group relative overflow-hidden border-2 border-[#080808]/20 bg-[#f4f5ec] ${photo.span} ${photo.height}`}
               >
                 <Image
@@ -182,18 +172,6 @@ export default function CommunityPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/72 via-[#080808]/16 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#efe5c6]">
-                    Community
-                  </span>
-                  <h3 className="mb-1 font-serif text-2xl font-bold text-white">
-                    {photo.title}
-                  </h3>
-                  <p className="max-w-md text-sm leading-relaxed text-white/78">
-                    {photo.note}
-                  </p>
-                </div>
               </article>
             ))}
           </div>
