@@ -51,7 +51,7 @@ const PHOTO_GRID = [
     height: 'min-h-[16rem]',
   },
   {
-    src: '/images/socials/beach.JPG',
+    src: '/images/socials/beach.JPEG',
     alt: 'TTG community photo',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
