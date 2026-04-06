@@ -39,25 +39,25 @@ const COMMUNITY_PILLARS = [
 
 const PHOTO_GRID = [
   {
-    src: '/images/socials/image1.png',
+    src: '/images/socials/GroupPicUsc.JPG',
     alt: 'TTG members at a community event',
     span: 'md:col-span-2 md:row-span-2',
     height: 'min-h-[20rem] md:min-h-[30rem]',
   },
   {
-    src: '/images/socials/image2.png',
+    src: '/images/socials/GuysPicUsc.JPG',
     alt: 'TTG members together as a group',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
-    src: '/images/socials/image1.png',
+    src: '/images/socials/GirlsUsc.JPG',
     alt: 'TTG community photo',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
-    src: '/images/socials/image2.png',
+    src: '/images/socials/hutPic.JPG',
     alt: 'TTG members networking together',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
