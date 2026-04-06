@@ -45,13 +45,13 @@ const PHOTO_GRID = [
     height: 'min-h-[20rem] md:min-h-[30rem]',
   },
   {
-    src: '/images/socials/GuysPicUsc.JPG',
+    src: '/images/socials/sunsetCalm.JPG',
     alt: 'TTG members together as a group',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
   },
   {
-    src: '/images/socials/GirlsUsc.JPG',
+    src: '/images/socials/beach.JPG',
     alt: 'TTG community photo',
     span: 'md:col-span-1 md:row-span-1',
     height: 'min-h-[16rem]',
@@ -63,7 +63,7 @@ const PHOTO_GRID = [
     height: 'min-h-[16rem]',
   },
   {
-    src: '/images/socials/image1.png',
+    src: '/images/socials/poster.JPEG',
     alt: 'TTG social gathering',
     span: 'md:col-span-2 md:row-span-1',
     height: 'min-h-[18rem]',
@@ -206,7 +206,7 @@ export default function CommunityPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative overflow-hidden border-2 border-[#080808]/20">
                   <Image
-                    src="/images/socials/image2.png"
+                    src="/images/socials/GirlsUsc.JPG"
                     alt="TTG members together"
                     width={320}
                     height={360}
@@ -215,7 +215,7 @@ export default function CommunityPage() {
                 </div>
                 <div className="relative overflow-hidden border-2 border-[#080808]/20">
                   <Image
-                    src="/images/socials/image1.png"
+                    src="/images/socials/GuysPicUsc.JPG"
                     alt="TTG event photo"
                     width={320}
                     height={360}
