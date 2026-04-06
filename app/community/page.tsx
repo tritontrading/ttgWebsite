@@ -39,7 +39,7 @@ const COMMUNITY_PILLARS = [
 
 const PHOTO_GRID = [
   {
-    src: '/images/socials/GroupPicUsc.JPG',
+    src: '/images/socials/GroupPicUsc.jpeg',
     alt: 'TTG members at a community event',
     span: 'md:col-span-2 md:row-span-2',
     height: 'min-h-[20rem] md:min-h-[30rem]',
