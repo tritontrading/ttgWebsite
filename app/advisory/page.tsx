@@ -9,7 +9,7 @@ import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 export const metadata: Metadata = {
   title: 'FP&A - Triton Trading Group',
   description:
-    'TTG's FP&A division delivers rigorous, data-driven financial analysis and strategic insights tailored to early-stage startups and growing businesses.',
+    "TTG's FP&A division delivers rigorous, data-driven financial analysis and strategic insights tailored to early-stage startups and growing businesses.",
 }
 
 const HOW_WE_OPERATE = [
