@@ -1,51 +1,140 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
-import { SectionHeader } from '@/components/ui/SectionHeader'
+import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
 
 export const metadata: Metadata = {
   title: 'FP&A - Triton Trading Group',
   description:
-    'Choose the Triton Trading Group FP&A path that fits you: prospective members exploring the program or organizations looking to hire student finance and strategy support.',
+    'TTG's FP&A division delivers rigorous, data-driven financial analysis and strategic insights tailored to early-stage startups and growing businesses.',
 }
 
-const PATHS = [
+const HOW_WE_OPERATE = [
   {
-    href: '/advisory/members',
-    eyebrow: 'FOR STUDENTS',
-    title: 'Prospective Members',
-    body:
-      'Learn how TTG members train inside the FP&A track, what projects they work on, and how the program prepares students for consulting, strategy, and finance roles.',
-    bullets: [
-      'Real client-style project experience',
-      'Structured analyst-to-lead progression',
-      'Application details and expected skills',
-    ],
-    cta: 'Explore The Program',
+    step: '01',
+    title: 'Discovery',
+    body: 'We learn your business, challenges, and goals before scoping anything.',
   },
   {
-    href: '/advisory/hire',
-    eyebrow: 'FOR FOUNDERS & TEAMS',
-    title: 'Hire Our Services',
-    body:
-      'See how TTG supports early-stage companies with finance, operations, growth strategy, and technical implementation through focused student FP&A engagements.',
-    bullets: [
-      'Research-driven deliverables',
-      'Scoped FP&A support for startups and operators',
-      'Direct inquiry path for new engagements',
-    ],
-    cta: 'View Service Offerings',
+    step: '02',
+    title: 'Diagnosis',
+    body: 'We assess your current state, gather data, and identify root causes.',
+  },
+  {
+    step: '03',
+    title: 'Analysis & Strategy',
+    body: 'We build models, surface insights, and develop recommendations.',
+  },
+  {
+    step: '04',
+    title: 'Delivery',
+    body: 'We present findings, support implementation, and hand off cleanly.',
   },
 ]
 
-export default function AdvisoryHubPage() {
+const WHY_CHOOSE = [
+  {
+    title: 'Built for Early-Stage',
+    body: 'We understand startup constraints — constrained resources, evolving needs, and the pressure to execute quickly. Our process is designed around your reality.',
+  },
+  {
+    title: 'Custom-Tailored Work',
+    body: 'Every engagement is scoped around your specific problem and goals. No copy-paste frameworks — we tailor analysis, deliverables, and communication style to your stage and constraints.',
+  },
+  {
+    title: 'Structured Division Behind You',
+    body: 'You get a team with defined roles and managed delivery — an engagement lead, senior analysts, and specialists all working toward your outcome.',
+  },
+  {
+    title: 'High-Impact, Accessible',
+    body: 'Professional quality analysis delivered with the focus and care that early-stage companies deserve. One client at a time so you are never competing for attention.',
+  },
+]
+
+const SERVICES = [
+  {
+    title: 'Finance & Business Analysis',
+    items: [
+      'Financial modeling & forecasting',
+      'Cash flow and runway analysis',
+      'Unit economics and break-even',
+      'Valuation and comparables',
+      'Pricing and margin analysis',
+      'Scenario and sensitivity modeling',
+    ],
+  },
+  {
+    title: 'Operations & Strategy',
+    items: [
+      'Market research and competitive analysis',
+      'Go-to-market planning',
+      'Sales process and CRM design',
+      'Workflow optimization',
+      'KPI tracking and project roadmaps',
+    ],
+  },
+  {
+    title: 'Tech & AI Integration',
+    items: [
+      'Workflow automation',
+      'AI tooling and API integration',
+      'Digital infrastructure setup',
+      'Digitization for SMBs',
+    ],
+  },
+  {
+    title: 'Marketing & Growth',
+    items: [
+      'Paid ad campaigns (Meta, TikTok, Instagram)',
+      'Short-form video and content creation',
+      'Website development (UI/UX)',
+      'Marketing strategy and sales support',
+    ],
+  },
+]
+
+const ROLES = [
+  { title: 'Engagement Lead', desc: 'Manages the project and client relationship. Sets deliverables, timelines, and communication cadence.' },
+  { title: 'Senior Consultant', desc: 'Leads analysis and project coordination. Owns the core work product and guides junior team members.' },
+  { title: 'Consultant', desc: 'Conducts research and develops insights. Builds models, slide decks, and analytical frameworks.' },
+  { title: 'Analyst', desc: 'Supports data gathering and analysis. Executes research tasks and contributes to deliverables.' },
+]
+
+const SKILLS = [
+  'Business analysis',
+  'Financial modeling',
+  'Technology consulting',
+  'Strategic thinking',
+  'Client communication',
+  'Operational design',
+]
+
+const CAREERS = [
+  { firm: 'Management Consulting', note: 'McKinsey, Bain, BCG, Deloitte' },
+  { firm: 'Venture Capital', note: 'Early-stage and growth investing' },
+  { firm: 'Corporate Strategy', note: 'In-house strategy & finance roles' },
+  { firm: 'Entrepreneurship', note: 'Founding and operating startups' },
+  { firm: 'Investment Banking', note: 'M&A and transaction execution' },
+  { firm: 'Private Equity', note: 'Portfolio operations & value creation' },
+]
+
+const CLIENTS = [
+  { name: 'Neet Sheets' },
+  { name: 'Linkkup' },
+  { name: 'UC Investments Academy' },
+  { name: 'Triton Investment Banking' },
+]
+
+export default function AdvisoryPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-cream">
       <AdvisoryBackground />
       <Nav />
 
+      {/* ── HERO ── */}
       <section className="relative z-10 border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
           <div>
@@ -53,106 +142,276 @@ export default function AdvisoryHubPage() {
               FP&A
             </span>
             <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
-                FP&A
+              FP&A
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
-              TTG&apos;s FP&A work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
+              Our FP&A division delivers rigorous, data-driven financial analysis and strategic insights tailored to early-stage startups and growing businesses. From cash flow modeling to growth strategy, we help founders and operators understand their numbers — and build a plan around them. All work is done by trained student analysts under structured project management.
             </p>
           </div>
 
           <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
             <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              HOW TO NAVIGATE THIS
+              NEW INQUIRIES
             </span>
-            <p className="text-sm leading-7 text-[#080808]/60">
-              If you are a student evaluating TTG, start with the member track. If you are a founder, startup, or operator exploring support, go to the services page.
+            <p className="mb-6 text-sm leading-7 text-[#080808]/60">
+              Send a short overview of your team, stage, and the decision or system you need help with.
             </p>
+            <a
+              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
+              className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
+            >
+              Email TTG FP&A
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
+      {/* ── HOW WE OPERATE ── */}
+      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            label="PATHS"
-            title="Choose Your Entry Point"
-            description="The structure is simple on purpose: one route explains the internal member experience, and the other explains the external client offering."
-            className="mb-10 md:mb-16"
-          />
+          <div className="mb-10 md:mb-16">
+            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+              PROCESS
+            </span>
+            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+              How We Operate
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {PATHS.map((path, index) => (
-              <Link
-                key={path.href}
-                href={path.href}
-                className={`group border border-[#080808]/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#080808]/40 md:p-8 ${
-                  index === 0 ? 'bg-cream' : 'bg-[#f0f1e8]'
-                }`}
-              >
-                <div className="mb-10 flex items-start justify-between gap-4">
-                  <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-                    {path.eyebrow}
-                  </span>
-                  <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/20 transition-transform duration-300 group-hover:translate-x-1">
-                    OPEN
-                  </span>
-                </div>
-
-                <h2 className="mb-4 font-serif text-3xl font-bold leading-tight text-[#080808] md:text-4xl">
-                  {path.title}
-                </h2>
-                <p className="mb-8 max-w-xl text-sm leading-relaxed text-[#080808]/60 md:text-[15px]">
-                  {path.body}
-                </p>
-
-                <div className="mb-10 space-y-3">
-                  {path.bullets.map((bullet) => (
-                    <div key={bullet} className="flex items-start gap-3 text-sm text-[#080808]/70">
-                      <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
-                      <span>{bullet}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between border-t border-[#080808]/15 pt-5">
-                  <span className="font-mono text-xs tracking-[0.22em] uppercase text-[#080808]">
-                    {path.cta}
-                  </span>
-                  <span className="text-lg text-[#080808]/40 transition-transform duration-300 group-hover:translate-x-1">
-                    -
-                  </span>
-                </div>
-              </Link>
+          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-4">
+            {HOW_WE_OPERATE.map((item) => (
+              <div key={item.step} className="bg-cream p-6 md:p-8">
+                <span className="mb-4 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/30">
+                  {item.step}
+                </span>
+                <h3 className="mb-3 font-serif text-xl font-bold text-[#080808]">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-[#080808]/55">{item.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 border-t border-[#080808]/15 px-5 py-16 md:px-12 md:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f7f8ef] p-6 md:grid-cols-3 md:p-8">
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              MEMBER TRACK
+      {/* ── WHY CHOOSE TTG ── */}
+      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 md:mb-16">
+            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+              WHY US
             </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Built for students who want applied exposure to consulting, corporate finance, and operator-style problem solving.
+            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+              Why Choose TTG
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+              We are a structured consulting division giving early-stage companies access to real analytical depth with personalized attention.
             </p>
           </div>
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              CLIENT SERVICES
+
+          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2">
+            {WHY_CHOOSE.map((item) => (
+              <div key={item.title} className="bg-[#f7f8ef] p-6 md:p-8">
+                <div className="mb-3 flex items-start gap-3">
+                  <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
+                  <h3 className="font-serif text-xl font-bold text-[#080808]">{item.title}</h3>
+                </div>
+                <p className="pl-4 text-sm leading-7 text-[#080808]/55">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section id="services" className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 md:mb-16">
+            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+              SERVICES
             </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Built for founders and teams looking for scoped support across finance, growth, operations, and technical execution.
+            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+              What We Can Help With
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+              Scoped FP&A work across finance, operations, growth, and technical systems.
             </p>
           </div>
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              SHARED STANDARD
+
+          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2">
+            {SERVICES.map((service) => (
+              <div key={service.title} className="bg-cream p-6 md:p-8">
+                <h3 className="mb-5 font-serif text-2xl font-bold text-[#080808]">{service.title}</h3>
+                <div className="space-y-3">
+                  {service.items.map((item) => (
+                    <div key={item} className="flex items-start gap-3 text-sm text-[#080808]/60">
+                      <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CLIENTS ── */}
+      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 md:mb-16">
+            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+              CLIENTS
             </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Both paths run on the same TTG model: disciplined analysis, tight scope, and outputs designed to be used in real decision-making.
+            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+              Who We Work With
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+              We partner with early-stage startups, student-run ventures, and small-to-medium businesses that need financial clarity.
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-px bg-[#080808]/15 md:grid-cols-4">
+            {CLIENTS.map((client) => (
+              <div
+                key={client.name}
+                className="flex flex-col items-center justify-center gap-4 bg-[#f7f8ef] p-8 md:p-12"
+              >
+                {/* Logo placeholder — replace with <Image> once logos are available */}
+                <div className="flex h-16 w-full max-w-[140px] items-center justify-center border border-[#080808]/15 bg-cream">
+                  <span className="font-mono text-[9px] tracking-widest uppercase text-[#080808]/30">
+                    LOGO
+                  </span>
+                </div>
+                <span className="text-center font-mono text-[11px] tracking-[0.18em] uppercase text-[#080808]/50">
+                  {client.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOR MEMBERS: PROJECT STRUCTURE ── */}
+      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
+            <div>
+              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+                PROJECT STRUCTURE
+              </span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
+                How Members Work
+              </h2>
+              <p className="mb-8 text-sm leading-relaxed text-[#080808]/60">
+                Projects are conducted by small, focused teams. Each engagement mirrors the structure of a professional consulting firm — with defined roles, clear deliverables, and direct client interaction.
+              </p>
+              <div className="overflow-hidden border-2 border-[#080808]/20">
+                <Image
+                  src="/images/socials/image1.png"
+                  alt="TTG members at work"
+                  width={600}
+                  height={360}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+              {ROLES.map((role, i) => (
+                <div key={role.title} className="flex gap-4 p-5 md:p-6">
+                  <span className="mt-0.5 w-5 shrink-0 font-mono text-[11px] text-[#080808]/25">
+                    {`0${i + 1}`}
+                  </span>
+                  <div>
+                    <h4 className="mb-1 font-serif font-bold text-[#080808]">{role.title}</h4>
+                    <p className="text-sm leading-relaxed text-[#080808]/50">{role.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SKILLS + CAREERS ── */}
+      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
+          <div>
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              SKILLS MEMBERS DEVELOP
+            </span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
+            <div className="space-y-3">
+              {SKILLS.map((skill) => (
+                <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
+                  <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              CAREER OUTCOMES
+            </span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
+            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+              {CAREERS.map((c) => (
+                <div
+                  key={c.firm}
+                  className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                >
+                  <span className="font-serif text-sm font-bold text-[#080808]">{c.firm}</span>
+                  <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">{c.note}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── APPLY + CONTACT ── */}
+      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+          {/* Apply */}
+          <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-10">
+            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+              FOR STUDENTS
+            </span>
+            <h2 className="mb-3 font-serif text-2xl font-bold text-[#080808] md:text-3xl">
+              Interested in the FP&A Track?
+            </h2>
+            <p className="mb-8 text-sm leading-7 text-[#080808]/60">
+              Applications open each academic quarter. The FP&A track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution.
+            </p>
+            <ApplyNowLink className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white">
+              Apply Now
+            </ApplyNowLink>
+          </div>
+
+          {/* Contact */}
+          <div className="border border-[#080808]/15 bg-cream p-6 md:p-10">
+            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+              FOR FOUNDERS & TEAMS
+            </span>
+            <h2 className="mb-3 font-serif text-2xl font-bold text-[#080808] md:text-3xl">
+              Start The Conversation
+            </h2>
+            <p className="mb-8 text-sm leading-7 text-[#080808]/60">
+              Email TTG with a short overview of your business, timeline, and FP&A need. Early-stage companies, founders preparing for capital decisions, and teams looking for scoped support are all welcome.
+            </p>
+            <a
+              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
+              className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
+            >
+              Email TTG FP&A
+            </a>
+            <div className="mt-6 border-t border-[#080808]/10 pt-5">
+              <p className="font-mono text-[11px] leading-6 text-[#080808]/35">
+                tritontradinggroup@ucsd.edu
+              </p>
+            </div>
           </div>
         </div>
       </section>
