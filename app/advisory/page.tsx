@@ -122,7 +122,7 @@ const CAREERS = [
 ]
 
 const CLIENTS = [
-  { name: 'Neet Sheets' },
+  { name: 'Neet Sheets', logo: '/images/clients/linkkup2.png' },
   { name: 'Linkkup', logo: '/images/clients/linkkup2.png' },
   { name: 'UC Investments Academy', logo: '/images/clients/ucia.png' },
   { name: 'Triton Investment Banking', logo: '/images/clients/TIB.png' },
@@ -276,11 +276,13 @@ export default function AdvisoryPage() {
                 className="flex flex-col items-center justify-center gap-4 bg-[#f7f8ef] p-8 md:p-12"
               >
                 {/* Logo placeholder — replace with <Image> once logos are available */}
-                <div className="flex h-16 w-full max-w-[140px] items-center justify-center border border-[#080808]/15 bg-cream">
-                  <span className="font-mono text-[9px] tracking-widest uppercase text-[#080808]/30">
-                    LOGO
-                  </span>
-                </div>
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={140}
+                  height={64}
+                  className="h-16 w-full max-w-[140px] object-contain"
+                />
                 <span className="text-center font-mono text-[11px] tracking-[0.18em] uppercase text-[#080808]/50">
                   {client.name}
                 </span>
