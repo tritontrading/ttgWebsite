@@ -123,9 +123,9 @@ const CAREERS = [
 
 const CLIENTS = [
   { name: 'Neet Sheets' },
-  { name: 'Linkkup' },
-  { name: 'UC Investments Academy' },
-  { name: 'Triton Investment Banking' },
+  { name: 'Linkkup', logo: '/images/clients/linkkup2.png' },
+  { name: 'UC Investments Academy', logo: '/images/clients/ucia.png' },
+  { name: 'Triton Investment Banking', logo: '/images/clients/TIB.png' },
 ]
 
 export default function AdvisoryPage() {
@@ -157,7 +157,7 @@ export default function AdvisoryPage() {
               Send a short overview of your team, stage, and the decision or system you need help with.
             </p>
             <a
-              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
+              href="mailto:tritontradinggroup@ucsd.edu?"
               className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
             >
               Email TTG FP&A
@@ -402,7 +402,7 @@ export default function AdvisoryPage() {
               Email TTG with a short overview of your business, timeline, and FP&A need. Early-stage companies, founders preparing for capital decisions, and teams looking for scoped support are all welcome.
             </p>
             <a
-              href="mailto:tritontradinggroup@ucsd.edu?subject=TTG%20FP%26A%20Inquiry"
+              href="mailto:tritontradinggroup@ucsd.edu?"
               className="inline-flex w-full items-center justify-center border border-[#080808] px-6 py-3 font-mono text-xs tracking-[0.22em] uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-white"
             >
               Email TTG FP&A
