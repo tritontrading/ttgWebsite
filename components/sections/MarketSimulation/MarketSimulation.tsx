@@ -10,7 +10,7 @@ export function MarketSimulation() {
     <section id="simulation" ref={containerRef} className="bg-[#f5f5f5] py-32 px-6 md:px-12 border-t border-[#080808]/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6">
-          <span className="font-mono text-[11px] text-[#080808]/30 tracking-widest uppercase">
+          <span className="font-mono text-[13px] text-[#080808]/50 tracking-widest uppercase">
             MARKET SIMULATION
           </span>
         </div>

@@ -96,33 +96,8 @@ const SERVICES = [
   },
 ]
 
-const ROLES = [
-  { title: 'Engagement Lead', desc: 'Manages the project and client relationship. Sets deliverables, timelines, and communication cadence.' },
-  { title: 'Senior Consultant', desc: 'Leads analysis and project coordination. Owns the core work product and guides junior team members.' },
-  { title: 'Consultant', desc: 'Conducts research and develops insights. Builds models, slide decks, and analytical frameworks.' },
-  { title: 'Analyst', desc: 'Supports data gathering and analysis. Executes research tasks and contributes to deliverables.' },
-]
-
-const SKILLS = [
-  'Business analysis',
-  'Financial modeling',
-  'Technology consulting',
-  'Strategic thinking',
-  'Client communication',
-  'Operational design',
-]
-
-const CAREERS = [
-  { firm: 'Management Consulting', note: 'McKinsey, Bain, BCG, Deloitte' },
-  { firm: 'Venture Capital', note: 'Early-stage and growth investing' },
-  { firm: 'Corporate Strategy', note: 'In-house strategy & finance roles' },
-  { firm: 'Entrepreneurship', note: 'Founding and operating startups' },
-  { firm: 'Investment Banking', note: 'M&A and transaction execution' },
-  { firm: 'Private Equity', note: 'Portfolio operations & value creation' },
-]
-
 const CLIENTS = [
-  { name: 'Neet Sheets', logo: '/images/clients/linkkup2.png' },
+  { name: 'Neet Sheets', logo: '/images/clients/neet.png' },
   { name: 'Linkkup', logo: '/images/clients/linkkup2.png' },
   { name: 'UC Investments Academy', logo: '/images/clients/ucia.png' },
   { name: 'Triton Investment Banking', logo: '/images/clients/TIB.png' },
@@ -138,7 +113,7 @@ export default function AdvisoryPage() {
       <section className="relative z-10 border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
           <div>
-            <span className="mb-6 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+            <span className="mb-6 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
               FP&A
             </span>
             <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
@@ -150,7 +125,7 @@ export default function AdvisoryPage() {
           </div>
 
           <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+            <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               NEW INQUIRIES
             </span>
             <p className="mb-6 text-sm leading-7 text-[#080808]/60">
@@ -170,7 +145,7 @@ export default function AdvisoryPage() {
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
               PROCESS
             </span>
             <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -181,7 +156,7 @@ export default function AdvisoryPage() {
           <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-4">
             {HOW_WE_OPERATE.map((item) => (
               <div key={item.step} className="bg-cream p-6 md:p-8">
-                <span className="mb-4 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/30">
+                <span className="mb-4 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
                   {item.step}
                 </span>
                 <h3 className="mb-3 font-serif text-xl font-bold text-[#080808]">{item.title}</h3>
@@ -196,7 +171,7 @@ export default function AdvisoryPage() {
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
               WHY US
             </span>
             <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -225,7 +200,7 @@ export default function AdvisoryPage() {
       <section id="services" className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
               SERVICES
             </span>
             <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -258,7 +233,7 @@ export default function AdvisoryPage() {
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
+            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
               CLIENTS
             </span>
             <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -283,92 +258,11 @@ export default function AdvisoryPage() {
                   height={64}
                   className="h-16 w-full max-w-[140px] object-contain"
                 />
-                <span className="text-center font-mono text-[11px] tracking-[0.18em] uppercase text-[#080808]/50">
+                <span className="text-center font-mono text-[13px] tracking-[0.18em] uppercase text-[#080808]/50">
                   {client.name}
                 </span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOR MEMBERS: PROJECT STRUCTURE ── */}
-      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
-            <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
-                PROJECT STRUCTURE
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
-                How Members Work
-              </h2>
-              <p className="mb-8 text-sm leading-relaxed text-[#080808]/60">
-                Projects are conducted by small, focused teams. Each engagement mirrors the structure of a professional consulting firm — with defined roles, clear deliverables, and direct client interaction.
-              </p>
-              <div className="overflow-hidden border-2 border-[#080808]/20">
-                <Image
-                  src="/images/socials/image1.png"
-                  alt="TTG members at work"
-                  width={600}
-                  height={360}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
-              {ROLES.map((role, i) => (
-                <div key={role.title} className="flex gap-4 p-5 md:p-6">
-                  <span className="mt-0.5 w-5 shrink-0 font-mono text-[11px] text-[#080808]/25">
-                    {`0${i + 1}`}
-                  </span>
-                  <div>
-                    <h4 className="mb-1 font-serif font-bold text-[#080808]">{role.title}</h4>
-                    <p className="text-sm leading-relaxed text-[#080808]/50">{role.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SKILLS + CAREERS ── */}
-      <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
-          <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
-              SKILLS MEMBERS DEVELOP
-            </span>
-            <div className="mb-8 border-t-2 border-[#080808]/20" />
-            <div className="space-y-3">
-              {SKILLS.map((skill) => (
-                <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
-                  <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
-              CAREER OUTCOMES
-            </span>
-            <div className="mb-8 border-t-2 border-[#080808]/20" />
-            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
-              {CAREERS.map((c) => (
-                <div
-                  key={c.firm}
-                  className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-                >
-                  <span className="font-serif text-sm font-bold text-[#080808]">{c.firm}</span>
-                  <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">{c.note}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -378,7 +272,7 @@ export default function AdvisoryPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {/* Apply */}
           <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-10">
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+            <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               FOR STUDENTS
             </span>
             <h2 className="mb-3 font-serif text-2xl font-bold text-[#080808] md:text-3xl">
@@ -394,7 +288,7 @@ export default function AdvisoryPage() {
 
           {/* Contact */}
           <div className="border border-[#080808]/15 bg-cream p-6 md:p-10">
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+            <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               FOR FOUNDERS & TEAMS
             </span>
             <h2 className="mb-3 font-serif text-2xl font-bold text-[#080808] md:text-3xl">
@@ -410,7 +304,7 @@ export default function AdvisoryPage() {
               Email TTG FP&A
             </a>
             <div className="mt-6 border-t border-[#080808]/10 pt-5">
-              <p className="font-mono text-[11px] leading-6 text-[#080808]/35">
+              <p className="font-mono text-[13px] leading-6 text-[#080808]/35">
                 tritontradinggroup@ucsd.edu
               </p>
             </div>

@@ -62,14 +62,14 @@ export default function AdvisoryMembersPage() {
       <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
-            <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
+            <Link href="/advisory" className="font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50 hover:text-[#080808]">
               {'<-'} Back To FP&A Paths
             </Link>
           </div>
 
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 FOR PROSPECTIVE MEMBERS
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
@@ -97,7 +97,7 @@ export default function AdvisoryMembersPage() {
       <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">AREAS OF WORK</span>
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">AREAS OF WORK</span>
             <div className="border-t-2 border-[#080808]/20" />
           </div>
           <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-3">
@@ -110,7 +110,7 @@ export default function AdvisoryMembersPage() {
           </div>
 
           <div className="mt-12 border-2 border-[#080808]/20 p-5 md:p-8">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               MEMBERS MAY ALSO ASSIST COMPANIES WITH
             </span>
             <div className="flex flex-wrap gap-3">
@@ -128,7 +128,7 @@ export default function AdvisoryMembersPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">PROJECT STRUCTURE</span>
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">PROJECT STRUCTURE</span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
               <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
                 How Members Work
@@ -164,7 +164,7 @@ export default function AdvisoryMembersPage() {
       <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
           <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">SKILLS MEMBERS DEVELOP</span>
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">SKILLS MEMBERS DEVELOP</span>
             <div className="mb-8 border-t-2 border-[#080808]/20" />
             <div className="space-y-3">
               {SKILLS.map((skill) => (
@@ -177,7 +177,7 @@ export default function AdvisoryMembersPage() {
           </div>
 
           <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">CAREER OUTCOMES</span>
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">CAREER OUTCOMES</span>
             <div className="mb-8 border-t-2 border-[#080808]/20" />
             <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
               {CAREERS.map((c) => (

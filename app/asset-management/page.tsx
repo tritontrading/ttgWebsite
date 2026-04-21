@@ -90,7 +90,7 @@ export default function AssetManagementPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 01 - ASSET MANAGEMENT
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
@@ -120,7 +120,7 @@ export default function AssetManagementPage() {
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               SECTOR COVERAGE
             </span>
             <div className="border-t-2 border-[#080808]/20" />
@@ -142,7 +142,7 @@ export default function AssetManagementPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 INVESTMENT PROCESS
               </span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -158,7 +158,7 @@ export default function AssetManagementPage() {
               </div>
             </div>
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 IN PRACTICE
               </span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -179,7 +179,7 @@ export default function AssetManagementPage() {
       <section className="px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
           <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               SKILLS MEMBERS DEVELOP
             </span>
             <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -193,7 +193,7 @@ export default function AssetManagementPage() {
             </div>
           </div>
           <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               CAREER OUTCOMES
             </span>
             <div className="mb-8 border-t-2 border-[#080808]/20" />

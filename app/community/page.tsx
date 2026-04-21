@@ -114,7 +114,7 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 COMMUNITY
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
@@ -145,7 +145,7 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 COMMUNITY GALLERY
               </span>
               <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -182,7 +182,7 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 RHYTHM OF THE GROUP
               </span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -199,7 +199,7 @@ export default function CommunityPage() {
             </div>
 
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 CULTURE SNAPSHOT
               </span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -241,7 +241,7 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 WHY IT MATTERS
               </span>
               <div className="mb-8 border-t-2 border-[#080808]/20" />
@@ -289,7 +289,7 @@ export default function CommunityPage() {
       <section className="px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 border-2 border-[#080808]/20 p-6 md:flex-row md:items-center md:p-10">
           <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-3 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               JOIN THE COMMUNITY
             </span>
             <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">

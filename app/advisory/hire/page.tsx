@@ -79,14 +79,14 @@ export default function AdvisoryHirePage() {
       <section className="relative z-10 border-b-2 border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
-            <Link href="/advisory" className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35 hover:text-[#080808]">
+            <Link href="/advisory" className="font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50 hover:text-[#080808]">
               {'<-'} Back To FP&A Paths
             </Link>
           </div>
 
           <div className="grid grid-cols-1 items-end gap-10 md:gap-16 lg:grid-cols-[1.05fr_.95fr]">
             <div>
-              <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 FOR FOUNDERS & TEAMS
               </span>
               <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.96] text-[#080808] sm:text-5xl md:text-7xl">
@@ -102,7 +102,7 @@ export default function AdvisoryHirePage() {
             </div>
 
             <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
-              <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+              <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
                 START HERE
               </span>
               <p className="mb-6 text-sm leading-7 text-[#080808]/60">
@@ -167,7 +167,7 @@ export default function AdvisoryHirePage() {
           <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-3">
             {VALUES.map((value) => (
               <div key={value.title} className="bg-[#f7f8ef] p-6 md:p-8">
-                <span className="mb-4 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/30">
+                <span className="mb-4 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
                   {value.eyebrow}
                 </span>
                 <h3 className="mb-4 font-serif text-2xl font-bold text-[#080808]">{value.title}</h3>
@@ -208,7 +208,7 @@ export default function AdvisoryHirePage() {
       <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f4f5ec] p-6 md:grid-cols-[1.1fr_.9fr] md:p-10">
           <div>
-            <span className="mb-4 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+            <span className="mb-4 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               CONTACT
             </span>
             <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-5xl">
@@ -229,7 +229,7 @@ export default function AdvisoryHirePage() {
           </div>
 
           <div className="border border-[#080808]/15 bg-cream p-6">
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
+            <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               NEW INQUIRIES
             </span>
             <h3 className="mb-4 font-serif text-2xl font-bold text-[#080808]">
@@ -245,7 +245,7 @@ export default function AdvisoryHirePage() {
               Email TTG FP&A
             </a>
             <div className="mt-6 border-t border-[#080808]/10 pt-5">
-              <p className="font-mono text-[11px] leading-6 text-[#080808]/35">
+              <p className="font-mono text-[13px] leading-6 text-[#080808]/35">
                 tritontradinggroup@ucsd.edu
               </p>
             </div>

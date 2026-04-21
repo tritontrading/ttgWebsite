@@ -17,7 +17,7 @@ export default function TeamPage() {
 
       <section className="border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-7xl">
-          <span className="mb-6 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+          <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
             LEADERSHIP & TEAM
           </span>
           <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
@@ -34,7 +34,7 @@ export default function TeamPage() {
       <section className="border-b border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               EXECUTIVE BOARD
             </span>
             <div className="border-t border-[#080808]/20" />
@@ -66,7 +66,7 @@ export default function TeamPage() {
       <section className="border-b border-[#080808]/20 bg-cream px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               ADDITIONAL LEADERSHIP
             </span>
             <div className="border-t border-[#080808]/20" />
@@ -92,7 +92,7 @@ export default function TeamPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 BOARD MEMBERS
               </span>
               <div className="mb-8 border-t border-[#080808]/20" />
@@ -136,7 +136,7 @@ export default function TeamPage() {
       <section className="border-b border-[#080808]/20 bg-cream px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               GENERAL MEMBERS
             </span>
             <div className="border-t border-[#080808]/20" />
@@ -174,7 +174,7 @@ export default function TeamPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
             <div>
-              <span className="mb-4 block font-mono text-[11px] tracking-widest uppercase text-[#080808]/30">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
                 ADVISORS
               </span>
               <div className="mb-8 border-t border-[#080808]/20" />
