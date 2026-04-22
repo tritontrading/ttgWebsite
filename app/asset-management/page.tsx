@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'Asset Management - Triton Trading Group',
@@ -90,27 +91,39 @@ export default function AssetManagementPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+              <span
+                className="page-hero-reveal mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50"
+                style={{ animationDelay: '0ms' }}
+              >
                 01 - ASSET MANAGEMENT
               </span>
-              <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
+              <h1
+                className="page-hero-reveal mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl"
+                style={{ animationDelay: '100ms' }}
+              >
                 Fundamental
                 <br />
                 Investing
               </h1>
-              <p className="max-w-lg text-base leading-relaxed text-[#080808]/60">
+              <p
+                className="page-hero-reveal max-w-lg text-base leading-relaxed text-[#080808]/60"
+                style={{ animationDelay: '200ms' }}
+              >
                 The Asset Management department runs TTG&apos;s student-led investment process. Members build
                 sector coverage, research public companies, develop valuation work, and present investment ideas
                 through a disciplined committee structure centered on risk-adjusted long-term decision making.
               </p>
             </div>
-            <div className="overflow-hidden border-2 border-[#080808]/20">
+            <div
+              className="page-hero-reveal overflow-hidden border-2 border-[#080808]/20"
+              style={{ animationDelay: '280ms' }}
+            >
               <Image
                 src="/images/meetings/image1.png"
                 alt="Asset Management team"
                 width={700}
                 height={420}
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
           </div>
@@ -119,103 +132,116 @@ export default function AssetManagementPage() {
 
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-              SECTOR COVERAGE
-            </span>
-            <div className="border-t-2 border-[#080808]/20" />
-          </div>
-          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-3">
+          <ScrollReveal>
+            <div className="mb-12">
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                SECTOR COVERAGE
+              </span>
+              <div className="border-t-2 border-[#080808]/20" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal
+            className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-3"
+            stagger={0.08}
+          >
             {SECTORS.map((sector) => (
-              <div key={sector.name} className="flex flex-col gap-3 bg-cream p-6 md:p-8">
+              <div key={sector.name} data-reveal className="card-hover flex flex-col gap-3 bg-cream p-6 md:p-8">
                 <h2 className="font-serif text-base font-bold leading-tight text-[#080808]">
                   {sector.name}
                 </h2>
                 <p className="text-sm leading-relaxed text-[#080808]/50">{sector.detail}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                INVESTMENT PROCESS
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
-                {PROCESS.map((step, index) => (
-                  <div key={step} className="flex items-start gap-4 px-5 py-5 md:px-6">
-                    <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#0066ff]">
-                      0{index + 1}
-                    </span>
-                    <span className="text-sm leading-relaxed text-[#080808]/70">{step}</span>
-                  </div>
-                ))}
+            <ScrollReveal>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  INVESTMENT PROCESS
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+                  {PROCESS.map((step, index) => (
+                    <div key={step} className="flex items-start gap-4 px-5 py-5 transition-colors duration-200 hover:bg-[#f4f5ec] md:px-6">
+                      <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#0066ff]">
+                        0{index + 1}
+                      </span>
+                      <span className="text-sm leading-relaxed text-[#080808]/70">{step}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                IN PRACTICE
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <div className="overflow-hidden border-2 border-[#080808]/20">
-                <Image
-                  src="/images/tabling/image2.png"
-                  alt="Students discussing portfolio ideas"
-                  width={600}
-                  height={420}
-                  className="h-auto w-full object-cover"
-                />
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  IN PRACTICE
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <div className="overflow-hidden border-2 border-[#080808]/20">
+                  <Image
+                    src="/images/tabling/image2.png"
+                    alt="Students discussing portfolio ideas"
+                    width={600}
+                    height={420}
+                    className="h-auto w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  />
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       <section className="px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
-          <div>
-            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-              SKILLS MEMBERS DEVELOP
-            </span>
-            <div className="mb-8 border-t-2 border-[#080808]/20" />
-            <div className="space-y-3">
-              {SKILLS.map((skill) => (
-                <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
-                  <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
-                  {skill}
-                </div>
-              ))}
+          <ScrollReveal>
+            <div>
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                SKILLS MEMBERS DEVELOP
+              </span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <div className="space-y-3">
+                {SKILLS.map((skill) => (
+                  <div key={skill} className="flex items-center gap-3 text-sm text-[#080808]">
+                    <span className="h-1 w-1 shrink-0 bg-[#0066ff]" />
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div>
-            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-              CAREER OUTCOMES
-            </span>
-            <div className="mb-8 border-t-2 border-[#080808]/20" />
-            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
-              {OUTCOMES.map((outcome) => (
-                <div
-                  key={outcome.role}
-                  className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-                >
-                  <span className="font-serif text-sm font-bold text-[#080808]">{outcome.role}</span>
-                  <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">
-                    {outcome.note}
-                  </span>
-                </div>
-              ))}
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div>
+              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                CAREER OUTCOMES
+              </span>
+              <div className="mb-8 border-t-2 border-[#080808]/20" />
+              <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+                {OUTCOMES.map((outcome) => (
+                  <div
+                    key={outcome.role}
+                    className="flex flex-col gap-1 px-5 py-4 transition-colors duration-200 hover:bg-[#f4f5ec] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                  >
+                    <span className="font-serif text-sm font-bold text-[#080808]">{outcome.role}</span>
+                    <span className="font-mono text-[10px] text-[#080808]/40 sm:text-right">
+                      {outcome.note}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-t-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <ScrollReveal className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
             <h2 className="mb-2 font-serif text-3xl font-bold text-[#080808]">
               Interested in Asset Management?
@@ -227,7 +253,7 @@ export default function AssetManagementPage() {
           <ApplyNowLink className="w-full shrink-0 border-2 border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream sm:w-auto">
             Apply Now
           </ApplyNowLink>
-        </div>
+        </ScrollReveal>
       </section>
 
       <Footer />

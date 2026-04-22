@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'Community - Triton Trading Group',
@@ -114,27 +115,39 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2">
             <div>
-              <span className="mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+              <span
+                className="page-hero-reveal mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50"
+                style={{ animationDelay: '0ms' }}
+              >
                 COMMUNITY
               </span>
-              <h1 className="mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl">
+              <h1
+                className="page-hero-reveal mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl"
+                style={{ animationDelay: '100ms' }}
+              >
                 Built Like
                 <br />
                 A Real Team
               </h1>
-              <p className="max-w-lg text-base leading-relaxed text-[#080808]/60">
+              <p
+                className="page-hero-reveal max-w-lg text-base leading-relaxed text-[#080808]/60"
+                style={{ animationDelay: '200ms' }}
+              >
                 TTG is more than a set of technical tracks. It is a community built around disciplined work,
                 ambitious peers, consistent mentorship, and a social culture that keeps members connected across
                 branches, graduating classes, and career paths.
               </p>
             </div>
-            <div className="overflow-hidden border-2 border-[#080808]/20">
+            <div
+              className="page-hero-reveal overflow-hidden border-2 border-[#080808]/20"
+              style={{ animationDelay: '280ms' }}
+            >
               <Image
                 src="/images/socials/image1.png"
                 alt="TTG community event"
                 width={700}
                 height={420}
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
           </div>
@@ -143,96 +156,106 @@ export default function CommunityPage() {
 
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                COMMUNITY GALLERY
-              </span>
-              <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
-                The page should look lived in.
-              </h2>
+          <ScrollReveal>
+            <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  COMMUNITY GALLERY
+                </span>
+                <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+                  The page should look lived in.
+                </h2>
+              </div>
+              <p className="max-w-xl text-sm leading-relaxed text-[#080808]/55">
+                TTG works hard, but it also looks like an actual community. This gallery leans into that:
+                shared events, cross-branch interaction, mentorship, and the social texture around the work.
+              </p>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-[#080808]/55">
-              TTG works hard, but it also looks like an actual community. This gallery leans into that:
-              shared events, cross-branch interaction, mentorship, and the social texture around the work.
-            </p>
-          </div>
-          <div className="mb-12 border-t-2 border-[#080808]/20" />
+            <div className="mb-12 border-t-2 border-[#080808]/20" />
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[12rem]">
+          <ScrollReveal
+            className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[12rem]"
+            stagger={0.1}
+          >
             {PHOTO_GRID.map((photo, index) => (
               <article
                 key={`${photo.src}-${index}`}
+                data-reveal
                 className={`group relative overflow-hidden border-2 border-[#080808]/20 bg-[#f4f5ec] ${photo.span} ${photo.height}`}
               >
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
               </article>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-2">
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                RHYTHM OF THE GROUP
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
-                {CADENCE.map((item, index) => (
-                  <div key={item} className="flex items-start gap-4 px-5 py-5 md:px-6">
-                    <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#0066ff]">
-                      0{index + 1}
-                    </span>
-                    <span className="text-sm leading-relaxed text-[#080808]/70">{item}</span>
-                  </div>
-                ))}
+            <ScrollReveal>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  RHYTHM OF THE GROUP
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+                  {CADENCE.map((item, index) => (
+                    <div key={item} className="flex items-start gap-4 px-5 py-5 transition-colors duration-200 hover:bg-[#f4f5ec] md:px-6">
+                      <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#0066ff]">
+                        0{index + 1}
+                      </span>
+                      <span className="text-sm leading-relaxed text-[#080808]/70">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                CULTURE SNAPSHOT
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative overflow-hidden border-2 border-[#080808]/20">
-                  <Image
-                    src="/images/socials/GirlsUsc.JPG"
-                    alt="TTG members together"
-                    width={320}
-                    height={360}
-                    className="h-[15rem] w-full object-cover md:h-[18rem]"
-                  />
-                </div>
-                <div className="relative overflow-hidden border-2 border-[#080808]/20">
-                  <Image
-                    src="/images/socials/GuysPicUsc.JPG"
-                    alt="TTG event photo"
-                    width={320}
-                    height={360}
-                    className="h-[15rem] w-full object-cover md:h-[18rem]"
-                  />
-                </div>
-                <div className="col-span-2 border-2 border-[#080808]/20 bg-[#f4f5ec] p-5 md:p-6">
-                  <h3 className="mb-3 font-serif text-2xl font-bold text-[#080808]">
-                    Community is part of the product.
-                  </h3>
-                  <p className="text-sm leading-relaxed text-[#080808]/60">
-                    People stay engaged when the group feels real. TTG blends serious technical work with a visible,
-                    social, and high-trust member environment.
-                  </p>
+            <ScrollReveal delay={0.12}>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  CULTURE SNAPSHOT
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative overflow-hidden border-2 border-[#080808]/20">
+                    <Image
+                      src="/images/socials/GirlsUsc.JPG"
+                      alt="TTG members together"
+                      width={320}
+                      height={360}
+                      className="h-[15rem] w-full object-cover transition-transform duration-700 hover:scale-[1.03] md:h-[18rem]"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden border-2 border-[#080808]/20">
+                    <Image
+                      src="/images/socials/GuysPicUsc.JPG"
+                      alt="TTG event photo"
+                      width={320}
+                      height={360}
+                      className="h-[15rem] w-full object-cover transition-transform duration-700 hover:scale-[1.03] md:h-[18rem]"
+                    />
+                  </div>
+                  <div className="col-span-2 border-2 border-[#080808]/20 bg-[#f4f5ec] p-5 md:p-6">
+                    <h3 className="mb-3 font-serif text-2xl font-bold text-[#080808]">
+                      Community is part of the product.
+                    </h3>
+                    <p className="text-sm leading-relaxed text-[#080808]/60">
+                      People stay engaged when the group feels real. TTG blends serious technical work with a visible,
+                      social, and high-trust member environment.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -240,54 +263,56 @@ export default function CommunityPage() {
       <section className="border-b-2 border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 md:gap-20 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                WHY IT MATTERS
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
-                Strong communities compound.
-              </h2>
-              <p className="mb-8 text-sm leading-relaxed text-[#080808]/60">
-                Members do better work when they are surrounded by people who care, challenge them directly,
-                and make the process sustainable. TTG treats community as infrastructure, not decoration.
-              </p>
-              <div className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {COMMUNITY_PILLARS.map((pillar) => (
-                  <div key={pillar.title} className="border border-[#080808]/15 bg-[#f7f8ef] p-4">
-                    <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#0066ff]">
-                      {pillar.title}
-                    </span>
-                    <p className="text-sm leading-relaxed text-[#080808]/55">{pillar.desc}</p>
-                  </div>
-                ))}
+            <ScrollReveal>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  WHY IT MATTERS
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <h2 className="mb-4 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
+                  Strong communities compound.
+                </h2>
+                <p className="mb-8 text-sm leading-relaxed text-[#080808]/60">
+                  Members do better work when they are surrounded by people who care, challenge them directly,
+                  and make the process sustainable. TTG treats community as infrastructure, not decoration.
+                </p>
+                <div className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {COMMUNITY_PILLARS.map((pillar) => (
+                    <div key={pillar.title} className="card-hover border border-[#080808]/15 bg-[#f7f8ef] p-4">
+                      <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#0066ff]">
+                        {pillar.title}
+                      </span>
+                      <p className="text-sm leading-relaxed text-[#080808]/55">{pillar.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-3">
+                  {BENEFITS.map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3 text-sm text-[#080808]/70">
+                      <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-3">
-                {BENEFITS.map((benefit) => (
-                  <div key={benefit} className="flex items-start gap-3 text-sm text-[#080808]/70">
-                    <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 gap-px bg-[#080808]/15 sm:grid-cols-2">
+            <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/15 sm:grid-cols-2" stagger={0.1} delay={0.1}>
               {TOUCHPOINTS.map((point) => (
-                <div key={point.label} className="bg-cream p-6 md:p-8">
+                <div key={point.label} data-reveal className="card-hover bg-cream p-6 md:p-8">
                   <span className="mb-3 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#0066ff]">
                     {point.label}
                   </span>
                   <p className="text-sm leading-relaxed text-[#080808]/55">{point.detail}</p>
                 </div>
               ))}
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       <section className="px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 border-2 border-[#080808]/20 p-6 md:flex-row md:items-center md:p-10">
+        <ScrollReveal className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 border-2 border-[#080808]/20 p-6 md:flex-row md:items-center md:p-10">
           <div>
             <span className="mb-3 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
               JOIN THE COMMUNITY
@@ -303,7 +328,7 @@ export default function CommunityPage() {
           <ApplyNowLink className="w-full shrink-0 border-2 border-[#080808] px-10 py-4 text-center font-mono text-sm tracking-widest uppercase text-[#080808] transition-all duration-200 hover:bg-[#080808] hover:text-cream sm:w-auto">
             Apply Now
           </ApplyNowLink>
-        </div>
+        </ScrollReveal>
       </section>
 
       <Footer />

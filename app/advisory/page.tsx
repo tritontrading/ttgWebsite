@@ -5,6 +5,7 @@ import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
 import { ApplyNowLink } from '@/components/ui/ApplyNowLink'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'FP&A - Triton Trading Group',
@@ -113,18 +114,30 @@ export default function AdvisoryPage() {
       <section className="relative z-10 border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
           <div>
-            <span className="mb-6 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
+            <span
+              className="page-hero-reveal mb-6 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50"
+              style={{ animationDelay: '0ms' }}
+            >
               FP&A
             </span>
-            <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
+            <h1
+              className="page-hero-reveal mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl"
+              style={{ animationDelay: '100ms' }}
+            >
               FP&A
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
+            <p
+              className="page-hero-reveal max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg"
+              style={{ animationDelay: '200ms' }}
+            >
               Our FP&A division delivers rigorous, data-driven financial analysis and strategic insights tailored to early-stage startups and growing businesses. From cash flow modeling to growth strategy, we help founders and operators understand their numbers — and build a plan around them. All work is done by trained student analysts under structured project management.
             </p>
           </div>
 
-          <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
+          <div
+            className="page-hero-reveal border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8"
+            style={{ animationDelay: '300ms' }}
+          >
             <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               NEW INQUIRIES
             </span>
@@ -144,18 +157,20 @@ export default function AdvisoryPage() {
       {/* ── HOW WE OPERATE ── */}
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
-              PROCESS
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
-              How We Operate
-            </h2>
-          </div>
+          <ScrollReveal>
+            <div className="mb-10 md:mb-16">
+              <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
+                PROCESS
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+                How We Operate
+              </h2>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-4">
+          <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2 lg:grid-cols-4" stagger={0.09}>
             {HOW_WE_OPERATE.map((item) => (
-              <div key={item.step} className="bg-cream p-6 md:p-8">
+              <div key={item.step} data-reveal className="card-hover bg-cream p-6 md:p-8">
                 <span className="mb-4 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
                   {item.step}
                 </span>
@@ -163,28 +178,30 @@ export default function AdvisoryPage() {
                 <p className="text-sm leading-relaxed text-[#080808]/55">{item.body}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ── WHY CHOOSE TTG ── */}
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
-              WHY US
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
-              Why Choose TTG
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
-              We are a structured consulting division giving early-stage companies access to real analytical depth with personalized attention.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-10 md:mb-16">
+              <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
+                WHY US
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+                Why Choose TTG
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+                We are a structured consulting division giving early-stage companies access to real analytical depth with personalized attention.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2">
+          <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2" stagger={0.09}>
             {WHY_CHOOSE.map((item) => (
-              <div key={item.title} className="bg-[#f7f8ef] p-6 md:p-8">
+              <div key={item.title} data-reveal className="card-hover bg-[#f7f8ef] p-6 md:p-8">
                 <div className="mb-3 flex items-start gap-3">
                   <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
                   <h3 className="font-serif text-xl font-bold text-[#080808]">{item.title}</h3>
@@ -192,28 +209,30 @@ export default function AdvisoryPage() {
                 <p className="pl-4 text-sm leading-7 text-[#080808]/55">{item.body}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ── SERVICES ── */}
       <section id="services" className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
-              SERVICES
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
-              What We Can Help With
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
-              Scoped FP&A work across finance, operations, growth, and technical systems.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-10 md:mb-16">
+              <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
+                SERVICES
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+                Our Services
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+                Scoped FP&A work across finance, operations, growth, and technical systems.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2">
+          <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/15 md:grid-cols-2" stagger={0.09}>
             {SERVICES.map((service) => (
-              <div key={service.title} className="bg-cream p-6 md:p-8">
+              <div key={service.title} data-reveal className="card-hover bg-cream p-6 md:p-8">
                 <h3 className="mb-5 font-serif text-2xl font-bold text-[#080808]">{service.title}</h3>
                 <div className="space-y-3">
                   {service.items.map((item) => (
@@ -225,32 +244,34 @@ export default function AdvisoryPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ── CLIENTS ── */}
       <section className="relative z-10 border-b border-[#080808]/15 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 md:mb-16">
-            <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
-              CLIENTS
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
-              Who We Work With
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
-              We partner with early-stage startups, student-run ventures, and small-to-medium businesses that need financial clarity.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-10 md:mb-16">
+              <span className="mb-4 block font-mono text-[13px] tracking-[0.28em] uppercase text-[#080808]/50">
+                CLIENTS
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-[#080808] md:text-5xl">
+                Who We Work With
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#080808]/55">
+                We partner with early-stage startups, student-run ventures, and small-to-medium businesses that need financial clarity.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 gap-px bg-[#080808]/15 md:grid-cols-4">
+          <ScrollReveal className="grid grid-cols-2 gap-px bg-[#080808]/15 md:grid-cols-4" stagger={0.1}>
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
-                className="flex flex-col items-center justify-center gap-4 bg-[#f7f8ef] p-8 md:p-12"
+                data-reveal
+                className="card-hover flex flex-col items-center justify-center gap-4 bg-[#f7f8ef] p-8 md:p-12"
               >
-                {/* Logo placeholder — replace with <Image> once logos are available */}
                 <Image
                   src={client.logo}
                   alt={client.name}
@@ -263,15 +284,15 @@ export default function AdvisoryPage() {
                 </span>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ── APPLY + CONTACT ── */}
       <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+        <ScrollReveal className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-12" stagger={0.12}>
           {/* Apply */}
-          <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-10">
+          <div data-reveal className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-10">
             <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               FOR STUDENTS
             </span>
@@ -287,7 +308,7 @@ export default function AdvisoryPage() {
           </div>
 
           {/* Contact */}
-          <div className="border border-[#080808]/15 bg-cream p-6 md:p-10">
+          <div data-reveal className="border border-[#080808]/15 bg-cream p-6 md:p-10">
             <span className="mb-3 block font-mono text-[13px] tracking-[0.22em] uppercase text-[#080808]/50">
               FOR FOUNDERS & TEAMS
             </span>
@@ -309,7 +330,7 @@ export default function AdvisoryPage() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <div className="relative z-10">
