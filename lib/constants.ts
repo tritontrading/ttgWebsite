@@ -33,7 +33,7 @@ export const EXEC_BOARD = [
         role: "Vice President of Finance",
         title: "Chief Financial Officer (CFO)",
         name: "Michael Valdivia",
-        photo: "/images/board/michael.jpg",
+        photo: "/images/board/michael.JPG",
         desc: "Oversees budgeting, funding, reimbursements, and financial compliance with UCSD policies.",
     },
     {
@@ -57,16 +57,6 @@ export const EXEC_BOARD = [
         photo: "/images/board/jackie.JPG",
         desc: "Leads recruitment, onboarding, and social programming to strengthen community engagement.",
     },
-    {
-        role: "Vice President of Marketing",
-        title: "Chief Marketing Officer (CMO)",
-        desc: "Leads branding, outreach, recruitment marketing, and communications.",
-    },
-    {
-        role: "Vice President of Asset Management",
-        title: "Supporting CIO",
-        desc: "Supports the Chief Investment Officer and manages the operational side of the investment process.",
-    },
 ];
 
 export const BOARD_MEMBERS = [
@@ -85,7 +75,7 @@ export const BOARD_MEMBERS = [
     {
         role: "Director of Marketing Design",
         name: "Shiyo Ohashi",
-        photo: "/images/board/shiyo.jpg",
+        photo: "/images/board/shiyo.JPG",
         desc: "Creates all visual designs for TTG's social media posts, marketing materials, and brand content across every platform.",
     },
     {

@@ -56,9 +56,13 @@ export default function TeamPage() {
           </ScrollReveal>
 
           <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/8 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
-            {EXEC_BOARD.map((member) => (
-              <div key={member.role} data-reveal className="card-hover flex flex-col overflow-hidden bg-cream">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#eff0e7]">
+            {EXEC_BOARD.map((member, index) => (
+              <div
+                key={member.role}
+                data-reveal
+                className={`card-hover flex flex-col overflow-hidden bg-cream${index === EXEC_BOARD.length - 1 && EXEC_BOARD.length % 3 === 1 ? ' lg:col-start-2' : ''}`}
+              >
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#eff0e7]">
                   {member.photo ? (
                     <Image
                       src={member.photo}
@@ -112,7 +116,7 @@ export default function TeamPage() {
           <ScrollReveal className="grid grid-cols-1 gap-px bg-[#080808]/8 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
             {BOARD_MEMBERS.map((member) => (
               <div key={member.role} data-reveal className="card-hover flex flex-col overflow-hidden bg-cream">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#eff0e7]">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#eff0e7]">
                   {member.photo ? (
                     <Image
                       src={member.photo}
