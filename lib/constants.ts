@@ -12,18 +12,50 @@ export const EXEC_BOARD = [
         role: "President",
         title: "Chief Executive Officer (CEO)",
         name: "Shaurya Prakaash",
-        desc: "Provides overall leadership for the organization and sets TTG's strategic direction.",
+        photo: "/images/board/shaurya.JPG",
+        desc: "Provides overall leadership, sets strategic vision, and represents TTG to campus and industry partners.",
     },
     {
         role: "Executive Vice President",
         title: "Chief Operating Officer (COO)",
         name: "Maya Nayberg",
-        desc: "Manages day-to-day operations and ensures teams execute projects and events effectively.",
+        photo: "/images/board/maya.JPG",
+        desc: "Supports the President by overseeing Vice Presidents and maintaining organizational structure and operational efficiency.",
+    },
+    {
+        role: "Chief Investment Officer",
+        title: "Chief Investment Officer (CIO)",
+        name: "Anthony Volkov",
+        photo: "/images/board/anthony.JPG",
+        desc: "Manages TTG's investment portfolio and leads financial education workshops.",
     },
     {
         role: "Vice President of Finance",
         title: "Chief Financial Officer (CFO)",
-        desc: "Oversees budgeting, financial reporting, and compliance with financial policies.",
+        name: "Michael Valdivia",
+        photo: "/images/board/michael.jpg",
+        desc: "Oversees budgeting, funding, reimbursements, and financial compliance with UCSD policies.",
+    },
+    {
+        role: "Vice President of Quantitative",
+        title: "Chief Quantitative Officer (CQO)",
+        name: "Noor Dhillon",
+        photo: "/images/board/noor.JPEG",
+        desc: "Oversees quantitative strategy development, algorithm performance, and data integrity.",
+    },
+    {
+        role: "Vice President of Product",
+        title: "Chief Product Officer (CPO)",
+        name: "Titus Cheng",
+        photo: "/images/board/titus.JPG",
+        desc: "Directs AI-driven projects and technology initiatives to provide members with hands-on technical experience.",
+    },
+    {
+        role: "Vice President of External Relations",
+        title: "Chief External Relations Officer (CXO)",
+        name: "Jacqueline Dao",
+        photo: "/images/board/jackie.JPG",
+        desc: "Leads recruitment, onboarding, and social programming to strengthen community engagement.",
     },
     {
         role: "Vice President of Marketing",
@@ -31,30 +63,35 @@ export const EXEC_BOARD = [
         desc: "Leads branding, outreach, recruitment marketing, and communications.",
     },
     {
-        role: "Vice President of Quantitative",
-        title: "Chief Quantitative Officer (CQO)",
-        desc: "Leads quantitative research, algorithm development, and strategy testing.",
-    },
-    {
-        role: "Vice President of Product",
-        title: "Chief Product Officer (CPO)",
-        desc: "Transforms research outputs into member-facing resources, reports, and tools.",
-    },
-    {
-        role: "Vice President of External Relations",
-        title: "Chief External Relations Officer (CXO)",
-        name: "Naliya Montebon",
-        desc: "Develops partnerships with organizations, firms, and speakers.",
-    },
-    {
-        role: "Chief Investment Officer",
-        title: "CIO",
-        desc: "Oversees the investment strategy and asset management framework.",
-    },
-    {
         role: "Vice President of Asset Management",
         title: "Supporting CIO",
         desc: "Supports the Chief Investment Officer and manages the operational side of the investment process.",
+    },
+];
+
+export const BOARD_MEMBERS = [
+    {
+        role: "VP of Asset Management",
+        name: "Micah Watson",
+        photo: "/images/board/micah.JPG",
+        desc: "Oversees the day-to-day operations of the Asset Management department, keeping research teams on track and ensuring all coverage work meets TTG's standards.",
+    },
+    {
+        role: "VP of Activities & Social Media",
+        name: "Prisca Lee",
+        photo: "/images/board/prisca.JPG",
+        desc: "Plans and organizes club socials and community events while managing TTG's social media presence and content across all platforms.",
+    },
+    {
+        role: "Director of Marketing Design",
+        name: "Shiyo Ohashi",
+        photo: "/images/board/shiyo.jpg",
+        desc: "Creates all visual designs for TTG's social media posts, marketing materials, and brand content across every platform.",
+    },
+    {
+        role: "Director of Quant",
+        name: "Anirudh Iyengar",
+        desc: "Leads the Quant Division's strategy, research initiatives, and competition efforts while coordinating with executive leadership.",
     },
 ];
 

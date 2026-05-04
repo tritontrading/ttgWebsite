@@ -67,6 +67,11 @@ h1, h2, h3, h4 {
   animation: scroll-line 1.9s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
+/* ── Board headshots: ensure EXIF orientation is respected ── */
+.board-headshot {
+  image-orientation: from-image;
+}
+
 /* ── Sub-page hero reveal (CSS-only, no JS required) ── */
 @keyframes pageHeroIn {
   from {
