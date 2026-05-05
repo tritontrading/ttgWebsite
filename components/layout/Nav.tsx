@@ -97,6 +97,12 @@ export function Nav() {
             )
           })}
           <Link
+            href="/donate"
+            className="border border-[#c79a3b] bg-[#c79a3b] px-4 py-2 font-mono text-sm tracking-[0.24em] uppercase text-[#0d1b3d] transition-all duration-200 hover:bg-transparent hover:text-[#0d1b3d]"
+          >
+            DONATE
+          </Link>
+          <Link
             href="/#recruitment"
             className="border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-2 font-mono text-sm tracking-[0.24em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
           >
@@ -138,8 +144,15 @@ export function Nav() {
               )
             })}
             <Link
+              href="/donate"
+              className="mt-2 inline-flex w-full items-center justify-center border border-[#c79a3b] bg-[#c79a3b] px-4 py-3 font-mono text-sm tracking-[0.22em] uppercase text-[#0d1b3d] transition-all duration-200 hover:bg-transparent"
+              onClick={() => setMenuOpen(false)}
+            >
+              Donate
+            </Link>
+            <Link
               href="/#recruitment"
-              className="mt-2 inline-flex w-full items-center justify-center border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-3 font-mono text-sm tracking-[0.22em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
+              className="mt-1 inline-flex w-full items-center justify-center border border-[#0d1b3d] bg-[#0d1b3d] px-4 py-3 font-mono text-sm tracking-[0.22em] uppercase text-[#f8f1df] transition-all duration-200 hover:border-[#c79a3b] hover:bg-[#c79a3b] hover:text-[#0d1b3d]"
               onClick={() => setMenuOpen(false)}
             >
               Apply
