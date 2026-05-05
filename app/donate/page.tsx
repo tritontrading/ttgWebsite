@@ -6,29 +6,41 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 export const metadata: Metadata = {
   title: 'Donate - Triton Trading Group',
   description:
-    'Support Triton Trading Group and help us build the next generation of financial analysts, quantitative researchers, and strategic consultants at UCSD.',
+    'Support Triton Trading Group — a UCSD 501(c)(3) nonprofit that has outperformed the S&P 500 roughly 5x in its first three months. Help us fund analyst training, a flagship student finance conference, an incubator, and a live student-managed fund.',
 }
 
-const IMPACT_ITEMS = [
+const STATS = [
+  { value: '$500K', label: 'FUNDRAISING GOAL' },
+  { value: '~5×', label: 'S&P 500 OUTPERFORMANCE' },
+  { value: '$1M+', label: 'CUMULATIVE P&L' },
+  { value: '35', label: 'ACTIVE POSITIONS' },
+]
+
+const FUND_USE = [
   {
-    label: 'EVENTS & SPEAKERS',
+    label: 'ANALYST TRAINING',
     detail:
-      'Fund industry speaker events, networking dinners, and finance competitions that give members real access to professionals.',
+      'A rigorous curriculum that turns undergrads into analysts who can actually compete — real modeling, real process, real review cadence.',
   },
   {
-    label: 'TOOLS & RESOURCES',
+    label: 'STUDENT FINANCE CONFERENCE',
     detail:
-      'Cover subscriptions to data platforms, modeling software, and research databases that power our work.',
+      'A flagship annual conference bringing together student investors, practitioners, and researchers from across the country.',
   },
   {
-    label: 'MEMBER DEVELOPMENT',
+    label: 'ENTREPRENEURSHIP INCUBATOR',
     detail:
-      'Support training programs, workshops, and recruiting prep sessions that help members land roles in finance and consulting.',
+      'A structured program for student founders and operators to build alongside TTG\'s finance and strategy talent.',
   },
   {
-    label: 'COMMUNITY & CULTURE',
+    label: 'ALUMNI NETWORK',
     detail:
-      'Help run socials, retreats, and team-building activities that make TTG a real community, not just a résumé line.',
+      'Formalize the alumni pipeline — connecting current members with TTG graduates who are already working in the industry.',
+  },
+  {
+    label: 'LIVE FUND SEED CAPITAL',
+    detail:
+      'Seed capital to transition our paper trading portfolio — already generating over $1M in cumulative P&L — into a live, student-managed fund.',
   },
 ]
 
@@ -44,23 +56,31 @@ export default function DonatePage() {
             className="page-hero-reveal mb-6 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50"
             style={{ animationDelay: '0ms' }}
           >
-            SUPPORT TTG
+            501(c)(3) EDUCATIONAL NONPROFIT · TAX-DEDUCTIBLE
           </span>
           <h1
             className="page-hero-reveal mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl"
             style={{ animationDelay: '100ms' }}
           >
-            Help Us Build
+            We&apos;re Not
             <br />
-            What&apos;s Next
+            Waiting Anymore
           </h1>
           <p
-            className="page-hero-reveal mb-10 max-w-2xl text-base leading-relaxed text-[#080808]/60"
+            className="page-hero-reveal mb-4 max-w-2xl text-base leading-relaxed text-[#080808]/60"
             style={{ animationDelay: '200ms' }}
           >
-            Triton Trading Group is a student-run organization at UCSD. Every dollar goes directly toward
-            resources, events, and experiences that give our members a genuine edge — in the classroom and
-            in their careers.
+            Three months ago we started TTG&apos;s paper trading portfolio with one question: can a student-run
+            team actually compete with the market? Today we have 35 positions, over $1M in cumulative P&L,
+            and roughly 5× the S&P 500&apos;s return over the same window.
+          </p>
+          <p
+            className="page-hero-reveal mb-10 max-w-2xl text-base leading-relaxed text-[#080808]/60"
+            style={{ animationDelay: '250ms' }}
+          >
+            We&apos;re raising $500,000 to fund the next phase — analyst training, a flagship student finance
+            conference, an entrepreneurship incubator, alumni network buildout, and seed capital for a live
+            student-managed fund. Donations are 100% tax-deductible.
           </p>
           <a
             href="https://gofund.me/5648b15d5"
@@ -77,25 +97,98 @@ export default function DonatePage() {
         </div>
       </section>
 
+      {/* ── STATS ── */}
+      <section className="border-b border-[#080808]/20 px-5 py-16 md:px-12 md:py-20">
+        <ScrollReveal className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-[#080808]/15 md:grid-cols-4" stagger={0.08}>
+          {STATS.map((stat) => (
+            <div key={stat.label} data-reveal className="bg-cream px-6 py-8 md:px-10 md:py-10">
+              <div className="mb-2 font-serif text-4xl font-bold text-[#0d1b3d] md:text-5xl">{stat.value}</div>
+              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#080808]/50">{stat.label}</div>
+            </div>
+          ))}
+        </ScrollReveal>
+      </section>
+
+      {/* ── THE STORY ── */}
+      <section className="border-b border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 gap-12 md:gap-20 lg:grid-cols-2">
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  WHY WE BUILT THIS
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <h2 className="mb-6 font-serif text-3xl font-bold text-[#080808] md:text-4xl">
+                  The existing path wasn&apos;t producing the talent the industry needs.
+                </h2>
+                <p className="mb-4 text-sm leading-relaxed text-[#080808]/60">
+                  Résumé-padded clubs, slow-moving committees, recruiting pipelines that reward who you know
+                  over what you can do. We started TTG because that system wasn&apos;t working — for students
+                  or for the industry.
+                </p>
+                <p className="text-sm leading-relaxed text-[#080808]/60">
+                  The discipline is institutional. The team is undergrads. We&apos;ve spent months trying to
+                  formalize a Student Managed Investment Fund with UCSD. That conversation hasn&apos;t moved.
+                  We&apos;re not waiting anymore.
+                </p>
+              </div>
+              <div>
+                <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+                  WHO WE&apos;RE ASKING
+                </span>
+                <div className="mb-8 border-t-2 border-[#080808]/20" />
+                <div className="space-y-5">
+                  <div className="border border-[#080808]/15 bg-[#f7f8ef] p-5">
+                    <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#c79a3b]">UC ALUMNI</span>
+                    <p className="text-sm leading-relaxed text-[#080808]/60">
+                      If you remember needing a break early in your career — and wish there had been a group
+                      doing what TTG is doing — this is how you pay it forward.
+                    </p>
+                  </div>
+                  <div className="border border-[#080808]/15 bg-[#f7f8ef] p-5">
+                    <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#c79a3b]">PHILANTHROPISTS</span>
+                    <p className="text-sm leading-relaxed text-[#080808]/60">
+                      If you believe student-led institutions can outwork the bureaucracies above them —
+                      the track record is already here. We&apos;re asking for your support to scale it.
+                    </p>
+                  </div>
+                  <div className="border border-[#080808]/15 bg-[#f7f8ef] p-5">
+                    <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#c79a3b]">TAX DEDUCTIBILITY</span>
+                    <p className="text-sm leading-relaxed text-[#080808]/60">
+                      TTG is a registered 501(c)(3) educational nonprofit. Donations are 100% tax-deductible.
+                      Every donor receives an official receipt with our EIN. IRS determination letter available on request.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ── WHERE IT GOES ── */}
       <section className="border-b border-[#080808]/20 px-5 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <ScrollReveal>
-            <div className="mb-12">
-              <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
-                WHERE IT GOES
-              </span>
-              <div className="mb-8 border-t-2 border-[#080808]/20" />
-              <div className="grid grid-cols-1 gap-px bg-[#080808]/15 sm:grid-cols-2">
-                {IMPACT_ITEMS.map((item) => (
-                  <div key={item.label} className="card-hover bg-cream p-6 md:p-8">
-                    <span className="mb-3 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#c79a3b]">
+            <span className="mb-4 block font-mono text-[13px] tracking-widest uppercase text-[#080808]/50">
+              WHERE THE $500K GOES
+            </span>
+            <div className="mb-8 border-t-2 border-[#080808]/20" />
+            <div className="divide-y-2 divide-[#080808]/15 border-2 border-[#080808]/20">
+              {FUND_USE.map((item, index) => (
+                <div key={item.label} className="flex items-start gap-5 px-5 py-6 transition-colors duration-200 hover:bg-[#f4f5ec] md:px-8">
+                  <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-[#c79a3b]">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <span className="mb-1 block font-mono text-[10px] tracking-[0.22em] uppercase text-[#080808]/70">
                       {item.label}
                     </span>
-                    <p className="text-sm leading-relaxed text-[#080808]/60">{item.detail}</p>
+                    <p className="text-sm leading-relaxed text-[#080808]/55">{item.detail}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
@@ -112,8 +205,7 @@ export default function DonatePage() {
               Ready to support?
             </h2>
             <p className="max-w-2xl text-sm leading-relaxed text-[#080808]/55">
-              Any amount helps. Your contribution directly funds the programs, tools, and community
-              that make TTG one of UCSD&apos;s most rigorous student finance organizations.
+              Any amount helps. 100% tax-deductible. Every donor receives an official receipt with our EIN.
             </p>
           </div>
           <a
