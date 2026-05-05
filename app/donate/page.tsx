@@ -62,9 +62,9 @@ export default function DonatePage() {
             className="page-hero-reveal mb-6 font-serif text-4xl font-bold leading-none text-[#080808] sm:text-5xl md:text-7xl"
             style={{ animationDelay: '100ms' }}
           >
-            We&apos;re Not
+            Help Us Build
             <br />
-            Waiting Anymore
+            What&apos;s Next
           </h1>
           <p
             className="page-hero-reveal mb-4 max-w-2xl text-base leading-relaxed text-[#080808]/60"
