@@ -13,7 +13,7 @@ export default function AlumniPage() {
     <SiteLayout>
       <PageHero
         title="TTG Alumni"
-        description="Former TTG members who have gone on to careers in finance, consulting, technology, and entrepreneurship. This directory will grow as we collect alumni stories and outcomes."
+        description="The TTG community extends well beyond campus. Meet former members pursuing careers in finance, technology, and beyond."
       />
 
       <TeamGrid label="Class of 2026" members={alumniMembers} />

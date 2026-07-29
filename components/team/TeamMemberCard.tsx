@@ -6,8 +6,30 @@ export type TeamMember = {
   title?: string | null;
   bio?: string;
   image?: string | null;
+  linkedin?: string;
   photoTba?: boolean;
 };
+
+function MemberName({ member }: { member: TeamMember }) {
+  const className = "font-heading text-base font-normal leading-tight text-heading";
+
+  return (
+    <h3 className={className}>
+      {member.linkedin ? (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="transition-colors duration-200 hover:text-brand-blue"
+        >
+          {member.name}
+        </a>
+      ) : (
+        member.name
+      )}
+    </h3>
+  );
+}
 
 export function TeamMemberCard({ member }: { member: TeamMember }) {
   const displayTitle = member.title ?? member.role;
@@ -32,7 +54,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
         )}
       </div>
       <div className="flex flex-col gap-1 pt-4">
-        <h3 className="font-heading text-base font-normal leading-tight text-heading">{member.name}</h3>
+        <MemberName member={member} />
         <p className="font-mono text-[11px] leading-snug tracking-wide text-text/55">{displayTitle}</p>
       </div>
     </div>
@@ -80,6 +102,30 @@ function MemberCardGrid({ members }: { members: TeamMember[] }) {
   );
 }
 
+function MemberDirectory({ members }: { members: TeamMember[] }) {
+  return (
+    <div>
+      <div className="hidden grid-cols-[minmax(0,1fr)_minmax(12rem,0.65fr)] gap-8 border-y border-editorial/10 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-text/40 md:grid">
+        <span>Name</span>
+        <span>Role</span>
+      </div>
+      <div className="border-t border-editorial/10 md:border-t-0">
+        {members.map((member) => (
+          <div
+            key={member.name}
+            className="grid gap-1 border-b border-editorial/10 px-4 py-5 transition-colors duration-200 hover:bg-editorial/3 md:grid-cols-[minmax(0,1fr)_minmax(12rem,0.65fr)] md:items-center md:gap-8 md:py-4"
+          >
+            <MemberName member={member} />
+            <p className="font-mono text-[11px] leading-snug tracking-wide text-text/55">
+              {member.role}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function TeamMembersSection({
   label,
   divisions,
@@ -104,7 +150,7 @@ export function TeamMembersSection({
               <span className="mb-6 block font-mono text-xs tracking-wide text-text/45">
                 {division.label}
               </span>
-              <MemberCardGrid members={division.members} />
+              <MemberDirectory members={division.members} />
             </div>
           ))}
         </div>

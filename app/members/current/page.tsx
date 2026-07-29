@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ApplyCtaBand, PageHero } from "@/components/editorial/PageSections";
 import { MembersSectionNav } from "@/components/team/MembersSectionNav";
 import { TeamGrid, TeamMembersSection } from "@/components/team/TeamMemberCard";
-import { advisors, memberDivisions } from "@/lib/pages/members";
+import { memberDivisions } from "@/lib/pages/members";
 import { boardMembers, cSuite } from "@/lib/pages/team";
 
 export const metadata: Metadata = {
@@ -36,7 +36,6 @@ export default function CurrentMembersPage() {
       />
       <TeamGrid id="board" label="Board" members={boardMembers} />
       <TeamMembersSection id="members" label="Members" divisions={memberDivisions} />
-      <TeamGrid id="advisors" label="Advisors" members={advisors} />
 
       <ApplyCtaBand
         eyebrow="Join The Team"

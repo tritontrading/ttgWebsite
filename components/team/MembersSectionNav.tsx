@@ -4,7 +4,6 @@ const sections = [
   { label: "Exec", href: "#exec" },
   { label: "Board", href: "#board" },
   { label: "Members", href: "#members" },
-  { label: "Advisors", href: "#advisors" },
 ] as const;
 
 export function MembersSectionNav() {
