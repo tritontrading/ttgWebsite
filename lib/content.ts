@@ -219,7 +219,15 @@ export const network = {
         {
             name: "Meadow Cognition",
             image: "/images/connections/meadowlabs.jpg",
-        }
+        },
+        {
+            name: "SharkNinja",
+            image: "/images/connections/sharkninja.svg",
+        },
+        {
+            name: "Skin 22",
+            image: "/images/connections/skin22.webp",
+        },
     ],
 } as const;
 
