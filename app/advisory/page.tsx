@@ -1,165 +1,277 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { Nav } from '@/components/layout/Nav'
-import { Footer } from '@/components/layout/Footer'
-import { AdvisoryBackground } from '@/components/sections/Advisory/AdvisoryBackground'
-import { SectionHeader } from '@/components/ui/SectionHeader'
+import type { Metadata } from "next";
+import { SiteLayout } from "@/components/layout/SiteLayout";
+import { ApplyCtaBand, EditorialLabel, EditorialSection } from "@/components/editorial/PageSections";
+import { SiteImage } from "@/components/ui/SiteImage";
+import { ButtonLink } from "@/components/ui/Button";
+import { advisoryPage as page } from "@/lib/pages/advisory";
 
 export const metadata: Metadata = {
-  title: 'FP&A - Triton Trading Group',
+  title: "FP&A - Triton Trading Group",
   description:
-    'Choose the Triton Trading Group FP&A path that fits you: prospective members exploring the program or organizations looking to hire student finance and strategy support.',
-}
+    "TTG's FP&A division: student-led financial consulting for founders and teams, plus the training track for prospective members.",
+};
 
-const PATHS = [
-  {
-    href: '/advisory/members',
-    eyebrow: 'FOR STUDENTS',
-    title: 'Prospective Members',
-    body:
-      'Learn how TTG members train inside the FP&A track, what projects they work on, and how the program prepares students for consulting, strategy, and finance roles.',
-    bullets: [
-      'Real client-style project experience',
-      'Structured analyst-to-lead progression',
-      'Application details and expected skills',
-    ],
-    cta: 'Explore The Program',
-  },
-  {
-    href: '/advisory/hire',
-    eyebrow: 'FOR FOUNDERS & TEAMS',
-    title: 'Hire Our Services',
-    body:
-      'See how TTG supports early-stage companies with finance, operations, growth strategy, and technical implementation through focused student FP&A engagements.',
-    bullets: [
-      'Research-driven deliverables',
-      'Scoped FP&A support for startups and operators',
-      'Direct inquiry path for new engagements',
-    ],
-    cta: 'View Service Offerings',
-  },
-]
-
-export default function AdvisoryHubPage() {
+export default function AdvisoryPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-cream">
-      <AdvisoryBackground />
-      <Nav />
-
-      <section className="relative z-10 border-b border-[#080808]/20 px-5 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+    <SiteLayout>
+      <section className="page-hero-padding relative z-10 border-b border-editorial/6">
+        <div className="site-container layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
-            <span className="mb-6 block font-mono text-[11px] tracking-[0.28em] uppercase text-[#080808]/35">
-              FP&A
+            <span
+              className="page-hero-reveal label-gap block font-mono text-[13px] tracking-[0.28em] uppercase text-text/50"
+              style={{ animationDelay: "0ms" }}
+            >
+              {page.label}
             </span>
-            <h1 className="mb-6 font-serif text-4xl font-bold leading-[0.95] tracking-tight text-[#080808] sm:text-5xl md:text-7xl">
-                FP&A
+            <h1
+              className="page-hero-reveal heading-gap font-heading text-4xl font-normal leading-[0.95] tracking-tight text-heading sm:text-5xl md:text-7xl"
+              style={{ animationDelay: "100ms" }}
+            >
+              {page.title}
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-[#080808]/60 md:text-lg">
-              TTG&apos;s FP&A work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.
+            <p
+              className="page-hero-reveal max-w-2xl text-base leading-relaxed text-text/60 md:text-lg"
+              style={{ animationDelay: "200ms" }}
+            >
+              {page.description}
             </p>
           </div>
-
-          <div className="border border-[#080808]/15 bg-[#f4f5ec] p-6 md:p-8">
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              HOW TO NAVIGATE THIS
-            </span>
-            <p className="text-sm leading-7 text-[#080808]/60">
-              If you are a student evaluating TTG, start with the member track. If you are a founder, startup, or operator exploring support, go to the services page.
-            </p>
+          <div className="page-hero-reveal border border-editorial/15" style={{ animationDelay: "300ms" }}>
+            <div className="p-6 md:p-8">
+              <span className="label-gap block font-mono text-[13px] tracking-[0.22em] uppercase text-text/50">
+                New Inquiries
+              </span>
+              <p className="prose-gap text-sm leading-7 text-text/60">
+                Send a short overview of your team, stage, and the decision or system you need help
+                with.
+              </p>
+              <a
+                href={`mailto:${page.email}`}
+                className="inline-flex w-full items-center justify-center border border-editorial px-8 py-4 font-mono text-xs tracking-[0.22em] uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-white"
+              >
+                Email TTG FP&A
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 px-5 py-20 md:px-12 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            label="PATHS"
-            title="Choose Your Entry Point"
-            description="The structure is simple on purpose: one route explains the internal member experience, and the other explains the external client offering."
-            className="mb-10 md:mb-16"
-          />
+      <EditorialSection className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>Process</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">How We Operate</h2>
+        </div>
+        <div className="divide-y divide-card-border border-y border-card-border">
+          {page.process.map((step) => (
+            <div key={step.step} className="grid grid-cols-1 gap-2 py-8 md:grid-cols-[6rem_1fr] md:gap-8">
+              <span className="font-mono text-[13px] tracking-[0.22em] uppercase text-text/50">
+                {step.step}
+              </span>
+              <div>
+                <h3 className="mb-2 font-heading text-xl font-normal text-heading">{step.title}</h3>
+                <p className="max-w-2xl text-sm leading-relaxed text-text/55">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </EditorialSection>
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {PATHS.map((path, index) => (
-              <Link
-                key={path.href}
-                href={path.href}
-                className={`group border border-[#080808]/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#080808]/40 md:p-8 ${
-                  index === 0 ? 'bg-cream' : 'bg-[#f0f1e8]'
-                }`}
-              >
-                <div className="mb-10 flex items-start justify-between gap-4">
-                  <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-                    {path.eyebrow}
-                  </span>
-                  <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/20 transition-transform duration-300 group-hover:translate-x-1">
-                    OPEN
-                  </span>
-                </div>
+      <EditorialSection className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>Why Us</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Why Choose TTG</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
+            We are a structured consulting division giving early-stage companies access to real
+            analytical depth with personalized attention.
+          </p>
+        </div>
+        <div className="divide-y divide-card-border border-y border-card-border">
+          {page.whyUs.map((item) => (
+            <div key={item.title} className="py-8">
+              <div className="mb-3 flex items-start gap-4">
+                <span className="mt-2 h-1 w-1 shrink-0 bg-brand-blue" />
+                <h3 className="font-heading text-xl font-normal text-heading">{item.title}</h3>
+              </div>
+              <p className="pl-4 text-sm leading-7 text-text/55">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </EditorialSection>
 
-                <h2 className="mb-4 font-serif text-3xl font-bold leading-tight text-[#080808] md:text-4xl">
-                  {path.title}
-                </h2>
-                <p className="mb-8 max-w-xl text-sm leading-relaxed text-[#080808]/60 md:text-[15px]">
-                  {path.body}
-                </p>
+      <EditorialSection id="services" className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>Services</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Our Services</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
+            Scoped FP&A work across finance, operations, growth, and technical systems.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 layout-grid-gap md:grid-cols-2">
+          {page.services.map((service) => (
+            <div key={service.title} className="border-t border-card-border pt-6">
+              <h3 className="mb-6 font-heading text-2xl font-normal text-heading">{service.title}</h3>
+              <div className="text-stack">
+                {service.items.map((item) => (
+                  <div key={item} className="flex items-start gap-4 text-sm text-text/60">
+                    <span className="mt-2 h-1 w-1 shrink-0 bg-brand-blue" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </EditorialSection>
 
-                <div className="mb-10 space-y-3">
-                  {path.bullets.map((bullet) => (
-                    <div key={bullet} className="flex items-start gap-3 text-sm text-[#080808]/70">
-                      <span className="mt-2 h-1 w-1 shrink-0 bg-[#0066ff]" />
-                      <span>{bullet}</span>
-                    </div>
-                  ))}
-                </div>
+      <EditorialSection className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>Work With Us</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
+            {page.workWithUs.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
+            {page.workWithUs.description}
+          </p>
+        </div>
+        <div className="layout-grid-gap grid grid-cols-1 md:grid-cols-3">
+          {page.workWithUs.offerings.map((offering) => (
+            <div key={offering.title} className="border-t border-card-border pt-6">
+              <h3 className="mb-3 font-heading text-lg font-normal text-heading">{offering.title}</h3>
+              <p className="text-sm leading-loose text-text/70">{offering.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="layout-grid-gap-lg mt-16 grid grid-cols-1 lg:grid-cols-2">
+          <div>
+            <h3 className="mb-6 font-heading text-2xl font-normal text-heading">How it works</h3>
+            <ol className="text-stack-loose">
+              {page.workWithUs.process.map((step, index) => (
+                <li key={step} className="flex items-start gap-5 text-base leading-loose text-text/80">
+                  <span className="mt-0.5 shrink-0 font-mono text-xs text-gold">0{index + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="border border-editorial/15 p-8 md:p-10">
+            <span className="label-gap block font-mono text-xs tracking-[0.22em] uppercase text-gold">
+              Get in touch
+            </span>
+            <p className="prose-gap text-sm leading-loose text-text/70">
+              Email us with a short overview of your organization, timeline, and the support you
+              are looking for. We will follow up if there is a strong fit for an upcoming project
+              cycle.
+            </p>
+            <ButtonLink href={`mailto:${page.email}`} variant="secondary" fullWidth>
+              Email TTG
+            </ButtonLink>
+          </div>
+        </div>
+      </EditorialSection>
 
-                <div className="flex items-center justify-between border-t border-[#080808]/15 pt-5">
-                  <span className="font-mono text-xs tracking-[0.22em] uppercase text-[#080808]">
-                    {path.cta}
-                  </span>
-                  <span className="text-lg text-[#080808]/40 transition-transform duration-300 group-hover:translate-x-1">
-                    -
-                  </span>
-                </div>
-              </Link>
+      <EditorialSection className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>For Prospective Members</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
+            FP&A As A Training Ground
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
+            {page.memberTrack.description}
+          </p>
+        </div>
+
+        <div className="section-block-gap">
+          <h3 className="mb-6 font-heading text-xl font-normal text-heading">Areas of Work</h3>
+          <div className="divide-y divide-card-border border-y border-card-border">
+            {page.memberTrack.areasOfWork.map((item) => (
+              <div key={item.title} className="py-6">
+                <h4 className="mb-2 font-heading text-base font-normal text-heading">{item.title}</h4>
+                <p className="text-sm leading-relaxed text-text/55">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
-      </section>
 
-      <section className="relative z-10 border-t border-[#080808]/15 px-5 py-16 md:px-12 md:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 border border-[#080808]/15 bg-[#f7f8ef] p-6 md:grid-cols-3 md:p-8">
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              MEMBER TRACK
-            </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Built for students who want applied exposure to consulting, corporate finance, and operator-style problem solving.
-            </p>
-          </div>
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              CLIENT SERVICES
-            </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Built for founders and teams looking for scoped support across finance, growth, operations, and technical execution.
-            </p>
-          </div>
-          <div>
-            <span className="mb-3 block font-mono text-[11px] tracking-[0.22em] uppercase text-[#080808]/35">
-              SHARED STANDARD
-            </span>
-            <p className="text-sm leading-relaxed text-[#080808]/60">
-              Both paths run on the same TTG model: disciplined analysis, tight scope, and outputs designed to be used in real decision-making.
-            </p>
+        <div className="section-block-gap">
+          <h3 className="mb-6 font-heading text-xl font-normal text-heading">How Members Work</h3>
+          <div className="divide-y divide-card-border border-y border-card-border">
+            {page.memberTrack.roles.map((role) => (
+              <div key={role.title} className="py-5">
+                <h4 className="mb-1 font-heading text-base font-normal text-heading">{role.title}</h4>
+                <p className="text-sm leading-relaxed text-text/55">{role.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      <div className="relative z-10">
-        <Footer />
-      </div>
-    </main>
-  )
+        <div className="layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-2">
+          <div>
+            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Skills Members Develop</h3>
+            <div className="text-stack">
+              {page.memberTrack.skills.map((skill) => (
+                <div key={skill} className="flex items-center gap-4 text-sm text-text">
+                  <span className="h-1 w-1 shrink-0 bg-brand-blue" />
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Career Outcomes</h3>
+            <div className="divide-y divide-card-border surface-card overflow-hidden">
+              {page.memberTrack.careers.map((career) => (
+                <div
+                  key={career.role}
+                  className="flex flex-col gap-1 px-6 py-4 transition-colors duration-200 hover:bg-cream-hover sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                >
+                  <span className="font-heading text-sm font-normal text-heading">{career.role}</span>
+                  <span className="font-mono text-[10px] text-text/40 sm:text-right">{career.detail}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </EditorialSection>
+
+      <EditorialSection className="border-editorial/5" border>
+        <div className="section-block-gap">
+          <EditorialLabel>Clients</EditorialLabel>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
+            Who We Work With
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
+            We partner with early-stage startups, student-run ventures, and small-to-medium
+            businesses that need financial clarity.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-px bg-editorial/10 md:grid-cols-4">
+          {page.clients.map((client) => (
+            <div
+              key={client.name}
+              className="flex flex-col items-center justify-center gap-4 bg-background p-8"
+            >
+              <div className="flex h-16 w-full items-center justify-center md:h-20">
+                <SiteImage
+                  src={client.image}
+                  alt={client.name}
+                  width={160}
+                  height={80}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <span className="text-center font-mono text-[13px] tracking-[0.18em] uppercase text-text/50">
+                {client.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </EditorialSection>
+
+      <ApplyCtaBand
+        eyebrow="For Students"
+        title="Interested in the FP&A Track?"
+        description="Applications open each academic quarter. The FP&A track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
+      />
+    </SiteLayout>
+  );
 }
