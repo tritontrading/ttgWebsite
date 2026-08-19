@@ -4,7 +4,7 @@ import { ApplyCtaBand, PageHero } from "@/components/editorial/PageSections";
 import { MembersSectionNav } from "@/components/team/MembersSectionNav";
 import { TeamGrid, TeamMembersSection } from "@/components/team/TeamMemberCard";
 import { memberDivisions } from "@/lib/pages/members";
-import { boardMembers, cSuite } from "@/lib/pages/team";
+import { cSuite } from "@/lib/pages/team";
 
 export const metadata: Metadata = {
   title: "Current Members - Triton Trading Group",
@@ -34,7 +34,6 @@ export default function CurrentMembersPage() {
         compactHeader
         className="!pt-16 md:!pt-20"
       />
-      <TeamGrid id="board" label="Board" members={boardMembers} />
       <TeamMembersSection id="members" label="Members" divisions={memberDivisions} />
 
       <ApplyCtaBand

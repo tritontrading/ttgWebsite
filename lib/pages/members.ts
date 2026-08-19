@@ -8,53 +8,46 @@ const roster = (name: string, role: string): TeamMember => ({
   photoTba: true,
 });
 
-/** Current roster, sourced from “TTG Member Information - TTG Equity Analyst.csv”. */
 export const memberDivisions = [
   {
-    label: "Quant",
+    id: "founders",
+    label: "Founders",
     members: [
-      roster("Noor Dhillon", "Chief Quantitative Officer"),
-      roster("Anirudh Iyengar", "Director of Quant"),
       roster("Sohan Shingade", "Quant Team Member"),
       roster("Divyansh Kanodia", "Quant Team Member"),
       roster("Matthieu Fuller", "Quant Team Member"),
       roster("Saksham Arora", "Quant Team Member"),
       roster("Kevin Lin", "Quant Team Member"),
+      roster("Prisca Lee", "VP of Activities & Social Media"),
+      roster("Shiyo Ohashi", "Director of Marketing Design"),
     ],
   },
   {
-    label: "Wealth Management",
+    id: "fall-2026",
+    label: "Fall 2026",
     members: [
       roster("Alibek Tolegen", "Wealth Management Lead"),
       roster("Alper Kaan Oguzhan", "Wealth Management Lead"),
       roster("Micah Watson", "Wealth Management Lead"),
       roster("Sulthan Uways Dinova", "Wealth Management Lead"),
+      roster("Anirudh Iyengar", "Director of Quant"),
       roster("Aarzu Singh", "Wealth Management Intern"),
       roster("Clevon Ho", "Wealth Management Intern"),
       roster("Roma Patel", "Wealth Management Intern"),
       roster("Ruhan Karthik", "Wealth Management Intern"),
-    ],
-  },
-  {
-    label: "FP&A",
-    members: [
       roster("Daniel Solichin", "FP&A Lead"),
-      roster("Jacqueline Dao", "FP&A Lead"),
-      roster("Thienan Bui", "FP&A Lead"),
-      roster("Annie Zhang", "FP&A Intern"),
       roster("Elias Willmert", "FP&A Intern"),
       roster("Myra Chou", "FP&A Intern"),
       roster("Trey Torres", "FP&A Intern"),
       roster("Abby Walker", "FP&A Intern"),
-      roster("Abhishai Ganta", "FP&A Intern"),
-      roster("Aditya Mandloi", "FP&A Intern"),
-      roster("Ashwin Kannan", "FP&A Intern"),
-      roster("Shea Elmore", "FP&A Intern"),
     ],
   },
   {
-    label: "Asset Management",
+    id: "spring-2026",
+    label: "Spring 2026",
     members: [
+      roster("Abhishai Ganta", "FP&A Intern"),
+      roster("Aditya Mandloi", "FP&A Intern"),
       roster("Allison Xu", "Asset Management Intern"),
       roster("Clarisa Mutia", "Asset Management Intern"),
       roster("Daniel Castro", "Asset Management Intern"),
@@ -64,6 +57,7 @@ export const memberDivisions = [
       roster("Ramon De La O", "Asset Management Intern"),
       roster("Sattvik Kurani", "Asset Management Intern"),
       roster("Sean Lee", "Asset Management Intern"),
+      roster("Shea Elmore", "FP&A Intern"),
     ],
   },
 ];
