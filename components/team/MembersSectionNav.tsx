@@ -2,8 +2,9 @@ import Link from "next/link";
 
 const sections = [
   { label: "Exec", href: "#exec" },
-  { label: "Board", href: "#board" },
-  { label: "Members", href: "#members" },
+  { label: "Founders", href: "#founders" },
+  { label: "Fall 2026", href: "#fall-2026" },
+  { label: "Spring 2026", href: "#spring-2026" },
 ] as const;
 
 export function MembersSectionNav() {

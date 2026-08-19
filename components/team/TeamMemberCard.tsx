@@ -4,6 +4,7 @@ export type TeamMember = {
   name: string;
   role: string;
   title?: string | null;
+  joined?: string;
   bio?: string;
   image?: string | null;
   linkedin?: string;
@@ -32,7 +33,9 @@ function MemberName({ member }: { member: TeamMember }) {
 }
 
 export function TeamMemberCard({ member }: { member: TeamMember }) {
-  const displayTitle = member.title ?? member.role;
+  const displayTitle = [member.title ?? member.role, member.joined && `Joined ${member.joined}`]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <div className="flex flex-col">
@@ -132,7 +135,7 @@ export function TeamMembersSection({
   id,
 }: {
   label: string;
-  divisions: readonly { label: string; members: TeamMember[] }[];
+  divisions: readonly { id?: string; label: string; members: TeamMember[] }[];
   id?: string;
 }) {
   return (
@@ -146,7 +149,7 @@ export function TeamMembersSection({
         </div>
         <div className="flex flex-col gap-12 md:gap-16">
           {divisions.map((division) => (
-            <div key={division.label}>
+            <div id={division.id} key={division.label} className="scroll-mt-24">
               <span className="mb-6 block font-mono text-xs tracking-wide text-text/45">
                 {division.label}
               </span>
