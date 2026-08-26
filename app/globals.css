@@ -209,6 +209,13 @@ body {
   animation-delay: 560ms;
 }
 
+.terminal-grid {
+  background-image:
+    linear-gradient(rgba(250, 248, 244, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 248, 244, 0.12) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
 .page-hero-reveal {
   opacity: 0;
   animation: pageHeroIn 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;

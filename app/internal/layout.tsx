@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { InternalAuthGate } from "@/components/internal/InternalAuthGate";
+import { LogoutButton } from "@/components/internal/LogoutButton";
 
 const sections = [
   ["AM", "/internal/am", "Asset management"],
@@ -14,10 +16,11 @@ export default function InternalLayout({ children }: { children: ReactNode }) {
         <Link href="/internal" className="font-heading text-xl tracking-tight">TTG <span className="text-[#c79a3b]">/</span> INTERNAL</Link>
         <nav aria-label="Internal navigation" className="flex items-center gap-1 text-[11px] font-bold tracking-[.16em] text-white/60">
           {sections.map(([short, href, label]) => <Link key={href} href={href} title={label} className="border border-transparent px-3 py-2 hover:border-[#c79a3b] hover:text-[#c79a3b]">{short}</Link>)}
+          <LogoutButton />
           <Link href="/" className="ml-2 border-l border-white/15 px-3 py-2 hover:text-[#c79a3b]">PUBLIC</Link>
         </nav>
       </div>
     </header>
-    {children}
+    <InternalAuthGate>{children}</InternalAuthGate>
   </main>;
 }
