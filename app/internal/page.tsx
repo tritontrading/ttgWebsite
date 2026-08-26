@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { InternalDashboardClient } from "@/components/internal/InternalDashboardClient";
 
 const areas = [
-  { code: "01", title: "Asset Management", href: "/internal/am", detail: "Research, coverage, portfolios, theses, signals, and market intelligence.", links: ["Screener", "Stock research", "DCF", "Portfolio"] },
+  { code: "01", title: "Asset Management", href: "/internal/am", detail: "Issuer research, SEC filings, DCF evidence, portfolios, theses, pitches, and orders.", links: ["Issuer research", "DCF", "Portfolio", "Pitches"] },
   { code: "02", title: "Quant", href: "/internal/quant", detail: "A durable library for models, source versions, imported evidence, and comparison.", links: ["Model library", "Run artifacts", "Comparison"] },
   { code: "03", title: "Operations", href: "/internal/admin", detail: "The organization’s work: people, projects, decisions, meetings, and accountability.", links: ["Tasks", "Projects", "Workflows", "People"] },
 ];
@@ -21,5 +22,6 @@ export default function InternalHome() {
         <p className="text-xs font-bold tracking-[.12em] opacity-60">{area.links.join("  ·  ")}</p>
       </Link>)}
     </div>
+    <InternalDashboardClient />
   </div>;
 }
