@@ -21,7 +21,7 @@ export default function CurrentMembersPage() {
             Behind TTG
           </>
         }
-        description="TTG is powered by a team of student leaders across finance, strategy, and technology. Our leadership structure brings together executives who define our strategic direction, directors who lead specialized teams, and members who collaborate to deliver impactful research, investments, and client solutions."
+        description="Meet the students who lead TTG's teams and contribute to research, investment, and client projects."
         descriptionAlign="right"
         belowTitle={<MembersSectionNav />}
         className="!pb-16 md:!pb-20"

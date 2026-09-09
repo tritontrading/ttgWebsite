@@ -2,54 +2,54 @@ export const quantPage = {
   label: "Quantitative Finance",
   titleLines: ["Data-Driven", "Investing"],
   description:
-    "The Quantitative Finance department focuses on data-driven investing and algorithmic trading strategies. Members develop systematic investment models using Python, QuantConnect, Alpaca, and statistical research workflows - combining finance, mathematics, and computer science to analyze markets and develop automated strategies.",
+    "Members use Python, market data, and statistical methods to research and backtest systematic investment ideas.",
   heroImage: "/images/tabling/image3.png",
   practiceImage: "/images/meetings/image2.png",
   areas: [
     {
       title: "Algorithmic Trading Strategies",
       description:
-        "Design, backtest, and refine systematic trading strategies using historical and live market data. Evaluate performance with rigorous statistical frameworks.",
+        "Design and backtest systematic trading strategies using historical market data.",
     },
     {
       title: "Factor-Based Investing",
       description:
-        "Construct multi-factor models that capture systematic return drivers across equities. Research factors including momentum, value, quality, and low-volatility.",
+        "Research equity factors such as momentum, value, quality, and low volatility.",
     },
     {
       title: "Statistical Arbitrage",
       description:
-        "Identify and exploit transient price dislocations using cointegration analysis, pairs trading, and cross-sectional momentum.",
+        "Study cointegration, pairs trading, and cross-sectional momentum.",
     },
     {
       title: "Market Data Analysis",
       description:
-        "Process and analyze large financial datasets, price histories, and portfolio data to surface actionable signals.",
+        "Analyze price histories and portfolio data to test market questions.",
     },
     {
       title: "Machine Learning in Finance",
       description:
-        "Apply supervised and unsupervised learning techniques to financial prediction problems, regime detection, and portfolio optimization.",
+        "Apply machine-learning methods to financial prediction, regime detection, and portfolio research.",
     },
     {
-      title: "Live Trading",
+      title: "Paper Trading",
       description:
-        "Deploy models that trade on paper. If they are performant, live deploy them to make trades with real capital.",
+        "Use paper trading to observe how a tested strategy behaves after backtesting.",
     },
   ],
   tools: [
-    { name: "Python", detail: "Primary development language - pandas, numpy, scipy, sklearn" },
+    { name: "Python", detail: "Data analysis, modeling, and research notebooks" },
     {
-      name: "QuantConnect Sponsorship",
-      detail: "The quant team is specifically sponsored by QuantConnect for strategy research and backtesting",
+      name: "QuantConnect",
+      detail: "Backtesting and strategy research",
     },
     {
       name: "Broker & Execution",
-      detail: "Alpaca for paper trading, brokerage connectivity, and live strategy workflows",
+      detail: "Paper trading and brokerage connectivity",
     },
-    { name: "Statistical Modeling", detail: "Time-series analysis, regression, Bayesian methods" },
-    { name: "Backtesting Frameworks", detail: "QuantConnect and internal research workflows" },
-    { name: "Version Control & Notebooks", detail: "Git, Jupyter, collaborative research workflows" },
+    { name: "Statistical Modeling", detail: "Time-series analysis, regression, and Bayesian methods" },
+    { name: "Backtesting", detail: "Historical strategy evaluation" },
+    { name: "Version Control & Notebooks", detail: "Git and Jupyter for research work" },
   ],
   skills: [
     "Statistical modeling",
@@ -60,11 +60,11 @@ export const quantPage = {
     "Python and scientific computing",
   ],
   careers: [
-    { role: "Quantitative Trading", detail: "Citadel, Two Sigma, DE Shaw, Jane Street" },
-    { role: "Hedge Funds", detail: "Systematic and discretionary strategies" },
-    { role: "Fintech", detail: "Algorithmic infrastructure and product" },
-    { role: "Data Science", detail: "Applied ML across finance and tech" },
-    { role: "Risk Management", detail: "Market risk and quant analytics at banks" },
+    { role: "Quantitative Trading", detail: "Systematic strategy research" },
+    { role: "Hedge Funds", detail: "Systematic and discretionary research" },
+    { role: "Fintech", detail: "Financial-data products and infrastructure" },
+    { role: "Data Science", detail: "Applied modeling and analysis" },
+    { role: "Risk Management", detail: "Market-risk and quantitative analysis" },
     { role: "Research", detail: "Academic and institutional finance research" },
   ],
 } as const;

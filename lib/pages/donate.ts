@@ -1,21 +1,15 @@
 export const donatePage = {
-  label: "501(c)(3) Educational Nonprofit · Tax-Deductible",
-  titleLines: ["Help Us Build", "What's Next"],
+  label: "Support TTG",
+  titleLines: ["Help Students", "Learn By Doing"],
   paragraphs: [
-    "Three months ago we started TTG's paper trading portfolio with one question: can a student-run team actually compete with the market? Today we have 35 positions, over $1M in cumulative P&L, and roughly 5× the S&P 500's return over the same window.",
-    "We're raising $500,000 to fund the next phase — analyst training, a flagship student finance conference, an entrepreneurship incubator, alumni network buildout, and seed capital for a live student-managed fund. Donations are 100% tax-deductible.",
+    "Support practical training, student projects, and programming for UC San Diego students interested in finance, strategy, and quantitative work.",
+    "Contributions can help fund analyst training, student events, and resources for hands-on projects.",
   ],
   goFundMeUrl: "https://gofund.me/5648b15d5",
-  stats: [
-    { value: "$500K", label: "Fundraising Goal" },
-    { value: "~5×", label: "S&P 500 Outperformance" },
-    { value: "$1M+", label: "Cumulative P&L" },
-    { value: "35", label: "Active Positions" },
-  ],
-  whyTitle: "The existing path wasn't producing the talent the industry needs.",
+  whyTitle: "Help students practice the work they want to pursue.",
   whyParagraphs: [
-    "Résumé-padded clubs, slow-moving committees, recruiting pipelines that reward who you know over what you can do. We started TTG because that system wasn't working — for students or for the industry.",
-    "The discipline is institutional. The team is undergrads. We've spent months trying to formalize a Student Managed Investment Fund with UCSD. That conversation hasn't moved. We're not waiting anymore.",
+    "TTG gives members structured opportunities to research companies, analyze business questions, and test quantitative ideas.",
+    "Your support helps make those learning experiences available to more students.",
   ],
   audiences: [
     {
@@ -29,9 +23,9 @@ export const donatePage = {
         "If you believe student-led institutions can outwork the bureaucracies above them — the track record is already here. We're asking for your support to scale it.",
     },
     {
-      label: "Tax Deductibility",
+      label: "Organization Details",
       description:
-        "TTG is a registered 501(c)(3) educational nonprofit. Donations are 100% tax-deductible. Every donor receives an official receipt with our EIN. IRS determination letter available on request.",
+        "Triton Trading Group's EIN is 41-2939437. Our address is 9500 Gilman Drive.",
     },
   ],
   allocations: [

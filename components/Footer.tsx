@@ -18,6 +18,12 @@ export function Footer() {
             >
               {footer.email}
             </a>
+            <span className="mt-4 block font-mono text-xs leading-relaxed text-footer-text/80">
+              {footer.address}
+            </span>
+            <span className="block font-mono text-xs leading-relaxed text-footer-text/80">
+              EIN {footer.ein}
+            </span>
           </div>
 
           <div className="min-w-56">
