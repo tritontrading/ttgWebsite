@@ -81,8 +81,7 @@ export default function AdvisoryPage() {
           <EditorialLabel>Why Us</EditorialLabel>
           <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Why Choose TTG</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            We are a structured consulting division giving early-stage companies access to real
-            analytical depth with personalized attention.
+            We scope each project around the decision, data, and deliverables the organization needs.
           </p>
         </div>
         <div className="divide-y divide-card-border border-y border-card-border">
@@ -103,7 +102,7 @@ export default function AdvisoryPage() {
           <EditorialLabel>Services</EditorialLabel>
           <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Our Services</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            Scoped FP&A work across finance, operations, growth, and technical systems.
+            Support across finance, operations, growth, and systems.
           </p>
         </div>
         <div className="grid grid-cols-1 layout-grid-gap md:grid-cols-2">
@@ -217,7 +216,7 @@ export default function AdvisoryPage() {
             </div>
           </div>
           <div>
-            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Career Outcomes</h3>
+            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Related Career Paths</h3>
             <div className="divide-y divide-card-border surface-card overflow-hidden">
               {page.memberTrack.careers.map((career) => (
                 <div

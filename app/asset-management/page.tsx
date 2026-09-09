@@ -104,7 +104,7 @@ export default function AssetManagementPage() {
             </div>
           </div>
           <div>
-            <EditorialLabel>Career Outcomes</EditorialLabel>
+            <EditorialLabel>Related Career Paths</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <div className="divide-y divide-card-border surface-card overflow-hidden">
               {page.careers.map((career) => (
@@ -125,7 +125,7 @@ export default function AssetManagementPage() {
 
       <ApplyCtaBand
         title="Interested in Asset Management?"
-        description="Curiosity, discipline, and strong communication matter more than prior buy-side experience."
+        description="No prior buy-side experience is required. Bring curiosity, discipline, and clear communication."
       />
     </SiteLayout>
   );

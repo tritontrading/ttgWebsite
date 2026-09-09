@@ -2,7 +2,7 @@ export const assetManagementPage = {
   label: "Asset Management",
   titleLines: ["Fundamental", "Investing"],
   description:
-    "The Asset Management department runs TTG's student-led investment process. Members build sector coverage, research public companies, develop valuation work, and present investment ideas through a disciplined committee structure centered on risk-adjusted long-term decision making.",
+    "Members research public companies, build valuation models, and present investment ideas to TTG's investment committee.",
   heroImage: "/images/meetings/image1.png",
   practiceImage: "/images/tabling/image2.png",
   sectors: [
@@ -53,11 +53,11 @@ export const assetManagementPage = {
     "Clear verbal defense of recommendations",
   ],
   careers: [
-    { role: "Asset Management", detail: "Public markets research, portfolio teams, and buy-side analyst tracks" },
-    { role: "Hedge Funds", detail: "Fundamental long/short research and catalyst-driven investing" },
-    { role: "Investment Banking", detail: "Valuation, financial statement fluency, and presentation discipline" },
-    { role: "Equity Research", detail: "Structured coverage work and repeatable written analysis" },
-    { role: "Corporate Finance", detail: "Capital allocation judgment and operating-performance analysis" },
-    { role: "Buyside Internships", detail: "Interview-ready investment process and security-selection language" },
+    { role: "Asset Management", detail: "Public-markets research and portfolio analysis" },
+    { role: "Hedge Funds", detail: "Fundamental research and investment theses" },
+    { role: "Investment Banking", detail: "Valuation and financial-statement analysis" },
+    { role: "Equity Research", detail: "Company coverage and written analysis" },
+    { role: "Corporate Finance", detail: "Capital allocation and operating analysis" },
+    { role: "Buy-Side Internships", detail: "Investment process and security-selection practice" },
   ],
 } as const;

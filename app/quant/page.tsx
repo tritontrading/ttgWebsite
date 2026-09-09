@@ -57,7 +57,7 @@ export default function QuantPage() {
       <EditorialSection>
         <div className="grid grid-cols-1 items-start layout-grid-gap-lg lg:grid-cols-2">
           <div>
-            <EditorialLabel>Tools & Tech Stack</EditorialLabel>
+            <EditorialLabel>Tools Members Use</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <div className="divide-y divide-card-border surface-card overflow-hidden">
               {page.tools.map((tool) => (
@@ -109,7 +109,7 @@ export default function QuantPage() {
             </div>
           </div>
           <div>
-            <EditorialLabel>Career Outcomes</EditorialLabel>
+            <EditorialLabel>Related Career Paths</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <div className="divide-y divide-card-border surface-card overflow-hidden">
               {page.careers.map((career) => (
@@ -130,7 +130,7 @@ export default function QuantPage() {
 
       <ApplyCtaBand
         title="Interested in Quant?"
-        description="Python experience helpful but not required. We train from the ground up."
+        description="Python experience helps, but it is not required. Training starts with the fundamentals."
       />
     </SiteLayout>
   );

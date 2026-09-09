@@ -5,7 +5,7 @@ export const site = {
     shortName: "TTG",
     university: "University of California, San Diego",
     hero: {
-        headline: "Preparing the next generation of finance leaders through",
+        headline: "Practice finance, strategy, and quantitative research through",
         divisions: [
             {
                 label: "Asset Management.",
@@ -38,20 +38,7 @@ export const memberLinks = [
 ] as const;
 
 export const tickerItems = [
-    { symbol: "SPY", change: "+0.40%", positive: true },
-    { symbol: "QQQ", change: "-0.20%", positive: false },
-    { symbol: "NVDA", change: "+2.30%", positive: true },
-    { symbol: "TSLA", change: "+1.10%", positive: true },
-    { symbol: "AAPL", change: "-0.10%", positive: false },
-    { symbol: "GLD", change: "+0.80%", positive: true },
-    { symbol: "BTC-USD", change: "+3.20%", positive: true },
-    { symbol: "ETH-USD", change: "+1.90%", positive: true },
-    { symbol: "JPM", change: "+0.50%", positive: true },
-    { symbol: "GS", change: "+0.70%", positive: true },
-    { symbol: "MS", change: "-0.30%", positive: false },
-    { symbol: "VIX", change: "-4.10%", positive: false },
-    { symbol: "TLT", change: "-0.60%", positive: false },
-    { symbol: "XLE", change: "+1.40%", positive: true },
+    "SPY", "QQQ", "NVDA", "TSLA", "AAPL", "GLD", "BTC-USD", "ETH-USD", "JPM", "GS", "MS", "VIX", "TLT", "XLE",
 ] as const;
 
 export const about = {
@@ -84,7 +71,7 @@ export const sponsors = {
 export const whoWeAre = {
     title: "About us",
     paragraphs: [
-        "Triton Trading Group equips UC San Diego students with practical experience across finance, strategy, and technology. Through structured training and real-world projects in Asset Management, FP&A, and Quantitative Finance, members develop the skills to analyze markets, solve business problems, and apply financial concepts beyond the classroom.",
+        "Triton Trading Group gives UC San Diego students a place to practice investment research, financial analysis, and quantitative work. Members learn through training, team projects, and presentations.",
     ],
     skillsLabel: "Skills Developed",
     skills: [
@@ -97,14 +84,14 @@ export const whoWeAre = {
 } as const;
 
 export const departments = {
-    headline: "Three branches. Three distinct operating environments.",
+    headline: "Three ways to build practical finance experience.",
     branches: [
         {
             department: "Asset Management",
             href: "/asset-management",
-            title: "Student Managed Investment Fund",
+            title: "Research public companies and defend investment ideas.",
             description:
-                "The Asset Management department manages TTG's student-led investment portfolio. Members conduct equity research, develop financial models, and present investment ideas through a structured investment committee process. The portfolio follows a disciplined investment framework focused on risk management, diversification, and long-term value creation.",
+                "Members cover sectors, build valuation models, write investment memos, and present their conclusions to the investment committee.",
             image: "/images/meetings/image1.png",
             bullets: [
                 "Conduct company and sector research",
@@ -118,9 +105,9 @@ export const departments = {
         {
             department: "Financial Planning & Analysis",
             href: "/advisory",
-            title: "Real-World Experience with Companies",
+            title: "Help organizations answer finance and operating questions.",
             description:
-                "The FP&A department provides hands-on experience working directly with companies, startups, and organizations. Members participate in real consulting-style projects where they help organizations analyze financial performance, improve operations, and develop strategic solutions. This department combines elements of corporate finance, consulting, and operational strategy.",
+                "Members work on financial analysis, market research, business strategy, and systems projects for startups, student ventures, and organizations.",
             image: "/images/tabling/image1.png",
             bullets: [
                 "Financial analysis and forecasting",
@@ -135,9 +122,9 @@ export const departments = {
         {
             department: "Quantitative Finance",
             href: "/quant",
-            title: "Data-Driven Investing & Algorithmic Trading",
+            title: "Turn market questions into testable strategies.",
             description:
-                "The Quantitative Finance department focuses on data-driven investing and algorithmic trading strategies. Members develop systematic investment models using Python, QuantConnect, Alpaca, and statistical research workflows. The quant team is specifically sponsored by QuantConnect and combines finance, mathematics, and computer science to analyze markets and develop automated trading strategies.",
+                "Members use Python, financial data, and statistical methods to research, backtest, and evaluate systematic investment ideas.",
             image: "/images/meetings/image2.png",
             bullets: [
                 "Algorithmic trading strategies",
@@ -154,14 +141,14 @@ export const departments = {
 export const clients = {
     title: "Work with us",
     description:
-        "Partner with TTG for student-led consulting, research, and financial analysis. We work with startups, nonprofits, and growing organizations on scoped projects with clear deliverables.",
+        "Bring TTG a finance, strategy, operations, or systems question. We work with startups, student ventures, and organizations on scoped projects.",
     href: "/advisory",
 } as const;
 
 export const network = {
     title: "Connections",
     description:
-        "TTG members and alumni have gone on to roles and opportunities across leading firms, universities, and organizations.",
+        "Organizations represented in the TTG network.",
     partners: [
         {
             name: "Stanford University",
@@ -389,6 +376,8 @@ export const recruitment = {
 
 export const footer = {
     email: "tritontradinggroup@ucsd.edu",
+    address: "9500 Gilman Drive",
+    ein: "41-2939437",
     social: [
         {
             label: "LinkedIn",
@@ -408,5 +397,5 @@ export const footer = {
         },
     ],
     disclaimer:
-        "Triton Trading Group takes no liability for any advice given through public platform.",
+        "Educational content only; not investment, legal, or tax advice.",
 } as const;

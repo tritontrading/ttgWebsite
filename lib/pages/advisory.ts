@@ -2,79 +2,97 @@ export const advisoryPage = {
   label: "FP&A",
   title: "FP&A",
   description:
-    "TTG's FP&A work serves both sides of the program: students developing real operating judgment, and organizations looking for structured support across finance, strategy, and execution.",
+    "TTG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
   email: "tritontradinggroup@ucsd.edu",
 
   process: [
     {
       step: "01",
-      title: "Excellence",
+      title: "Discovery",
       description:
-        "We operate with client-grade rigor. Our work is evidence-based, internally reviewed, and built to stand up in front of investors, advisors, and leadership teams.",
+        "We learn your business, challenges, and goals before scoping anything.",
     },
     {
       step: "02",
-      title: "Adaptability",
+      title: "Diagnosis",
       description:
-        "We do not copy-paste frameworks. We tailor analysis, deliverables, and communication style to the client stage, industry, and constraints.",
+        "We assess your current state, gather data, and identify root causes.",
     },
     {
       step: "03",
-      title: "Commitment",
+      title: "Analysis & Strategy",
       description:
-        "We prioritize responsiveness, clarity, and follow-through, working closely with one client at a time so you are not competing for attention.",
+        "We build models, surface insights, and develop recommendations.",
+    },
+    {
+      step: "04",
+      title: "Delivery",
+      description:
+        "We present findings, support implementation, and hand off cleanly.",
     },
   ],
 
   whyUs: [
     {
-      title: "Research-Driven Clarity",
+      title: "Built for Early-Stage",
       description:
-        "We deliver research-driven clarity, powered by top-tier student talent and rigorous internal review, so teams can explore options and defend decisions with sharper conviction.",
+        "We understand startup constraints - constrained resources, evolving needs, and the pressure to execute quickly. Our process is designed around your reality.",
     },
     {
-      title: "Measurable Impact",
+      title: "Custom-Tailored Work",
       description:
-        "Every engagement is structured around outputs you can use immediately and maintain after handoff, from decision memos to operating models and implementation plans.",
+        "Every engagement is scoped around your specific problem and goals.",
+    },
+    {
+      title: "Structured Division Behind You",
+      description:
+        "You get a team with defined roles and managed delivery - an engagement lead, senior analysts, and specialists all working toward your outcome.",
+    },
+    {
+      title: "High-Impact, Accessible",
+      description:
+        "Professional-quality analysis delivered with the focus and care that early-stage companies deserve.",
     },
   ],
 
   services: [
     {
-      title: "Operations and Strategy",
+      title: "Finance & Business Analysis",
       items: [
-        "Customer identification",
-        "Market positioning strategy",
-        "Sales process structuring",
-        "CRM design and cleanup",
+        "Financial modeling & forecasting",
+        "Cash flow and runway analysis",
+        "Unit economics and break-even",
+        "Valuation and comparables",
+        "Pricing and margin analysis",
+        "Scenario and sensitivity modeling",
       ],
     },
     {
-      title: "Marketing & Growth Strategy",
+      title: "Operations & Strategy",
       items: [
-        "Ad creation support",
-        "Influencer strategy and vetting",
-        "Marketing tracking systems",
-        "Sample disbursement SOPs",
+        "Market research and competitive analysis",
+        "Go-to-market planning",
+        "Sales process and CRM design",
+        "Workflow optimization",
+        "KPI tracking and project roadmaps",
       ],
     },
     {
-      title: "Finance",
+      title: "Tech & AI Integration",
       items: [
-        "Cash flow analysis",
-        "SWOT analysis",
-        "Financial modeling",
-        "Startup credit analysis and auditing",
-        "Unit economics",
+        "Workflow automation",
+        "AI tooling and API integration",
+        "Digital infrastructure setup",
+        "Digitization for SMBs",
       ],
     },
     {
-      title: "Technology",
+      title: "Marketing & Growth",
       items: [
-        "AI infrastructure",
-        "Automation",
-        "Cloud tooling and security workflows",
-        "Distributed data analytics",
+        "Paid ad campaigns (Meta, TikTok, Instagram)",
+        "Short-form video and content creation",
+        "Website development (UI/UX)",
+        "Marketing strategy and sales support",
       ],
     },
   ],
@@ -110,7 +128,7 @@ export const advisoryPage = {
   memberTrack: {
     title: "For Prospective Members",
     description:
-      "The FP&A track gives TTG members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution. Members learn by working through real business questions with clear deliverables and accountability.",
+      "The FP&A track gives members practice with financial analysis, client communication, and project delivery.",
     areasOfWork: [
       {
         title: "Financial Analysis & Forecasting",

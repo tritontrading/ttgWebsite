@@ -62,21 +62,6 @@ export default function DonatePage() {
         </div>
       </section>
 
-      <section className="border-b border-editorial/6 section-padding-tight">
-        <div className="site-container grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
-          {page.stats.map((stat) => (
-            <div key={stat.label}>
-              <div className="mb-4 font-heading text-4xl font-normal text-heading md:text-5xl">
-                {stat.value}
-              </div>
-              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-text/50">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <EditorialSection className="border-editorial/6" border>
         <div className="layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-2">
           <div>
@@ -109,7 +94,7 @@ export default function DonatePage() {
       </EditorialSection>
 
       <EditorialSection className="border-editorial/6" border>
-        <EditorialLabel>Where the $500K Goes</EditorialLabel>
+        <EditorialLabel>Where Support Goes</EditorialLabel>
         <div className="mb-8 border-t border-editorial/6" />
         <div className="divide-y divide-card-border surface-card overflow-hidden">
           {page.allocations.map((item, index) => (
@@ -134,7 +119,7 @@ export default function DonatePage() {
       <ApplyCtaBand
         eyebrow="Make an Impact"
         title="Ready to support?"
-        description="Any amount helps. 100% tax-deductible. Every donor receives an official receipt with our EIN."
+        description="Support practical finance, strategy, and quantitative learning for UC San Diego students."
         buttonLabel="Donate Now"
         href={page.goFundMeUrl}
       />

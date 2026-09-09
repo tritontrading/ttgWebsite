@@ -21,10 +21,10 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <p className="font-mono text-xs tracking-[0.24em] text-gold uppercase">Fall 2026 recruitment</p>
             <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-cream md:text-6xl">
-              Build your edge before you graduate.
+              Build practical experience before you graduate.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-loose text-cream/70 md:text-lg">
-              Join a team that studies markets, solves client problems, and turns curiosity into practical experience.
+              Study markets, work on client projects, and practice presenting your analysis.
             </p>
           </div>
           <ButtonLink href="/recruitment" variant="gold" className="self-start md:self-auto">

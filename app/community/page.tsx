@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 const COMMUNITY_PILLARS = [
   {
     title: "Peer Learning",
-    desc: "Members improve quickly by working in tight teams, sharing research standards, and reviewing each other's thinking in public.",
+    desc: "Members work together on research, projects, and presentations.",
   },
   {
     title: "Mentorship",
-    desc: "Older members and leadership help newer analysts ramp across markets, modeling, recruiting, and presentation skills.",
+    desc: "Members share advice on markets, modeling, recruiting, and presentations.",
   },
   {
     title: "Social Events",
-    desc: "The group runs socials, hangouts, and informal gatherings that make the club feel like a real operating community instead of a loose roster.",
+    desc: "Socials and informal gatherings help members get to know one another.",
   },
   {
     title: "Professional Network",
-    desc: "TTG connects members with alumni, speakers, and recruiting brands that widen the path into finance, consulting, and technology roles.",
+    desc: "Members can connect with alumni and speakers through TTG programming.",
   },
 ];
 
@@ -66,13 +66,8 @@ export default function CommunityPage() {
     <SiteLayout>
       <PageHeroSplit
         label="Community"
-        title={
-          <>
-            Built Like
-            <br />A Real Team
-          </>
-        }
-        description="TTG is more than a set of technical tracks. It is a community built around disciplined work, ambitious peers, consistent mentorship, and a social culture that keeps members connected across branches, graduating classes, and career paths."
+        title="Meet the TTG community"
+        description="TTG brings together students working across asset management, FP&A, and quantitative finance."
         media={
           <SiteImage
             src="/images/socials/image1.png"
@@ -150,12 +145,11 @@ export default function CommunityPage() {
             <EditorialLabel>Why It Matters</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <h2 className="mb-4 font-heading text-3xl font-normal text-heading md:text-4xl">
-              Strong communities compound.
+              Learn alongside other students.
             </h2>
             <p className="mb-10 text-sm leading-relaxed text-text/60">
-              Members do better work when they are surrounded by people who care, challenge them
-              directly, and make the process sustainable. TTG treats community as infrastructure,
-              not decoration.
+              Community gives members a place to share work, ask questions, and build connections
+              outside formal meetings.
             </p>
             <div className="divide-y divide-card-border border-y border-card-border">
               {COMMUNITY_PILLARS.map((pillar) => (
@@ -183,8 +177,8 @@ export default function CommunityPage() {
       </EditorialSection>
 
       <ApplyCtaBand
-        title="Want in?"
-        description="TTG is built for people who want a real peer group, serious standards, and a stronger path into finance, strategy, and quantitative work."
+        title="Interested in TTG?"
+        description="Apply to learn with students working across finance, strategy, and quantitative research."
       />
     </SiteLayout>
   );
