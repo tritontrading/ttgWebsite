@@ -1,23 +1,37 @@
-import { Nav } from '@/components/layout/Nav'
-import { Footer } from '@/components/layout/Footer'
-import { Hero } from '@/components/sections/Hero/Hero'
-import { About } from '@/components/sections/About/About'
-import { Departments } from '@/components/sections/Departments/Departments'
-import { IndustryTools } from '@/components/sections/IndustryTools/IndustryTools'
-import { Timeline } from '@/components/sections/Timeline/Timeline'
-import { Recruitment } from '@/components/sections/Recruitment/Recruitment'
+import { SiteLayout } from "@/components/layout/SiteLayout";
+import { ClientsSection } from "@/components/ClientsSection";
+import { CommunitySection } from "@/components/CommunitySection";
+import { Departments } from "@/components/Departments";
+import { Hero } from "@/components/Hero";
+import { NetworkSection } from "@/components/NetworkSection";
+import { WhoWeAreSection } from "@/components/WhoWeAreSection";
+import { ButtonLink } from "@/components/ui/Button";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="bg-cream min-h-screen">
-      <Nav />
+    <SiteLayout>
       <Hero />
-      <About />
+      <WhoWeAreSection />
       <Departments />
-      <IndustryTools />
-      <Timeline />
-      <Recruitment />
-      <Footer />
-    </main>
-  )
+      <ClientsSection />
+      <NetworkSection />
+      <CommunitySection />
+      <section className="border-t border-border bg-navy">
+        <div className="site-container grid gap-10 py-20 md:grid-cols-[1fr_auto] md:items-end md:py-28">
+          <div className="max-w-2xl">
+            <p className="font-mono text-xs tracking-[0.24em] text-gold uppercase">Fall 2026 recruitment</p>
+            <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-cream md:text-6xl">
+              Build practical experience before you graduate.
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-loose text-cream/70 md:text-lg">
+              Study markets, work on client projects, and practice presenting your analysis.
+            </p>
+          </div>
+          <ButtonLink href="/recruitment" variant="gold" className="self-start md:self-auto">
+            View recruitment
+          </ButtonLink>
+        </div>
+      </section>
+    </SiteLayout>
+  );
 }
