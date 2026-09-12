@@ -1,6 +1,6 @@
 export const advisoryPage = {
-  label: "FP&A",
-  title: "FP&A",
+  label: "Financial Planning & Analysis",
+  title: "Financial Planning & Analysis",
   description:
     "TTG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
   email: "tritontradinggroup@ucsd.edu",
@@ -103,7 +103,7 @@ export const advisoryPage = {
       "TTG partners with startups, student ventures, and organizations that need structured financial analysis, strategic support, and hands-on project work. Our members operate like a consulting bench — scoped engagements, clear deliverables, and professional standards.",
     offerings: [
       {
-        title: "FP&A & Consulting",
+        title: "Financial Planning & Analysis Consulting",
         description:
           "Financial modeling, forecasting, market research, and operational strategy for early-stage and growth-stage teams.",
       },
@@ -128,7 +128,7 @@ export const advisoryPage = {
   memberTrack: {
     title: "For Prospective Members",
     description:
-      "The FP&A track gives members practice with financial analysis, client communication, and project delivery.",
+      "The Financial Planning & Analysis track gives members practice with financial analysis, client communication, and project delivery.",
     areasOfWork: [
       {
         title: "Financial Analysis & Forecasting",

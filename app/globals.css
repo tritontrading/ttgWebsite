@@ -120,25 +120,6 @@
   }
 }
 
-@keyframes heroPhraseCycle {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  90% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -209,31 +190,9 @@ body {
   animation-delay: 560ms;
 }
 
-.terminal-grid {
-  background-image:
-    linear-gradient(rgba(250, 248, 244, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(250, 248, 244, 0.12) 1px, transparent 1px);
-  background-size: 34px 34px;
-}
-
 .page-hero-reveal {
   opacity: 0;
   animation: pageHeroIn 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-rotating-subtitle {
-  position: relative;
-  display: inline-block;
-  vertical-align: baseline;
-  text-align: left;
-}
-
-.hero-rotating-phrase {
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0;
-  margin: 0;
-  animation: heroPhraseCycle 3200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /*
@@ -542,7 +501,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal,
   .page-hero-reveal,
-  .hero-rotating-phrase,
   .animate-ticker,
   .animate-community-marquee {
     animation: none;

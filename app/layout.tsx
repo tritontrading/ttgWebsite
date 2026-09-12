@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Triton Trading Group - UCSD",
   description:
-    "Triton Trading Group gives UC San Diego students hands-on experience in asset management, FP&A, and quantitative finance.",
+    "Triton Trading Group is a nonprofit student organization serving UC San Diego students through Asset Management, Financial Planning & Analysis, and Quantitative Finance programs.",
   icons: {
     icon: "/images/brand/logo.png",
     shortcut: "/images/brand/logo.png",
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Triton Trading Group - UCSD",
-    description: "Hands-on experience in asset management, FP&A, and quantitative finance.",
+    description:
+      "A nonprofit student organization providing hands-on experience in Asset Management, Financial Planning & Analysis, and Quantitative Finance.",
     type: "website",
   },
 };
