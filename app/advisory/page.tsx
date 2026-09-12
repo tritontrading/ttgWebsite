@@ -6,9 +6,9 @@ import { ButtonLink } from "@/components/ui/Button";
 import { advisoryPage as page } from "@/lib/pages/advisory";
 
 export const metadata: Metadata = {
-  title: "FP&A - Triton Trading Group",
+  title: "Financial Planning & Analysis - Triton Trading Group",
   description:
-    "TTG's FP&A division: student-led financial consulting for founders and teams, plus the training track for prospective members.",
+    "TTG's Financial Planning & Analysis division provides student-led financial consulting and practical training for UC San Diego students.",
 };
 
 export default function AdvisoryPage() {
@@ -49,7 +49,7 @@ export default function AdvisoryPage() {
                 href={`mailto:${page.email}`}
                 className="inline-flex w-full items-center justify-center border border-editorial px-8 py-4 font-mono text-xs tracking-[0.22em] uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-white"
               >
-                Email TTG FP&A
+                Email Financial Planning & Analysis
               </a>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function AdvisoryPage() {
         <div className="section-block-gap">
           <EditorialLabel>For Prospective Members</EditorialLabel>
           <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
-            FP&A As A Training Ground
+            Financial Planning & Analysis As A Training Ground
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
             {page.memberTrack.description}
@@ -268,8 +268,8 @@ export default function AdvisoryPage() {
 
       <ApplyCtaBand
         eyebrow="For Students"
-        title="Interested in the FP&A Track?"
-        description="Applications open each academic quarter. The FP&A track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
+        title="Interested in Financial Planning & Analysis?"
+        description="Applications open each academic quarter. The Financial Planning & Analysis track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
       />
     </SiteLayout>
   );

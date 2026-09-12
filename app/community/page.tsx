@@ -67,7 +67,7 @@ export default function CommunityPage() {
       <PageHeroSplit
         label="Community"
         title="Meet the TTG community"
-        description="TTG brings together students working across asset management, FP&A, and quantitative finance."
+        description="TTG brings together students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
         media={
           <SiteImage
             src="/images/socials/image1.png"
@@ -178,7 +178,7 @@ export default function CommunityPage() {
 
       <ApplyCtaBand
         title="Interested in TTG?"
-        description="Apply to learn with students working across finance, strategy, and quantitative research."
+        description="Apply to learn with students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
       />
     </SiteLayout>
   );
