@@ -3,6 +3,23 @@ import { memberLinkedins } from "@/lib/memberLinkedins";
 
 export const cSuite: TeamMember[] = [
   {
+    name: "Shaurya Prakaash",
+    role: "President",
+    title: "Chief Executive Officer (CEO)",
+    joined: "Founder",
+    bio: "Provides overall leadership for the organization and sets TTG's strategic direction.",
+    image: "/images/board/shaurya.JPG",
+    linkedin: memberLinkedins["Shaurya Prakaash"],
+  },
+  {
+    name: "Matthieu Fuller",
+    role: "Chief Technology Officer",
+    title: "Chief Technology Officer (CTO)",
+    joined: "Founder",
+    bio: "Leads TTG's technology strategy and technical development.",
+    linkedin: memberLinkedins["Matthieu Fuller"],
+  },
+  {
     name: "Maya Nayberg",
     role: "Executive Vice President",
     title: "Chief Operating Officer (COO)",
