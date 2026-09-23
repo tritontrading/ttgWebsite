@@ -13,9 +13,9 @@ export const memberDivisions = [
     id: "founders",
     label: "Founders",
     members: [
+      roster("Shaurya Prakaash", "Chief Executive Officer (CEO)"),
       roster("Sohan Shingade", "Quant Team Member"),
       roster("Divyansh Kanodia", "Quant Team Member"),
-      roster("Matthieu Fuller", "Quant Team Member"),
       roster("Saksham Arora", "Quant Team Member"),
       roster("Kevin Lin", "Quant Team Member"),
       roster("Prisca Lee", "VP of Activities & Social Media"),
