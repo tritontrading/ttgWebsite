@@ -21,6 +21,7 @@ export const divisionLinks = [
 
 export const memberLinks = [
     { label: "Current", href: "/members/current" },
+    { label: "Founders", href: "/members/founders" },
     { label: "Alumni", href: "/members/alumni" },
 ] as const;
 

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ApplyCtaBand, PageHero } from "@/components/editorial/PageSections";
 import { MembersSectionNav } from "@/components/team/MembersSectionNav";
-import { TeamGrid, TeamMembersSection } from "@/components/team/TeamMemberCard";
-import { memberDivisions } from "@/lib/pages/members";
-import { cSuite } from "@/lib/pages/team";
+import { TeamMembersSection } from "@/components/team/TeamMemberCard";
+import { boardDivisions, memberDivisions } from "@/lib/pages/members";
 
 export const metadata: Metadata = {
   title: "Current Members - Triton Trading Group",
@@ -27,14 +26,8 @@ export default function CurrentMembersPage() {
         className="!pb-16 md:!pb-20"
       />
 
-      <TeamGrid
-        id="exec"
-        label="Exec"
-        members={cSuite}
-        compactHeader
-        className="!pt-16 md:!pt-20"
-      />
-      <TeamMembersSection id="members" label="Members" divisions={memberDivisions} />
+      <TeamMembersSection id="board" label="Board" divisions={boardDivisions} />
+      <TeamMembersSection id="general-members" label="General Members" divisions={memberDivisions} />
 
       <ApplyCtaBand
         eyebrow="Join The Team"
