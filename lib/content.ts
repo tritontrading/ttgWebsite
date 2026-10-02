@@ -275,7 +275,7 @@ export const timeline = {
 } as const;
 
 const applicationFormUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSf5iQbS2NwGXnqd-L0uw4LxIIB7bJtzA8ZUCeg6xoZP6TbQsA/viewform";
+    "https://docs.google.com/forms/d/e/1FAIpQLSdfXBTLXA6OsW1Kaco9lp6bi-726-bZoRD9FWYwBUjH_2Ckbg/viewform";
 
 export const recruitment = {
     title: "Join Triton Trading Group",
