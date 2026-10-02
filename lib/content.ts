@@ -274,7 +274,7 @@ export const timeline = {
     ],
 } as const;
 
-const applicationFormUrl =
+export const applicationFormUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSdfXBTLXA6OsW1Kaco9lp6bi-726-bZoRD9FWYwBUjH_2Ckbg/viewform";
 
 export const recruitment = {
