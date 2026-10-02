@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { applicationFormUrl } from "@/lib/content";
 
 type PageHeroProps = {
   label?: string;
@@ -185,7 +186,7 @@ export function ApplyCtaBand({
   title,
   description,
   buttonLabel = "Apply Now",
-  href = "https://docs.google.com/forms/d/e/1FAIpQLSdfXBTLXA6OsW1Kaco9lp6bi-726-bZoRD9FWYwBUjH_2Ckbg/viewform",
+  href = applicationFormUrl,
 }: {
   eyebrow?: string;
   title: string;
