@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ApplyCtaBand, PageHero } from "@/components/editorial/PageSections";
 import { MembersSectionNav } from "@/components/team/MembersSectionNav";
 import { TeamMembersSection } from "@/components/team/TeamMemberCard";
+import { applicationFormUrl } from "@/lib/content";
 import { boardDivisions, memberDivisions } from "@/lib/pages/members";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function CurrentMembersPage() {
         eyebrow="Join The Team"
         title="Want to be part of this?"
         description="Applications open each academic quarter. We recruit across all majors — what matters is curiosity, commitment, and a drive to do serious work."
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdfXBTLXA6OsW1Kaco9lp6bi-726-bZoRD9FWYwBUjH_2Ckbg/viewform"
+        href={applicationFormUrl}
       />
     </SiteLayout>
   );
