@@ -1,41 +1,44 @@
 import type { TeamMember } from "@/components/team/TeamMemberCard";
 import { memberLinkedins } from "@/lib/memberLinkedins";
 
-const roster = (name: string, role: string): TeamMember => ({
+const roster = (name: string, role: string, image?: string): TeamMember => ({
   name,
   role,
+  image,
   linkedin: memberLinkedins[name],
-  photoTba: true,
 });
 
 export const boardDivisions = [
   {
-    id: "c-suite",
-    label: "C-Suite",
+    id: "executive-board",
+    label: "Executive Board",
     members: [
-      roster("Shaurya Prakaash", "Chief Executive Officer"),
+      roster("Shaurya Prakaash", "Founder & Chief Executive Officer", "/images/board/shaurya.JPG"),
       roster("Anthony Cardoza", "Executive Vice President / Co-Founder"),
-      roster("Maya Nayberg", "Chief Operating Officer"),
-      roster("Anthony Volkov", "Chief Investment Officer"),
+      roster("Maya Nayberg", "Chief Operating Officer / Founding Team", "/images/board/maya.JPG"),
       roster("Aarzu Singh", "Chief Financial Officer"),
-      roster("Noor Dhillon", "Chief Quantitative Officer"),
-      roster("Jacqueline Dao", "Chief External Relations Officer"),
-      roster("Matthieu Fuller", "Chief Technology Officer"),
     ],
   },
   {
-    id: "vps",
-    label: "Vice Presidents",
+    id: "departments",
+    label: "Departments",
     members: [
+      roster("Noor Dhillon", "VP of Quant", "/images/board/noor.JPEG"),
+      roster("Anirudh Iyengar", "Director of Quant", "/images/board/anirudh.jpg"),
+      roster("Sattvik Kurani", "VP of Asset Management"),
       roster("Alibek Tolegen", "VP of Asset Management"),
-      roster("Prisca Lee", "VP of Activities"),
-      roster("Shiyo Ohashi", "VP of Marketing"),
     ],
   },
   {
-    id: "other-board",
-    label: "Other Board Members",
-    members: [roster("Daniel Solichin", "FP&A Analyst")],
+    id: "operations",
+    label: "Operations",
+    members: [
+      roster("Matthieu Fuller", "VP of Technology"),
+      roster("Shiyo Ohashi", "VP of Marketing", "/images/board/shiyo.JPG"),
+      roster("Prisca Lee", "VP of Activities & Events", "/images/board/prisca.JPG"),
+      roster("Jacqueline Dao", "VP of External Relations", "/images/board/jackie.JPG"),
+      roster("Daniel Solichin", "VP of FP&A"),
+    ],
   },
 ];
 

@@ -27,7 +27,7 @@ export default function CurrentMembersPage() {
         className="!pb-16 md:!pb-20"
       />
 
-      <TeamMembersSection id="board" label="Board" divisions={boardDivisions} />
+      <TeamMembersSection id="board" label="Board" divisions={boardDivisions} showPhotos />
       <TeamMembersSection id="general-members" label="General Members" divisions={memberDivisions} />
 
       <ApplyCtaBand
