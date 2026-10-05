@@ -133,10 +133,12 @@ export function TeamMembersSection({
   label,
   divisions,
   id,
+  showPhotos = false,
 }: {
   label: string;
   divisions: readonly { id?: string; label: string; members: TeamMember[] }[];
   id?: string;
+  showPhotos?: boolean;
 }) {
   return (
     <section id={id} className="section-padding scroll-mt-24 border-b border-editorial/6">
@@ -153,7 +155,11 @@ export function TeamMembersSection({
               <span className="mb-6 block font-mono text-xs tracking-wide text-text/45">
                 {division.label}
               </span>
-              <MemberDirectory members={division.members} />
+              {showPhotos ? (
+                <MemberCardGrid members={division.members} />
+              ) : (
+                <MemberDirectory members={division.members} />
+              )}
             </div>
           ))}
         </div>
