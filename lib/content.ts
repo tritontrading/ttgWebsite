@@ -5,35 +5,23 @@ export const site = {
     shortName: "TTG",
     university: "University of California, San Diego",
     hero: {
-        headline: "Practice finance, strategy, and quantitative research through",
-        divisions: [
-            {
-                label: "Asset Management.",
-                image: "/images/hero/asset-management.png",
-                alt: "TTG members at an info session",
-            },
-            {
-                label: "Quantitative Research.",
-                image: "/images/hero/quantitative-research.png",
-                alt: "TTG members collaborating with laptops",
-            },
-            {
-                label: "Business Advisory.",
-                image: "/images/hero/business-advisory.png",
-                alt: "TTG members at a client advisory project",
-            },
-        ],
+        headline: "Build practical experience in finance, investing, and quantitative research.",
+        description:
+            "Triton Trading Group is a nonprofit student organization serving students at the University of California, San Diego through hands-on programs in Asset Management, Financial Planning & Analysis, Quantitative Finance, and professional development.",
+        image: "/images/hero/asset-management.png",
+        alt: "Triton Trading Group members at an information session",
     },
 } as const;
 
 export const divisionLinks = [
-    { label: "Asset management", href: "/asset-management" },
-    { label: "FP&A", href: "/advisory" },
-    { label: "Quant", href: "/quant" },
+    { label: "Asset Management", href: "/asset-management" },
+    { label: "Financial Planning & Analysis", href: "/advisory" },
+    { label: "Quantitative Finance", href: "/quant" },
 ] as const;
 
 export const memberLinks = [
     { label: "Current", href: "/members/current" },
+    { label: "Founders", href: "/members/founders" },
     { label: "Alumni", href: "/members/alumni" },
 ] as const;
 
@@ -55,22 +43,10 @@ export const about = {
     ],
 } as const;
 
-export const sponsors = {
-    title: "Featured Sponsors",
-    description:
-        "QuantConnect and MarketCrunch directly support TTG members with tools and infrastructure used in research, market analysis, and quantitative development.",
-    items: [
-        { name: "QuantConnect", image: "/images/sponsors/quantconnect.avif" },
-        {
-            name: "MarketCrunch AI",
-            image: "/images/sponsors/marketcrunchai.png",
-        },
-    ],
-} as const;
-
 export const whoWeAre = {
     title: "About us",
     paragraphs: [
+        "Triton Trading Group is a nonprofit student organization focused on practical financial education, professional development, and applied learning for UC San Diego students.",
         "Triton Trading Group gives UC San Diego students a place to practice investment research, financial analysis, and quantitative work. Members learn through training, team projects, and presentations.",
     ],
     skillsLabel: "Skills Developed",
@@ -80,6 +56,15 @@ export const whoWeAre = {
         "algorithmic strategy",
         "consulting",
         "valuation analysis",
+    ],
+} as const;
+
+export const mission = {
+    title: "Our Mission",
+    paragraphs: [
+        "Triton Trading Group is a nonprofit organization serving students at the University of California, San Diego. Our mission is to provide students with practical financial education and professional development through hands-on experience in investment research, financial analysis, quantitative finance, and business strategy.",
+        "We carry out this mission through our primary programs in Asset Management, Financial Planning & Analysis, and Quantitative Finance. Members participate in structured training, investment and market research, financial modeling, quantitative strategy development, company projects, workshops, competitions, presentations, and other professional development opportunities.",
+        "Triton Trading Group owns and operates tritontradinggroup.org as the organization’s official website.",
     ],
 } as const;
 
@@ -307,39 +292,35 @@ export const recruitment = {
         },
     },
     schedule: {
-        title: "Fall 2026 Recruitment",
-        description:
-            "Key dates for the upcoming cycle. Times and locations will be confirmed closer to each event.",
+        title: "Schedule",
         events: [
             {
-                date: "Oct 1",
-                title: "Applications Open",
-                description:
-                    "Online application goes live. Submit your resume, transcript, and short responses by the deadline.",
+                date: "Thursday 10/01",
+                title: "Dirty Birds Social",
+                details: "8-9:30 pm | Dirty Birds UCSD | Casual",
             },
             {
-                date: "Oct 8",
-                title: "Info Session",
-                description:
-                    "Meet members, learn about each department, and ask questions about the recruitment process.",
+                date: "Friday 10/02",
+                title: "Yogurt Chats",
+                details: "11-9 pm | Yogurtworld | Casual",
             },
             {
-                date: "Oct 15",
-                title: "Written Assessment",
-                description:
-                    "Candidates complete a timed technical and fit assessment covering finance fundamentals and analytical reasoning.",
+                date: "Monday 10/05",
+                title: "Info Night",
+                details: "8-10 pm | Location TBD | Business Casual",
+                note: "Applications due tonight.",
             },
             {
-                date: "Oct 22–24",
+                date: "Wednesday 10/07",
+                title: "Stock Pitch Night",
+                qualifier: "Invite-only",
+                details: "8-10 pm | Business Professional",
+            },
+            {
+                date: "Saturday 10/10",
                 title: "Interviews",
-                description:
-                    "Selected applicants interview with department leads across technical, case, and behavioral rounds.",
-            },
-            {
-                date: "Oct 31",
-                title: "Offers & Onboarding",
-                description:
-                    "Offers released to new members. Accepted candidates begin orientation and the training program.",
+                qualifier: "Invite-only",
+                details: "Business Professional",
             },
         ],
     },
@@ -356,7 +337,7 @@ export const recruitment = {
             },
             {
                 question: "Can I apply to more than one department?",
-                answer: "Yes. You may indicate interest in Asset Management, FP&A, and Quant on your application. Final placement depends on fit, assessment performance, and interview outcomes.",
+                answer: "Yes. You may indicate interest in Asset Management, Financial Planning & Analysis, and Quantitative Finance on your application. Final placement depends on fit, assessment performance, and interview outcomes.",
             },
             {
                 question: "What does the recruitment process involve?",
@@ -376,8 +357,11 @@ export const recruitment = {
 
 export const footer = {
     email: "tritontradinggroup@ucsd.edu",
-    address: "9500 Gilman Drive",
+    description:
+        "Nonprofit student organization serving students at the University of California, San Diego",
+    address: "9500 Gilman Drive, La Jolla, CA 92093",
     ein: "41-2939437",
+    website: "tritontradinggroup.org",
     social: [
         {
             label: "LinkedIn",

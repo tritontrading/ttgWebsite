@@ -1,163 +1,68 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { recruitment } from "@/lib/content";
-import {
-  SectionDivider,
-  SectionLabel,
-  SectionShell,
-} from "@/components/ui/primitives";
-
-const ACTIVE_OFFSET = 78;
-
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
-}
-
-function easeInQuad(t: number) {
-  return t * t;
-}
+import { SectionShell } from "@/components/ui/primitives";
 
 export function RecruitmentTimeline() {
   const { schedule } = recruitment;
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const dateRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const activeIndexRef = useRef(-1);
-  const fadeTimeoutRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const wrapEl = wrapRef.current;
-    const dateEl = dateRef.current;
-    const titleEl = titleRef.current;
-    if (!wrapEl || !dateEl || !titleEl) return;
-
-    const events = [...wrapEl.querySelectorAll<HTMLElement>(".recruitment-tl-ev")];
-    if (!events.length) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let frame = 0;
-
-    const updateActive = () => {
-      let nextIndex = events.findIndex(
-        (event) => event.querySelector("h3")!.getBoundingClientRect().top > ACTIVE_OFFSET,
-      );
-      if (nextIndex === -1) {
-        nextIndex = events.length - 1;
-      }
-
-      if (nextIndex === activeIndexRef.current) return;
-
-      activeIndexRef.current = nextIndex;
-      events.forEach((event, index) => {
-        event.classList.toggle("is-active", index === nextIndex);
-      });
-
-      const active = events[nextIndex];
-      if (!active) return;
-
-      dateEl.style.opacity = "0";
-      titleEl.style.opacity = "0";
-      if (fadeTimeoutRef.current) {
-        window.clearTimeout(fadeTimeoutRef.current);
-      }
-      fadeTimeoutRef.current = window.setTimeout(() => {
-        dateEl.textContent = active.dataset.date ?? "";
-        titleEl.textContent = active.dataset.title ?? "";
-        dateEl.style.opacity = "1";
-        titleEl.style.opacity = "1";
-      }, 150);
-    };
-
-    const animate = () => {
-      updateActive();
-
-      if (!reduceMotion) {
-        const viewportHeight = window.innerHeight;
-
-        events.forEach((event) => {
-          const inner = event.querySelector<HTMLElement>(".recruitment-tl-ev-inner");
-          if (!inner) return;
-
-          const rect = event.getBoundingClientRect();
-          const center = rect.top + rect.height / 2;
-          const progress = 1 - Math.min(1, Math.max(0, center / viewportHeight));
-
-          let translateY = 0;
-          let opacity = 1;
-
-          if (progress < 0.45) {
-            const eased = easeOutCubic(progress / 0.45);
-            translateY = (1 - eased) * 78;
-            opacity = 0.2 + eased * 0.8;
-          } else if (progress < 0.86) {
-            translateY = 0;
-            opacity = 1;
-          } else {
-            const eased = easeInQuad((progress - 0.86) / 0.14);
-            translateY = -eased * 12;
-            opacity = 1 - eased * 0.45;
-          }
-
-          inner.style.transform = `translateY(${translateY}px)`;
-          inner.style.opacity = String(opacity);
-        });
-      }
-
-      frame = window.requestAnimationFrame(animate);
-    };
-
-    frame = window.requestAnimationFrame(animate);
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-      if (fadeTimeoutRef.current) {
-        window.clearTimeout(fadeTimeoutRef.current);
-      }
-    };
-  }, [schedule.events.length]);
-
-  const firstEvent = schedule.events[0];
 
   return (
-    <SectionShell id="recruitment-schedule" narrow>
-      <SectionLabel>Recruitment Timeline</SectionLabel>
-      <SectionDivider />
-
-      <div className="section-block-gap max-w-2xl">
-        <h2 className="font-heading text-3xl font-normal leading-[1.05] text-heading md:text-4xl">
+    <SectionShell id="recruitment-schedule" className="bg-surface">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-12 text-center font-sans text-3xl font-bold uppercase tracking-tight text-heading md:mb-14 md:text-4xl">
           {schedule.title}
         </h2>
-        <p className="mt-6 text-base leading-loose text-text/70">{schedule.description}</p>
-      </div>
 
-      <div ref={wrapRef} className="recruitment-tl-wrap">
-        <div className="recruitment-tl-rail">
-          <div ref={dateRef} className="recruitment-tl-rail-date">
-            {firstEvent?.date}
-          </div>
-          <div ref={titleRef} className="recruitment-tl-rail-title">
-            {firstEvent?.title}
-          </div>
-        </div>
-
-        <div className="recruitment-tl-events">
+        <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-5">
           {schedule.events.map((event, index) => (
             <article
               key={event.title}
-              className={`recruitment-tl-ev${index === 0 ? " is-active" : ""}`}
-              data-date={event.date}
-              data-title={event.title}
+              className={`pb-8 lg:pb-0 ${
+                index > 0
+                  ? "border-t border-border pt-7 lg:border-l lg:border-t-0 lg:pt-0 lg:pl-5"
+                  : ""
+              } ${index % 2 === 1 ? "sm:border-l sm:pl-5" : ""} ${
+                index === 1 ? "sm:border-t-0 sm:pt-0" : ""
+              }`}
             >
-              <div className="recruitment-tl-ev-inner">
-                <span className="recruitment-tl-mobile-date">{event.date}</span>
-                <h3 className="font-heading text-xl font-normal text-heading md:text-2xl">
-                  {event.title}
-                </h3>
-                <p className="max-w-lg text-base leading-loose text-text/75">{event.description}</p>
-              </div>
+              <p className="mb-5 font-sans text-sm font-bold uppercase leading-tight text-heading">
+                {event.date}
+              </p>
+              <h3 className="font-heading text-xl font-bold leading-tight text-heading">
+                {event.title}
+                {"qualifier" in event && event.qualifier && (
+                  <span className="block">[{event.qualifier}]</span>
+                )}
+              </h3>
+              <p className="mt-3 text-base leading-snug text-text">{event.details}</p>
+              {"note" in event && event.note && (
+                <p className="mt-7 font-sans text-base font-bold leading-snug text-heading">
+                  {event.note}
+                </p>
+              )}
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex flex-col gap-6 border-t border-border pt-8 text-center text-sm leading-snug text-text sm:flex-row sm:items-end sm:justify-between sm:text-left">
+          <address className="not-italic">
+            <p className="font-bold text-heading">Recruitment Questions? Contact us:</p>
+            <a className="hover:underline" href="mailto:tritontrading@tritontradinggroup.org">
+              tritontrading@tritontradinggroup.org
+            </a>
+          </address>
+          <p>
+            Website:{" "}
+            <a className="hover:underline" href="https://tritontradinggroup.org">
+              tritontradinggroup.org
+            </a>
+            <br />
+            LinkedIn:{" "}
+            <a
+              className="hover:underline"
+              href="https://www.linkedin.com/company/tritontradinggroup"
+            >
+              @tritontradinggroup
+            </a>
+          </p>
         </div>
       </div>
     </SectionShell>

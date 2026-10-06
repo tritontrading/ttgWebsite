@@ -7,23 +7,30 @@ export function Footer() {
     <footer className="border-t border-footer-border bg-footer-bg px-8 py-16 text-footer-text md:px-16 md:py-24">
       <div className="site-container">
         <div className="flex flex-col items-start justify-between gap-12 md:flex-row md:items-start md:gap-16">
-          <div>
+          <div className="max-w-md">
             <span className="mb-4 block font-mono text-sm font-semibold text-footer-text">
-              {site.name.toUpperCase()}
+              {site.name}
             </span>
-            <span className="font-mono text-sm leading-relaxed text-footer-text/80">{site.university}</span>
+            <p className="font-mono text-xs leading-relaxed text-footer-text/80">{footer.description}</p>
+            <address className="mt-4 font-mono text-xs not-italic leading-relaxed text-footer-text/80">
+              {footer.address}
+            </address>
+            <p className="font-mono text-xs leading-relaxed text-footer-text/80">EIN: {footer.ein}</p>
+            <p className="font-mono text-xs leading-relaxed text-footer-text/80">
+              Official Website:{" "}
+              <a
+                href={`https://${footer.website}`}
+                className="text-footer-link transition-colors duration-200 hover:text-footer-text"
+              >
+                {footer.website}
+              </a>
+            </p>
             <a
               href={`mailto:${footer.email}`}
               className="mt-4 block font-mono text-sm text-footer-link transition-colors duration-200 hover:text-footer-text"
             >
               {footer.email}
             </a>
-            <span className="mt-4 block font-mono text-xs leading-relaxed text-footer-text/80">
-              {footer.address}
-            </span>
-            <span className="block font-mono text-xs leading-relaxed text-footer-text/80">
-              EIN {footer.ein}
-            </span>
           </div>
 
           <div className="min-w-56">

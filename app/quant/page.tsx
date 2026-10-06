@@ -129,7 +129,7 @@ export default function QuantPage() {
       </EditorialSection>
 
       <ApplyCtaBand
-        title="Interested in Quant?"
+        title="Interested in Quantitative Finance?"
         description="Python experience helps, but it is not required. Training starts with the fundamentals."
       />
     </SiteLayout>
