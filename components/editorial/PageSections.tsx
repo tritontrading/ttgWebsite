@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { applicationFormUrl } from "@/lib/content";
 
 type PageHeroProps = {
   label?: string;
@@ -186,13 +185,15 @@ export function ApplyCtaBand({
   title,
   description,
   buttonLabel = "Apply Now",
-  href = applicationFormUrl,
+  href,
+  note = "Applications Closed",
 }: {
   eyebrow?: string;
   title: string;
   description: string;
   buttonLabel?: string;
   href?: string;
+  note?: string;
 }) {
   return (
     <section className="section-padding border-t border-editorial/6">
@@ -206,14 +207,20 @@ export function ApplyCtaBand({
           <h2 className="mb-4 font-heading text-3xl font-normal text-heading">{title}</h2>
           <p className="text-sm text-text/50">{description}</p>
         </div>
-        <a
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          className="w-full shrink-0 rounded-md border border-editorial px-8 py-4 text-center font-mono text-sm tracking-widest uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
-        >
-          {buttonLabel}
-        </a>
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full shrink-0 rounded-md border border-editorial px-8 py-4 text-center font-mono text-sm tracking-widest uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
+          >
+            {buttonLabel}
+          </a>
+        ) : (
+          <span className="w-full shrink-0 rounded-md border border-editorial/40 px-8 py-4 text-center font-mono text-sm tracking-widest uppercase text-text/50 sm:w-auto">
+            {note}
+          </span>
+        )}
       </div>
     </section>
   );
