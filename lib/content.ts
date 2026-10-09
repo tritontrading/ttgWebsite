@@ -274,23 +274,10 @@ export const timeline = {
     ],
 } as const;
 
-export const applicationFormUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSdfXBTLXA6OsW1Kaco9lp6bi-726-bZoRD9FWYwBUjH_2Ckbg/viewform";
-
 export const recruitment = {
     title: "Join Triton Trading Group",
     description:
         "Triton Trading Group recruits students each academic quarter who are interested in finance, markets, technology, and business strategy.",
-    links: {
-        interestForm: {
-            label: "Interest Form",
-            href: applicationFormUrl,
-        },
-        application: {
-            label: "Application",
-            href: applicationFormUrl,
-        },
-    },
     schedule: {
         title: "Schedule",
         events: [
@@ -381,5 +368,5 @@ export const footer = {
         },
     ],
     disclaimer:
-        "Educational content only; not investment, legal, or tax advice.",
+        "Educational content only; not investment, legal, or tax advice. Student organization; no university endorsement is implied.",
 } as const;
