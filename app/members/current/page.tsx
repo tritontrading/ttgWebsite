@@ -32,7 +32,7 @@ export default function CurrentMembersPage() {
       <ApplyCtaBand
         eyebrow="Join The Team"
         title="Want to be part of this?"
-        description="Applications open each academic quarter. We recruit across all majors — what matters is curiosity, commitment, and a drive to do serious work."
+        description="Recruitment runs each academic quarter; applications are currently closed. We recruit across all majors — what matters is curiosity, commitment, and a drive to do serious work."
       />
     </SiteLayout>
   );
