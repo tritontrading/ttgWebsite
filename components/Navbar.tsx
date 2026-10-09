@@ -66,9 +66,6 @@ export function Navbar() {
             <NavButtonLink href="/donate" variant="secondary">
               Donate
             </NavButtonLink>
-            <NavButtonLink href="/recruitment" variant="primary">
-              Apply
-            </NavButtonLink>
           </div>
         </div>
 
@@ -129,13 +126,6 @@ export function Navbar() {
                 onClick={closeMenu}
               >
                 Donate
-              </Link>
-              <Link
-                href="/recruitment"
-                className="inline-flex flex-1 items-center justify-center rounded-md border border-navy bg-navy px-4 py-2 font-mono text-sm leading-none text-cream transition-all duration-200 hover:border-gold hover:bg-gold hover:text-navy"
-                onClick={closeMenu}
-              >
-                Apply
               </Link>
             </div>
           </div>
