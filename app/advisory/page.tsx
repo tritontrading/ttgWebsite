@@ -269,7 +269,7 @@ export default function AdvisoryPage() {
       <ApplyCtaBand
         eyebrow="For Students"
         title="Interested in Financial Planning & Analysis?"
-        description="Applications open each academic quarter. The Financial Planning & Analysis track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
+        description="Recruitment runs each academic quarter; applications are currently closed. The Financial Planning & Analysis track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
       />
     </SiteLayout>
   );

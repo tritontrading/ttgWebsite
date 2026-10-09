@@ -68,32 +68,12 @@ export const advisoryPage = {
       ],
     },
     {
-      title: "Operations & Strategy",
-      items: [
-        "Market research and competitive analysis",
-        "Go-to-market planning",
-        "Sales process and CRM design",
-        "Workflow optimization",
-        "KPI tracking and project roadmaps",
-      ],
+      title: "Strategic Finance & Research",
+      items: ["Market research and competitive analysis", "Go-to-market analysis", "Dashboards and financial reporting"],
     },
     {
-      title: "Tech & AI Integration",
-      items: [
-        "Workflow automation",
-        "AI tooling and API integration",
-        "Digital infrastructure setup",
-        "Digitization for SMBs",
-      ],
-    },
-    {
-      title: "Marketing & Growth",
-      items: [
-        "Paid ad campaigns (Meta, TikTok, Instagram)",
-        "Short-form video and content creation",
-        "Website development (UI/UX)",
-        "Marketing strategy and sales support",
-      ],
+      title: "Finance-Related Automation",
+      items: ["Financial reporting workflows", "Data pipelines for financial analysis", "Finance-related tooling and automation"],
     },
   ],
 
