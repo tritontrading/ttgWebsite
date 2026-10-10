@@ -2,7 +2,7 @@ export const assetManagementPage = {
   label: "Asset Management",
   titleLines: ["Fundamental", "Investing"],
   description:
-    "Members research public companies, build valuation models, and present investment ideas to TTG's investment committee.",
+    "A student investment research and portfolio education program. Members research public companies, build valuation models, and present investment ideas to TFG's investment committee. This page does not offer external investment management services.",
   heroImage: "/images/meetings/image1.png",
   practiceImage: "/images/tabling/image2.png",
   sectors: [

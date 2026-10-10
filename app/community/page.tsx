@@ -10,9 +10,10 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { CommunityCarousel } from "@/components/CommunityCarousel";
 
 export const metadata: Metadata = {
-  title: "Community - Triton Trading Group",
+  alternates: { canonical: "/community" },
+  title: "Community - Triton Finance Group",
   description:
-    "Explore the TTG community: mentorship, socials, recruiting support, alumni connections, and the member culture built around learning together.",
+    "Explore the TFG community: mentorship, socials, recruiting support, alumni connections, and the member culture built around learning together.",
 };
 
 const COMMUNITY_PILLARS = [
@@ -30,7 +31,7 @@ const COMMUNITY_PILLARS = [
   },
   {
     title: "Professional Network",
-    desc: "Members can connect with alumni and speakers through TTG programming.",
+    desc: "Members can connect with alumni and speakers through TFG programming.",
   },
 ];
 
@@ -66,12 +67,12 @@ export default function CommunityPage() {
     <SiteLayout>
       <PageHeroSplit
         label="Community"
-        title="Meet the TTG community"
-        description="TTG brings together students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
+        title="Meet the TFG community"
+        description="TFG brings together students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
         media={
           <SiteImage
             src="/images/socials/image1.png"
-            alt="TTG community event"
+            alt="TFG community event"
             width={700}
             height={420}
             className="h-auto w-full object-cover"
@@ -88,7 +89,7 @@ export default function CommunityPage() {
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-relaxed text-text/55">
-            Photos from socials, mentorship sessions, and cross-branch events — the parts of TTG
+            Photos from socials, mentorship sessions, and cross-branch events — the parts of TFG
             that don&apos;t show up in a strategy writeup.
           </p>
         </div>
@@ -122,14 +123,14 @@ export default function CommunityPage() {
             <div className="grid grid-cols-2 gap-4">
               <SiteImage
                 src="/images/socials/image2.png"
-                alt="TTG members together"
+                alt="TFG members together"
                 width={320}
                 height={360}
                 className="h-[15rem] w-full object-cover md:h-[18rem]"
               />
               <SiteImage
                 src="/images/socials/image1.png"
-                alt="TTG event photo"
+                alt="TFG event photo"
                 width={320}
                 height={360}
                 className="h-[15rem] w-full object-cover md:h-[18rem]"
@@ -177,7 +178,7 @@ export default function CommunityPage() {
       </EditorialSection>
 
       <ApplyCtaBand
-        title="Interested in TTG?"
+        title="Interested in TFG?"
         description="Apply to learn with students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
       />
     </SiteLayout>
