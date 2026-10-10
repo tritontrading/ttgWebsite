@@ -1,5 +1,5 @@
 export const donatePage = {
-  label: "Support TTG",
+  label: "Support TFG",
   titleLines: ["Help Students", "Learn By Doing"],
   paragraphs: [
     "Support practical training, student projects, and programming for UC San Diego students interested in finance, strategy, and quantitative work.",
@@ -8,14 +8,14 @@ export const donatePage = {
   goFundMeUrl: "https://gofund.me/5648b15d5",
   whyTitle: "Help students practice the work they want to pursue.",
   whyParagraphs: [
-    "TTG gives members structured opportunities to research companies, analyze business questions, and test quantitative ideas.",
+    "TFG gives members structured opportunities to research companies, analyze business questions, and test quantitative ideas.",
     "Your support helps make those learning experiences available to more students.",
   ],
   audiences: [
     {
       label: "UC Alumni",
       description:
-        "If you remember needing a break early in your career — and wish there had been a group doing what TTG is doing — this is how you pay it forward.",
+        "If you remember needing a break early in your career — and wish there had been a group doing what TFG is doing — this is how you pay it forward.",
     },
     {
       label: "Philanthropists",

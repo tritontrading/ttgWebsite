@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ClientsSection } from "@/components/ClientsSection";
 import { CommunitySection } from "@/components/CommunitySection";
@@ -8,6 +9,8 @@ import { WhoWeAreSection } from "@/components/WhoWeAreSection";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionShell } from "@/components/ui/primitives";
 import { mission } from "@/lib/content";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function HomePage() {
   return (
