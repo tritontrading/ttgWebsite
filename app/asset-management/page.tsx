@@ -10,7 +10,8 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { assetManagementPage as page } from "@/lib/pages/asset-management";
 
 export const metadata: Metadata = {
-  title: "Asset Management - Triton Trading Group",
+  alternates: { canonical: "/asset-management" },
+  title: "Asset Management - Triton Finance Group",
 };
 
 export default function AssetManagementPage() {

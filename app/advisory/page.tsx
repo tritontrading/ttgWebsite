@@ -6,9 +6,10 @@ import { ButtonLink } from "@/components/ui/Button";
 import { advisoryPage as page } from "@/lib/pages/advisory";
 
 export const metadata: Metadata = {
-  title: "Financial Planning & Analysis - Triton Trading Group",
+  alternates: { canonical: "/advisory" },
+  title: "Financial Planning & Analysis - Triton Finance Group",
   description:
-    "TTG's Financial Planning & Analysis division provides student-led financial consulting and practical training for UC San Diego students.",
+    "TFG's Financial Planning & Analysis division provides student-led financial consulting and practical training for UC San Diego students.",
 };
 
 export default function AdvisoryPage() {
@@ -79,7 +80,7 @@ export default function AdvisoryPage() {
       <EditorialSection className="border-editorial/5" border>
         <div className="section-block-gap">
           <EditorialLabel>Why Us</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Why Choose TTG</h2>
+          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Why Choose TFG</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
             We scope each project around the decision, data, and deliverables the organization needs.
           </p>
@@ -162,7 +163,7 @@ export default function AdvisoryPage() {
               cycle.
             </p>
             <ButtonLink href={`mailto:${page.email}`} variant="secondary" fullWidth>
-              Email TTG
+              Email TFG
             </ButtonLink>
           </div>
         </div>

@@ -5,13 +5,14 @@ import { TeamGrid } from "@/components/team/TeamMemberCard";
 import { memberLinkedins } from "@/lib/memberLinkedins";
 
 export const metadata: Metadata = {
-  title: "Founders - Triton Trading Group",
+  alternates: { canonical: "/members/founders" },
+  title: "Founders - Triton Finance Group",
 };
 
 export default function FoundersPage() {
   return (
     <SiteLayout>
-      <PageHero title="Founders" description="The people who started Triton Trading Group." />
+      <PageHero title="Founders" description="The people who started Triton Trading Group, now known publicly as Triton Finance Group." />
       <TeamGrid
         label="Founders"
         members={[
