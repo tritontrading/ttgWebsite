@@ -2,7 +2,7 @@ export const advisoryPage = {
   label: "Financial Planning & Analysis",
   title: "Financial Planning & Analysis",
   description:
-    "TTG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
+    "TFG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
   email: "tritontradinggroup@ucsd.edu",
 
   process: [
@@ -80,7 +80,7 @@ export const advisoryPage = {
   workWithUs: {
     title: "Work With Us",
     description:
-      "TTG partners with startups, student ventures, and organizations that need structured financial analysis, strategic support, and hands-on project work. Our members operate like a consulting bench — scoped engagements, clear deliverables, and professional standards.",
+      "TFG partners with startups, student ventures, and organizations that need structured financial analysis, strategic support, and hands-on project work. Our members operate like a consulting bench — scoped engagements, clear deliverables, and professional standards.",
     offerings: [
       {
         title: "Financial Planning & Analysis Consulting",
@@ -100,7 +100,7 @@ export const advisoryPage = {
     ],
     process: [
       "Share a brief overview of your organization and project scope.",
-      "TTG reviews fit and assigns a student project team.",
+      "TFG reviews fit and assigns a student project team.",
       "Teams deliver structured work on an agreed timeline with check-ins throughout.",
     ],
   },

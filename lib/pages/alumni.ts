@@ -11,5 +11,5 @@ export const alumniMembers: TeamMember[] = [
   { name: "Hudson Betts", role: "Class of 2026", linkedin: memberLinkedins["Hudson Betts"], photoTba: true },
   { name: "Ryan Hayden", role: "Class of 2026", linkedin: memberLinkedins["Ryan Hayden"], photoTba: true },
   { name: "Srihan Basvapatri", role: "Machine Learning Engineer", linkedin: memberLinkedins["Srihan Basvapatri"], photoTba: true },
-  { name: "Gilad Segal", role: "TTG Alum", linkedin: memberLinkedins["Gilad Segal"], photoTba: true },
+  { name: "Gilad Segal", role: "TFG Alum", linkedin: memberLinkedins["Gilad Segal"], photoTba: true },
 ];

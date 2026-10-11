@@ -33,7 +33,7 @@ export function RecruitmentTimeline() {
                 )}
               </h3>
               <p className="mt-3 text-base leading-snug text-text">{event.details}</p>
-              {"note" in event && event.note && (
+              {"note" in event && typeof event.note === "string" && event.note && (
                 <p className="mt-7 font-sans text-base font-bold leading-snug text-heading">
                   {event.note}
                 </p>
