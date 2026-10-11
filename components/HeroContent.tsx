@@ -8,6 +8,7 @@ export function HeroContent() {
   return (
     <div className="site-container relative z-10 flex w-full flex-1 flex-col justify-center gap-14 pb-24 pt-40 md:gap-16 md:pb-32 md:pt-48 lg:grid lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-20 xl:gap-24">
       <div className="flex flex-col items-start gap-8 md:gap-10 lg:max-w-none lg:pr-6 xl:pr-10">
+        <p className="font-mono text-xs tracking-widest text-text/60 uppercase">Formerly Triton Trading Group</p>
         <h1 className="hero-reveal max-w-3xl font-heading text-[2.5rem] leading-[1.14] tracking-[-0.025em] text-heading sm:text-[2.875rem] md:text-[3.75rem] lg:max-w-[42rem] lg:text-[4rem]">
           {headline}
         </h1>
@@ -22,7 +23,7 @@ export function HeroContent() {
             variant="primary"
             className="px-6 py-2.5 text-xs tracking-[0.2em]"
           >
-            Join our team
+            View recruitment
           </ButtonLink>
           <ButtonLink
             href="/advisory"

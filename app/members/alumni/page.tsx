@@ -5,22 +5,23 @@ import { TeamGrid } from "@/components/team/TeamMemberCard";
 import { alumniMembers } from "@/lib/pages/alumni";
 
 export const metadata: Metadata = {
-  title: "Alumni - Triton Trading Group",
+  alternates: { canonical: "/members/alumni" },
+  title: "Alumni - Triton Finance Group",
 };
 
 export default function AlumniPage() {
   return (
     <SiteLayout>
       <PageHero
-        title="TTG Alumni"
-        description="Meet former TTG members."
+        title="TFG Alumni"
+        description="Meet former TFG members."
       />
 
       <TeamGrid label="Class of 2026" members={alumniMembers} />
 
       <ApplyCtaBand
         eyebrow="Stay Connected"
-        title="Are you a TTG alum?"
+        title="Are you a TFG alum?"
         description="Reach out if you'd like to be featured here or stay connected with current members through recruiting and mentorship."
         buttonLabel="Get In Touch"
         href="mailto:tritontradinggroup@ucsd.edu"

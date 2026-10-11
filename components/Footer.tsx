@@ -15,7 +15,7 @@ export function Footer() {
             <address className="mt-4 font-mono text-xs not-italic leading-relaxed text-footer-text/80">
               {footer.address}
             </address>
-            <p className="font-mono text-xs leading-relaxed text-footer-text/80">EIN: {footer.ein}</p>
+            <p className="font-mono text-xs leading-relaxed text-footer-text/80">Legal entity: {site.legalName}. EIN: {footer.ein}</p>
             <p className="font-mono text-xs leading-relaxed text-footer-text/80">
               Official Website:{" "}
               <a
@@ -55,9 +55,10 @@ export function Footer() {
 
           <div className="flex flex-col gap-3 text-left md:max-w-xs md:text-right">
             <span className="font-mono text-xs leading-relaxed text-footer-text/80">
-              Copyright {year} {site.name}. All rights reserved.
+              Copyright {year} {site.legalName}. All rights reserved.
             </span>
             <span className="font-mono text-xs leading-relaxed text-footer-text/70">{footer.disclaimer}</span>
+            <a href="/disclaimer" className="font-mono text-xs underline">Website disclaimer</a>
           </div>
         </div>
       </div>

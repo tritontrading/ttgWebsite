@@ -10,7 +10,8 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { quantPage as page } from "@/lib/pages/quant";
 
 export const metadata: Metadata = {
-  title: "Quantitative Finance - Triton Trading Group",
+  alternates: { canonical: "/quant" },
+  title: "Quantitative Finance - Triton Finance Group",
 };
 
 export default function QuantPage() {

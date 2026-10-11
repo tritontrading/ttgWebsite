@@ -3,7 +3,8 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { Recruitment } from "@/components/Recruitment";
 
 export const metadata: Metadata = {
-  title: "Recruitment - Triton Trading Group",
+  alternates: { canonical: "/recruitment" },
+  title: "Recruitment - Triton Finance Group",
 };
 
 export default function RecruitmentPage() {
