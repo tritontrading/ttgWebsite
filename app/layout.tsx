@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     "Triton Finance Group is a nonprofit student organization serving UC San Diego students through Asset Management, Financial Planning & Analysis, and Quantitative Finance programs.",
   icons: {
-    icon: "/images/brand/logo.png",
-    shortcut: "/images/brand/logo.png",
+    icon: "/images/brand/logo.svg",
+    shortcut: "/images/brand/logo.svg",
     apple: "/images/brand/logo.png",
   },
   openGraph: {
