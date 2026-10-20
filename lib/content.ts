@@ -358,8 +358,8 @@ export const footer = {
         { label: "X", handle: "@ttgatucsd", href: "https://x.com/ttgatucsd" },
         {
             label: "Instagram",
-            handle: "@tritontradingucsd",
-            href: "https://www.instagram.com/tritontradingucsd",
+            handle: "@tritonfinancegroup",
+            href: "https://www.instagram.com/tritonfinancegroup",
         },
         {
             label: "Reddit",
