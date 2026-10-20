@@ -36,7 +36,7 @@ export function Navbar() {
       <div className="flex h-18 w-full items-center gap-6">
         <Link href="/" className="mr-auto flex items-center gap-4">
           <SiteImage
-            src="/images/brand/logo.png"
+            src="/images/brand/logo.svg"
             alt={`${site.shortName} logo`}
             width={40}
             height={40}
@@ -133,4 +133,4 @@ export function Navbar() {
       </div>
     </nav>
   );
-}
+            }
