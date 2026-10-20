@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/brand/logo.svg",
     shortcut: "/images/brand/logo.svg",
-    apple: "/images/brand/logo.png",
+    apple: "/images/brand/apple-touch-icon.png",
   },
   openGraph: {
     title: "Triton Finance Group - UCSD",
@@ -18,7 +18,14 @@ export const metadata: Metadata = {
       "A nonprofit student organization providing hands-on experience in Asset Management, Financial Planning & Analysis, and Quantitative Finance.",
     type: "website",
     siteName: "Triton Finance Group",
-    images: [{ url: "/images/brand/logo.png", alt: "Triton Finance Group" }],
+    images: [
+      {
+        url: "/images/brand/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Triton Finance Group",
+      },
+    ],
   },
 };
 
