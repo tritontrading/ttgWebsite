@@ -1,11 +1,12 @@
 import type { TeamMember } from "@/components/team/TeamMemberCard";
 import { memberLinkedins } from "@/lib/memberLinkedins";
 
-const roster = (name: string, role: string): TeamMember => ({
+const roster = (name: string, role: string, image?: string): TeamMember => ({
   name,
   role,
   linkedin: memberLinkedins[name],
-  photoTba: true,
+  photoTba: !image,
+  image,
 });
 
 export const boardDivisions = [
@@ -13,13 +14,13 @@ export const boardDivisions = [
     id: "c-suite",
     label: "C-Suite",
     members: [
-      roster("Shaurya Prakaash", "Chief Executive Officer"),
+      roster("Shaurya Prakaash", "Chief Executive Officer", "/images/board/shaurya.JPG"),
       roster("Anthony Cardoza", "Executive Vice President / Co-Founder"),
-      roster("Maya Nayberg", "Chief Operating Officer"),
-      roster("Anthony Volkov", "Chief Investment Officer"),
+      roster("Maya Nayberg", "Chief Operating Officer", "/images/board/maya.JPG"),
+      roster("Anthony Volkov", "Chief Investment Officer", "/images/board/anthony.JPG"),
       roster("Aarzu Singh", "Chief Financial Officer"),
-      roster("Noor Dhillon", "Chief Quantitative Officer"),
-      roster("Jacqueline Dao", "Chief External Relations Officer"),
+      roster("Noor Dhillon", "Chief Quantitative Officer", "/images/board/noor.JPEG"),
+      roster("Jacqueline Dao", "Chief External Relations Officer", "/images/board/jackie.JPG"),
       roster("Matthieu Fuller", "Chief Technology Officer"),
     ],
   },
@@ -28,8 +29,8 @@ export const boardDivisions = [
     label: "Vice Presidents",
     members: [
       roster("Alibek Tolegen", "VP of Asset Management"),
-      roster("Prisca Lee", "VP of Activities"),
-      roster("Shiyo Ohashi", "VP of Marketing"),
+      roster("Prisca Lee", "VP of Activities", "/images/board/prisca.JPG"),
+      roster("Shiyo Ohashi", "VP of Marketing", "/images/board/shiyo.JPG"),
     ],
   },
   {
@@ -50,7 +51,7 @@ export const memberDivisions = [
       roster("Clevon Ho", "Equity Analyst"),
       roster("Elias Wilmert", "Equity Analyst"),
       roster("Jacob De Palma", "Equity Analyst"),
-      roster("Micah Watson", "Equity Analyst"),
+      roster("Micah Watson", "Equity Analyst", "/images/board/micah.JPG"),
       roster("Ramon De La O", "Equity Analyst"),
       roster("Roma Patel", "Equity Analyst"),
       roster("Ruhan Karthik", "Equity Analyst"),
@@ -63,7 +64,7 @@ export const memberDivisions = [
     id: "quant",
     label: "Quant",
     members: [
-      roster("Anirudh Iyengar", "Director of Quant"),
+      roster("Anirudh Iyengar", "Director of Quant", "/images/board/anirudh.jpg"),
       roster("Divyansh Kanodia", "Quant Analyst"),
       roster("Gilad Segal", "Quant Analyst"),
       roster("Kevin Lin", "Quant Analyst"),
