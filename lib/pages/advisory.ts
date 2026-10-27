@@ -3,7 +3,7 @@ export const advisoryPage = {
   title: "Financial Planning & Analysis",
   description:
     "TFG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
-  email: "tritontradinggroup@ucsd.edu",
+  email: "contact@tritonfinance.org",
 
   process: [
     {
