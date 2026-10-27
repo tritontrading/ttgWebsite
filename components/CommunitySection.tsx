@@ -14,7 +14,7 @@ export function CommunitySection() {
         </div>
       </div>
 
-      <CommunityCarousel />
+      <CommunityCarousel photos={community.professionalPhotos} />
     </SectionShell>
   );
 }
