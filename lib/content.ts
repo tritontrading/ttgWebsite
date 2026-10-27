@@ -343,12 +343,12 @@ export const recruitment = {
 } as const;
 
 export const footer = {
-    email: "tritontradinggroup@ucsd.edu",
+    email: "contact@tritonfinance.org",
     description:
         "Nonprofit student organization serving students at the University of California, San Diego",
     address: "9500 Gilman Drive, La Jolla, CA 92093",
     ein: "41-2939437",
-    website: "tritontradinggroup.org",
+    website: "tritonfinance.org",
     social: [
         {
             label: "LinkedIn",
