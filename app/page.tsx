@@ -18,7 +18,7 @@ export default function HomePage() {
       <Hero />
       <WhoWeAreSection />
       <SectionShell id="mission">
-        <div className="layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-start">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center md:gap-10">
           <h2 className="font-heading text-4xl font-normal leading-[1.05] text-heading md:text-5xl">
             {mission.title}
           </h2>
@@ -36,17 +36,17 @@ export default function HomePage() {
       <NetworkSection />
       <CommunitySection />
       <section className="border-t border-border bg-navy">
-        <div className="site-container grid gap-10 py-20 md:grid-cols-[1fr_auto] md:items-end md:py-28">
+        <div className="site-container flex flex-col items-center gap-10 py-20 text-center md:py-28">
           <div className="max-w-2xl">
-            <p className="font-mono text-xs tracking-[0.24em] text-gold uppercase">Fall 2026 recruitment</p>
+            <p className="font-mono text-xs tracking-[0.24em] text-cream/50 uppercase">Fall 2026 recruitment</p>
             <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-cream md:text-6xl">
               Build practical experience before you graduate.
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-loose text-cream/70 md:text-lg">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-loose text-cream/70 md:text-lg">
               Study markets, work on client projects, and practice presenting your analysis.
             </p>
           </div>
-          <ButtonLink href="/recruitment" variant="gold" className="self-start md:self-auto">
+          <ButtonLink href="/recruitment" variant="secondary">
             View recruitment
           </ButtonLink>
         </div>

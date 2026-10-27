@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { community } from "@/lib/content";
 import { SiteImage } from "@/components/ui/SiteImage";
 
-type Photo = (typeof community.photos)[number];
+type Photo = { readonly src: string; readonly alt: string };
 
 const AUTO_ADVANCE_MS = 4000;
 const USER_PAUSE_MS = 3500;
@@ -18,7 +18,11 @@ function shufflePhotos<T>(items: readonly T[]): T[] {
   return copy;
 }
 
-export function CommunityCarousel() {
+export function CommunityCarousel({
+  photos: sourcePhotos = community.photos,
+}: {
+  photos?: readonly Photo[];
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const userActiveRef = useRef(false);
@@ -30,9 +34,9 @@ export function CommunityCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    setPhotos(shufflePhotos(community.photos));
+    setPhotos(shufflePhotos(sourcePhotos));
     slideRefs.current = [];
-  }, []);
+  }, [sourcePhotos]);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");

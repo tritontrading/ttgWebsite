@@ -9,6 +9,9 @@ export const cSuite: TeamMember[] = [
     joined: "Founder",
     bio: "Provides overall leadership for the organization and sets TFG's strategic direction.",
     image: "/images/board/shaurya.JPG",
+    photoPosition: "50% 15%",
+    photoScale: 1.6,
+    photoOrigin: "37% 50%",
     linkedin: memberLinkedins["Shaurya Prakaash"],
   },
   {
