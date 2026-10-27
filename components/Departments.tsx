@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { departments } from "@/lib/content";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function Departments() {
   return (
@@ -16,13 +17,14 @@ export function Departments() {
               href={branch.href}
               className="group flex h-full flex-col overflow-hidden lg:border-l lg:border-card-border lg:pl-12 lg:first:border-l-0 lg:first:pl-0"
             >
-              <div
-                aria-hidden="true"
-                className="relative flex aspect-4/3 items-center justify-center border-b border-card-border bg-surface"
-              >
-                <span className="select-none font-heading text-7xl leading-none text-heading/10 transition-colors duration-500 group-hover:text-heading/20 md:text-8xl">
-                  {branch.department.charAt(0)}
-                </span>
+              <div className="relative aspect-4/3 overflow-hidden border-b border-card-border bg-surface">
+                <SiteImage
+                  src={branch.image}
+                  alt={branch.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
               </div>
 
               <div className="flex h-full flex-col content-block-gap-lg pt-8 md:pt-10">
