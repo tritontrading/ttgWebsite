@@ -7,6 +7,12 @@ export type TeamMember = {
   joined?: string;
   bio?: string;
   image?: string | null;
+  /** CSS object-position for the circular face crop, e.g. "50% 25%". */
+  photoPosition?: string;
+  /** Extra zoom for loosely framed photos; 1 = none. */
+  photoScale?: number;
+  /** Transform origin used with photoScale, in container coordinates. Defaults to photoPosition. */
+  photoOrigin?: string;
   linkedin?: string;
   photoTba?: boolean;
 };
@@ -39,10 +45,10 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
 
   return (
     <div className="flex flex-col">
-      <div className="relative aspect-2/3 w-full overflow-hidden border border-card-border bg-editorial-muted">
+      <div className="relative mx-auto aspect-square w-full max-w-40 overflow-hidden rounded-full border border-card-border bg-editorial-muted">
         {member.photoTba || !member.image ? (
           <div className="flex h-full items-center justify-center" aria-label={`Avatar for ${member.name}`}>
-            <span className="font-mono text-3xl uppercase tracking-widest text-text/40">
+            <span className="font-mono text-2xl uppercase tracking-widest text-text/40">
               {member.name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("")}
             </span>
           </div>
@@ -51,12 +57,17 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover object-top"
-            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+            className="object-cover"
+            style={{
+              objectPosition: member.photoPosition ?? "50% 20%",
+              transform: member.photoScale ? `scale(${member.photoScale})` : undefined,
+              transformOrigin: member.photoOrigin ?? member.photoPosition ?? "50% 20%",
+            }}
+            sizes="(min-width: 1024px) 12vw, (min-width: 768px) 20vw, 40vw"
           />
         )}
       </div>
-      <div className="flex flex-col gap-1 pt-4">
+      <div className="flex flex-col items-center gap-1 pt-4 text-center">
         <MemberName member={member} />
         <p className="font-mono text-[11px] leading-snug tracking-wide text-text/55">{displayTitle}</p>
       </div>
