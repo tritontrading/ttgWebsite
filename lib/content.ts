@@ -79,6 +79,7 @@ export const departments = {
             description:
                 "Members cover sectors, build valuation models, write investment memos, and present their conclusions to the investment committee.",
             image: "/images/meetings/image1.png",
+            imageAlt: "TFG members in business attire at a meeting",
             bullets: [
                 "Conduct company and sector research",
                 "Build financial models and valuation frameworks",
@@ -94,7 +95,8 @@ export const departments = {
             title: "Help organizations answer finance and operating questions.",
             description:
                 "Members work on financial analysis, market research, business strategy, and systems projects for startups, student ventures, and organizations.",
-            image: "/images/tabling/image1.png",
+            image: "/images/hero/business-advisory.png",
+            imageAlt: "TFG members in professional dress",
             bullets: [
                 "Financial analysis and forecasting",
                 "Market research and competitive analysis",
@@ -112,6 +114,7 @@ export const departments = {
             description:
                 "Members use Python, financial data, and statistical methods to research, backtest, and evaluate systematic investment ideas.",
             image: "/images/meetings/image2.png",
+            imageAlt: "A TFG member presenting at a meeting",
             bullets: [
                 "Algorithmic trading strategies",
                 "Factor-based investing",
@@ -228,6 +231,40 @@ export const community = {
         {
             src: "/images/socials/group-night.png",
             alt: "TFG members together at night",
+        },
+    ],
+    professionalPhotos: [
+        {
+            src: "/images/big_group_picture-2.png",
+            alt: "TFG members in business attire at a formal group event",
+        },
+        {
+            src: "/images/big_group_picture.JPG",
+            alt: "TFG members at a Portfolio Management Program event",
+        },
+        {
+            src: "/images/brand/group_photoshoot.png",
+            alt: "TFG members in business attire",
+        },
+        {
+            src: "/images/hero/asset-management.png",
+            alt: "TFG information session in an auditorium",
+        },
+        {
+            src: "/images/hero/quantitative-research.png",
+            alt: "TFG members collaborating on research",
+        },
+        {
+            src: "/images/hero/business-advisory.png",
+            alt: "TFG members in professional dress",
+        },
+        {
+            src: "/images/meetings/image1.png",
+            alt: "TFG members networking at a meeting",
+        },
+        {
+            src: "/images/meetings/image2.png",
+            alt: "A TFG member presenting at a meeting",
         },
     ],
 } as const;
