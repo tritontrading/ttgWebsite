@@ -16,7 +16,7 @@ export default function FoundersPage() {
       <TeamGrid
         label="Founders"
         members={[
-          { name: "Shaurya Prakaash", role: "Co-Founder", image: "/images/board/shaurya.JPG", linkedin: memberLinkedins["Shaurya Prakaash"] },
+          { name: "Shaurya Prakaash", role: "Co-Founder", image: "/images/board/shaurya.JPG", linkedin: memberLinkedins["Shaurya Prakaash"], photoPosition: "50% 15%", photoScale: 1.6, photoOrigin: "37% 50%" },
           { name: "Anthony Cardoza", role: "Co-Founder" },
         ]}
       />
