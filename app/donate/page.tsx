@@ -4,7 +4,8 @@ import { ApplyCtaBand, EditorialLabel, EditorialSection } from "@/components/edi
 import { donatePage as page } from "@/lib/pages/donate";
 
 export const metadata: Metadata = {
-  title: "Donate - Triton Trading Group",
+  alternates: { canonical: "/donate" },
+  title: "Donate - Triton Finance Group",
 };
 
 function ArrowIcon() {

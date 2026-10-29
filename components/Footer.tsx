@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { applicationFormUrl, footer, primaryLinks, site } from "@/lib/content";
+import { footer, primaryLinks, site } from "@/lib/content";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -16,7 +16,7 @@ export function Footer() {
             <address className="mt-4 font-mono text-xs not-italic leading-relaxed text-footer-text/80">
               {footer.address}
             </address>
-            <p className="font-mono text-xs leading-relaxed text-footer-text/80">EIN: {footer.ein}</p>
+            <p className="font-mono text-xs leading-relaxed text-footer-text/80">Legal entity: {site.legalName}. EIN: {footer.ein}</p>
             <p className="font-mono text-xs leading-relaxed text-footer-text/80">
               Official Website:{" "}
               <a
@@ -44,11 +44,8 @@ export function Footer() {
               <Link href="/community" className="hover:text-footer-text">Community</Link>
               <span className="mt-4 font-semibold text-footer-text">Recruitment</span>
               <p className="max-w-56 text-xs leading-relaxed text-footer-text/80">
-                Interested in joining TTG? Share your interest through our application form.
+                Applications are currently closed. Follow our social channels for future recruitment updates.
               </p>
-              <a href={applicationFormUrl} target="_blank" rel="noopener noreferrer" className="hover:text-footer-text">
-                Apply / Interest form ↗
-              </a>
             </div>
           </div>
 
@@ -74,9 +71,10 @@ export function Footer() {
 
           <div className="flex flex-col gap-3 text-left xl:text-right">
             <span className="font-mono text-xs leading-relaxed text-footer-text/80">
-              Copyright {year} {site.name}. All rights reserved.
+              Copyright {year} {site.legalName}. All rights reserved.
             </span>
             <span className="font-mono text-xs leading-relaxed text-footer-text/70">{footer.disclaimer}</span>
+            <a href="/disclaimer" className="font-mono text-xs underline">Website disclaimer</a>
           </div>
         </div>
       </div>

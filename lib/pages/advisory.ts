@@ -2,7 +2,7 @@ export const advisoryPage = {
   label: "Financial Planning & Analysis",
   title: "Financial Planning & Analysis",
   description:
-    "TTG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
+    "TFG helps early-stage teams use cash-flow models, market research, and operating plans to make finance and growth decisions. Student analysts work with a named engagement lead.",
   email: "contact@tritonfinance.org",
 
   process: [
@@ -68,39 +68,19 @@ export const advisoryPage = {
       ],
     },
     {
-      title: "Operations & Strategy",
-      items: [
-        "Market research and competitive analysis",
-        "Go-to-market planning",
-        "Sales process and CRM design",
-        "Workflow optimization",
-        "KPI tracking and project roadmaps",
-      ],
+      title: "Strategic Finance & Research",
+      items: ["Market research and competitive analysis", "Go-to-market analysis", "Dashboards and financial reporting"],
     },
     {
-      title: "Tech & AI Integration",
-      items: [
-        "Workflow automation",
-        "AI tooling and API integration",
-        "Digital infrastructure setup",
-        "Digitization for SMBs",
-      ],
-    },
-    {
-      title: "Marketing & Growth",
-      items: [
-        "Paid ad campaigns (Meta, TikTok, Instagram)",
-        "Short-form video and content creation",
-        "Website development (UI/UX)",
-        "Marketing strategy and sales support",
-      ],
+      title: "Finance-Related Automation",
+      items: ["Financial reporting workflows", "Data pipelines for financial analysis", "Finance-related tooling and automation"],
     },
   ],
 
   workWithUs: {
     title: "Work With Us",
     description:
-      "TTG partners with startups, student ventures, and organizations that need structured financial analysis, strategic support, and hands-on project work. Our members operate like a consulting bench — scoped engagements, clear deliverables, and professional standards.",
+      "TFG partners with startups, student ventures, and organizations that need structured financial analysis, strategic support, and hands-on project work. Our members operate like a consulting bench — scoped engagements, clear deliverables, and professional standards.",
     offerings: [
       {
         title: "Financial Planning & Analysis Consulting",
@@ -120,7 +100,7 @@ export const advisoryPage = {
     ],
     process: [
       "Share a brief overview of your organization and project scope.",
-      "TTG reviews fit and assigns a student project team.",
+      "TFG reviews fit and assigns a student project team.",
       "Teams deliver structured work on an agreed timeline with check-ins throughout.",
     ],
   },

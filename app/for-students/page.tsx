@@ -8,8 +8,9 @@ import { NetworkSection } from "@/components/NetworkSection";
 import { departments } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "For Students - Triton Trading Group",
-  description: "Explore hands-on financial education, team research, mentorship, and the TTG student experience at UC San Diego.",
+  alternates: { canonical: "/for-students" },
+  title: "For Students - Triton Finance Group",
+  description: "Explore hands-on financial education, team research, mentorship, and the TFG student experience at UC San Diego.",
 };
 
 export default function ForStudentsPage() {
@@ -17,7 +18,7 @@ export default function ForStudentsPage() {
     <SiteLayout>
       <PageHeroSplit label="For Students" title="Build skills. Put them to work."
         description="Learn alongside UC San Diego students through structured training, research, and real project experience."
-        media={<SiteImage src="/images/meetings/image2.png" alt="TTG students in a training session" width={784} height={523} className="h-auto w-full object-cover" />} />
+        media={<SiteImage src="/images/meetings/image2.png" alt="TFG students in a training session" width={784} height={523} className="h-auto w-full object-cover" />} />
       <EditorialSection>
         <EditorialLabel>The experience</EditorialLabel>
         <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">From learning to doing.</h2>

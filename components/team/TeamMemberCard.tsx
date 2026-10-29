@@ -41,9 +41,9 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
     <div className="flex flex-col">
       <div className="relative aspect-2/3 w-full overflow-hidden border border-card-border bg-editorial-muted">
         {member.photoTba || !member.image ? (
-          <div className="flex h-full items-center justify-center">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-text/20">
-              Photo TBA
+          <div className="flex h-full items-center justify-center" aria-label={`Avatar for ${member.name}`}>
+            <span className="font-mono text-3xl uppercase tracking-widest text-text/40">
+              {member.name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("")}
             </span>
           </div>
         ) : (
