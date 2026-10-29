@@ -33,6 +33,11 @@ export default function AboutPage() {
               <div>
                 <h3 className="mb-4 font-heading text-3xl text-heading">{branch.department}</h3>
                 <p className="text-base leading-loose text-text/75">{branch.description}</p>
+                {branch.department === "Financial Planning & Analysis" ? (
+                  <div className="mt-6">
+                    <ButtonLink href="/advisory" variant="secondary" arrow="right">Student training</ButtonLink>
+                  </div>
+                ) : null}
               </div>
               <ul className="space-y-3 text-sm leading-relaxed text-text/75">
                 {branch.bullets.map((bullet) => <li key={bullet} className="border-b border-card-border pb-3">{bullet}</li>)}

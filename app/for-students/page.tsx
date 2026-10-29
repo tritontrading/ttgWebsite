@@ -44,7 +44,13 @@ export default function ForStudentsPage() {
               <h2 className="font-heading text-3xl text-heading">{branch.department}</h2>
               <div>
                 <p className="mb-5 leading-loose text-text/70">{branch.description}</p>
-                <ButtonLink href={branch.href} variant="secondary">Explore the division</ButtonLink>
+                <ButtonLink
+                  href={branch.department === "Financial Planning & Analysis" ? "/advisory" : branch.href}
+                  variant="secondary"
+                  arrow="right"
+                >
+                  {branch.department === "Financial Planning & Analysis" ? "Explore FP&A training" : "Explore the division"}
+                </ButtonLink>
               </div>
             </div>
           ))}

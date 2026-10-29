@@ -212,12 +212,12 @@ export function ApplyCtaBand({
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="w-full shrink-0 rounded-md border border-editorial px-8 py-4 text-center font-mono text-sm tracking-widest uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
+            className="ui-button w-full shrink-0 rounded-md border border-editorial px-8 py-4 text-center font-sans text-sm uppercase text-editorial transition-colors duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
           >
             {buttonLabel}
           </a>
         ) : (
-          <span className="w-full shrink-0 rounded-md border border-editorial/40 px-8 py-4 text-center font-mono text-sm tracking-widest uppercase text-text/50 sm:w-auto">
+          <span className="ui-button w-full shrink-0 rounded-md border border-editorial/40 px-8 py-4 text-center font-sans text-sm uppercase text-text/50 sm:w-auto">
             {note}
           </span>
         )}

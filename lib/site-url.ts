@@ -4,7 +4,7 @@ export const siteUrl = new URL(
 );
 
 export const canonicalPaths = [
-  "/", "/about", "/for-clients", "/for-students", "/community", "/donate",
+  "/", "/about", "/for-clients", "/for-students", "/advisory", "/community", "/donate",
   "/members/current", "/members/founders", "/members/alumni",
   "/disclaimer",
 ] as const;

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
 import { clients } from "@/lib/content";
 
 export function ClientsSection() {
@@ -13,12 +13,9 @@ export function ClientsSection() {
             <p className="mt-6 text-base leading-loose text-text/75">{clients.description}</p>
           </div>
 
-          <Link
-            href={clients.href}
-            className="inline-flex w-full items-center justify-center rounded-md border border-navy bg-navy px-8 py-4 font-mono text-sm tracking-[0.24em] uppercase text-cream transition-all duration-200 hover:border-gold hover:bg-gold hover:text-navy sm:w-auto"
-          >
+          <ButtonLink href={clients.href} arrow="right">
             Learn more
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     </section>

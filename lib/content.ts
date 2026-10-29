@@ -6,9 +6,9 @@ export const site = {
     legalName: "Triton Trading Group",
     university: "University of California, San Diego",
     hero: {
-        headline: "Build practical experience in finance, investing, and quantitative research.",
+        headline: "Financial clarity for your next decision.",
         description:
-            "Triton Finance Group is a nonprofit student organization serving students at the University of California, San Diego through hands-on programs in Asset Management, Financial Planning & Analysis, Quantitative Finance, and professional development.",
+            "Financial modeling, market research, and reporting automation for startups, student ventures, and organizations. Work with a UC San Diego student team on a focused project.",
         image: "/images/hero/asset-management.png",
         alt: "Triton Finance Group members at an information session",
     },
