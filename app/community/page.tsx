@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import {
-  ApplyCtaBand,
   EditorialLabel,
   EditorialSection,
   PageHeroSplit,
@@ -70,8 +69,8 @@ export default function CommunityPage() {
         description="TTG brings together students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
         media={
           <SiteImage
-            src="/images/socials/image1.png"
-            alt="TTG community event"
+            src="/images/brand/group_photoshoot.png"
+            alt="TTG members in professional attire"
             width={700}
             height={420}
             className="h-auto w-full object-cover"
@@ -88,8 +87,7 @@ export default function CommunityPage() {
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-relaxed text-text/55">
-            Photos from socials, mentorship sessions, and cross-branch events — the parts of TTG
-            that don&apos;t show up in a strategy writeup.
+            A look at our meetings, presentations, and the students behind the work.
           </p>
         </div>
         <CommunityCarousel />
@@ -121,15 +119,15 @@ export default function CommunityPage() {
             </p>
             <div className="grid grid-cols-2 gap-4">
               <SiteImage
-                src="/images/socials/image2.png"
-                alt="TTG members together"
+                src="/images/meetings/image1.png"
+                alt="TTG members at a meeting"
                 width={320}
                 height={360}
                 className="h-[15rem] w-full object-cover md:h-[18rem]"
               />
               <SiteImage
-                src="/images/socials/image1.png"
-                alt="TTG event photo"
+                src="/images/meetings/image2.png"
+                alt="TTG classroom presentation"
                 width={320}
                 height={360}
                 className="h-[15rem] w-full object-cover md:h-[18rem]"
@@ -176,10 +174,6 @@ export default function CommunityPage() {
         </div>
       </EditorialSection>
 
-      <ApplyCtaBand
-        title="Interested in TTG?"
-        description="Apply to learn with students working across Asset Management, Financial Planning & Analysis, and Quantitative Finance."
-      />
     </SiteLayout>
   );
 }

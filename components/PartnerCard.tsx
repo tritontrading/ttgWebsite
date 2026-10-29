@@ -10,8 +10,8 @@ const LOGO_BOX_CLASS = "h-16 w-full md:h-20";
 export function PartnerCard({ name, image, initials, compact = false }: PartnerCardProps) {
   return (
     <div
-      className={`group flex h-full flex-col items-center justify-center bg-background transition-colors duration-200 ${
-        compact ? "gap-4 px-3 py-5 md:px-4 md:py-6" : "gap-8 card-padding"
+      className={`flex items-center justify-center ${
+        compact ? "px-4 py-8 md:px-6 md:py-10" : "p-8 md:p-10"
       }`}
     >
       <div className={`flex items-center justify-center ${LOGO_BOX_CLASS}`}>
@@ -28,15 +28,6 @@ export function PartnerCard({ name, image, initials, compact = false }: PartnerC
           </div>
         )}
       </div>
-      <span
-        className={`text-center font-mono normal-case text-text-muted transition-colors duration-200 group-hover:text-accent-blue ${
-          compact
-            ? "text-[9px] leading-snug tracking-[0.08em] md:text-[10px]"
-            : "text-xs tracking-[0.22em] uppercase"
-        }`}
-      >
-        {name}
-      </span>
     </div>
   );
 }
