@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { divisionLinks, memberLinks, site } from "@/lib/content";
+import { primaryLinks, memberLinks, site } from "@/lib/content";
 import { MobileNavGroup, NavDropdown } from "@/components/NavDropdown";
 import { NavButtonLink } from "@/components/ui/Button";
 import { SiteImage } from "@/components/ui/SiteImage";
@@ -47,20 +47,12 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-10 md:flex">
-          <NavDropdown label="Divisions" items={divisionLinks} />
-          <Link
-            href="/recruitment"
-            className="font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold"
-          >
-            Recruitment
-          </Link>
-          <Link
-            href="/community"
-            className="font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold"
-          >
-            Community
-          </Link>
+        <div className="hidden items-center gap-6 lg:flex xl:gap-10">
+          {primaryLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold">
+              {link.label}
+            </Link>
+          ))}
           <NavDropdown label="Members" items={memberLinks} />
           <div className="flex items-center gap-4">
             <NavButtonLink href="/donate" variant="secondary">
@@ -73,7 +65,7 @@ export function Navbar() {
           type="button"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background/90 text-heading md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background/90 text-heading lg:hidden"
           onClick={() => setMenuOpen((open) => !open)}
         >
           <span className="relative block h-3.5 w-4">
@@ -97,32 +89,22 @@ export function Navbar() {
       </div>
 
       <div
-        className={`overflow-hidden transition-[max-height,opacity] duration-300 md:hidden ${
-          menuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+        className={`transition-[max-height,opacity] duration-300 lg:hidden ${
+          menuOpen ? "max-h-[calc(100dvh-4.5rem)] overflow-y-auto opacity-100" : "max-h-0 overflow-hidden opacity-0"
         }`}
       >
         <div className="border-t border-border bg-background pb-6 pt-4">
           <div className="flex flex-col gap-4">
-            <MobileNavGroup label="Divisions" items={divisionLinks} onNavigate={closeMenu} />
-            <Link
-              href="/recruitment"
-              className="border-b border-border px-2 py-4 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold"
-              onClick={closeMenu}
-            >
-              Recruitment
-            </Link>
-            <Link
-              href="/community"
-              className="border-b border-border px-2 py-4 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold"
-              onClick={closeMenu}
-            >
-              Community
-            </Link>
+            {primaryLinks.map((link) => (
+              <Link key={link.href} href={link.href} onClick={closeMenu} className="border-b border-border px-2 py-4 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold">
+                {link.label}
+              </Link>
+            ))}
             <MobileNavGroup label="Members" items={memberLinks} onNavigate={closeMenu} />
             <div className="mt-4 flex gap-4">
               <Link
                 href="/donate"
-                className="inline-flex flex-1 items-center justify-center rounded-md border border-border bg-surface px-4 py-2 font-mono text-sm leading-none text-heading transition-all duration-200 hover:border-heading hover:bg-cream-hover"
+                className="ui-button inline-flex flex-1 items-center justify-center rounded-md border border-border bg-surface px-4 py-2 font-sans text-sm text-heading transition-colors duration-200 hover:border-heading hover:bg-cream-hover"
                 onClick={closeMenu}
               >
                 Donate

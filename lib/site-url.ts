@@ -1,10 +1,10 @@
-/** Stay on the working domain until the owner approves the DNS/HTTPS cutover. */
+/** Canonical public domain; override for an alternate deployment when needed. */
 export const siteUrl = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL || "https://tritontradinggroup.org",
+  process.env.NEXT_PUBLIC_SITE_URL || "https://tritonfinance.org",
 );
 
 export const canonicalPaths = [
-  "/", "/advisory", "/asset-management", "/community", "/donate", "/quant",
-  "/recruitment", "/members/current", "/members/founders", "/members/alumni",
+  "/", "/about", "/for-clients", "/for-students", "/advisory", "/community", "/donate",
+  "/members/current", "/members/founders", "/members/alumni",
   "/disclaimer",
 ] as const;

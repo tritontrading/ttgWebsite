@@ -1,277 +1,72 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { ApplyCtaBand, EditorialLabel, EditorialSection } from "@/components/editorial/PageSections";
-import { SiteImage } from "@/components/ui/SiteImage";
+import { PageHeroSplit, EditorialLabel, EditorialSection } from "@/components/editorial/PageSections";
 import { ButtonLink } from "@/components/ui/Button";
-import { advisoryPage as page } from "@/lib/pages/advisory";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/advisory" },
-  title: "Financial Planning & Analysis - Triton Finance Group",
-  description:
-    "TFG's Financial Planning & Analysis division provides student-led financial consulting and practical training for UC San Diego students.",
+  title: "FP&A Student Training - Triton Finance Group",
+  description: "A hands-on training ground for financial modeling, business research, and project communication at UC San Diego.",
 };
+
+const training = [
+  {
+    title: "Build the model",
+    description: "Practice cash-flow forecasting, unit economics, and scenario analysis. Learn to explain the assumptions behind the numbers.",
+    output: "A financial model with clear assumptions.",
+  },
+  {
+    title: "Research the question",
+    description: "Use market and company research to frame a business problem, compare options, and support a recommendation.",
+    output: "A concise research brief.",
+  },
+  {
+    title: "Present the answer",
+    description: "Work with peers and project leads to turn analysis into a useful deliverable. Present your reasoning and improve it through feedback.",
+    output: "A presentation and documented handoff.",
+  },
+] as const;
 
 export default function AdvisoryPage() {
   return (
     <SiteLayout>
-      <section className="page-hero-padding relative z-10 border-b border-editorial/6">
-        <div className="site-container layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div>
-            <span
-              className="page-hero-reveal label-gap block font-mono text-[13px] tracking-[0.28em] uppercase text-text/50"
-              style={{ animationDelay: "0ms" }}
-            >
-              {page.label}
-            </span>
-            <h1
-              className="page-hero-reveal heading-gap font-heading text-4xl font-normal leading-[0.95] tracking-tight text-heading sm:text-5xl md:text-7xl"
-              style={{ animationDelay: "100ms" }}
-            >
-              {page.title}
-            </h1>
-            <p
-              className="page-hero-reveal max-w-2xl text-base leading-relaxed text-text/60 md:text-lg"
-              style={{ animationDelay: "200ms" }}
-            >
-              {page.description}
-            </p>
-          </div>
-          <div className="page-hero-reveal border border-editorial/15" style={{ animationDelay: "300ms" }}>
-            <div className="p-6 md:p-8">
-              <span className="label-gap block font-mono text-[13px] tracking-[0.22em] uppercase text-text/50">
-                New Inquiries
-              </span>
-              <p className="prose-gap text-sm leading-7 text-text/60">
-                Send a short overview of your team, stage, and the decision or system you need help
-                with.
-              </p>
-              <a
-                href={`mailto:${page.email}`}
-                className="inline-flex w-full items-center justify-center border border-editorial px-8 py-4 font-mono text-xs tracking-[0.22em] uppercase text-editorial transition-all duration-200 hover:bg-editorial hover:text-white"
-              >
-                Email Financial Planning & Analysis
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <EditorialSection className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>Process</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">How We Operate</h2>
-        </div>
-        <div className="divide-y divide-card-border border-y border-card-border">
-          {page.process.map((step) => (
-            <div key={step.step} className="grid grid-cols-1 gap-2 py-8 md:grid-cols-[6rem_1fr] md:gap-8">
-              <span className="font-mono text-[13px] tracking-[0.22em] uppercase text-text/50">
-                {step.step}
-              </span>
-              <div>
-                <h3 className="mb-2 font-heading text-xl font-normal text-heading">{step.title}</h3>
-                <p className="max-w-2xl text-sm leading-relaxed text-text/55">{step.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </EditorialSection>
-
-      <EditorialSection className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>Why Us</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Why Choose TFG</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            We scope each project around the decision, data, and deliverables the organization needs.
-          </p>
-        </div>
-        <div className="divide-y divide-card-border border-y border-card-border">
-          {page.whyUs.map((item) => (
-            <div key={item.title} className="py-8">
-              <div className="mb-3 flex items-start gap-4">
-                <span className="mt-2 h-1 w-1 shrink-0 bg-brand-blue" />
-                <h3 className="font-heading text-xl font-normal text-heading">{item.title}</h3>
-              </div>
-              <p className="pl-4 text-sm leading-7 text-text/55">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </EditorialSection>
-
-      <EditorialSection id="services" className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>Services</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">Our Services</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            Support across finance, operations, growth, and systems.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 layout-grid-gap md:grid-cols-2">
-          {page.services.map((service) => (
-            <div key={service.title} className="border-t border-card-border pt-6">
-              <h3 className="mb-6 font-heading text-2xl font-normal text-heading">{service.title}</h3>
-              <div className="text-stack">
-                {service.items.map((item) => (
-                  <div key={item} className="flex items-start gap-4 text-sm text-text/60">
-                    <span className="mt-2 h-1 w-1 shrink-0 bg-brand-blue" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </EditorialSection>
-
-      <EditorialSection className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>Work With Us</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
-            {page.workWithUs.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            {page.workWithUs.description}
-          </p>
-        </div>
-        <div className="layout-grid-gap grid grid-cols-1 md:grid-cols-3">
-          {page.workWithUs.offerings.map((offering) => (
-            <div key={offering.title} className="border-t border-card-border pt-6">
-              <h3 className="mb-3 font-heading text-lg font-normal text-heading">{offering.title}</h3>
-              <p className="text-sm leading-loose text-text/70">{offering.description}</p>
-            </div>
-          ))}
-        </div>
-        <div className="layout-grid-gap-lg mt-16 grid grid-cols-1 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-6 font-heading text-2xl font-normal text-heading">How it works</h3>
-            <ol className="text-stack-loose">
-              {page.workWithUs.process.map((step, index) => (
-                <li key={step} className="flex items-start gap-5 text-base leading-loose text-text/80">
-                  <span className="mt-0.5 shrink-0 font-mono text-xs text-gold">0{index + 1}</span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div className="border border-editorial/15 p-8 md:p-10">
-            <span className="label-gap block font-mono text-xs tracking-[0.22em] uppercase text-gold">
-              Get in touch
-            </span>
-            <p className="prose-gap text-sm leading-loose text-text/70">
-              Email us with a short overview of your organization, timeline, and the support you
-              are looking for. We will follow up if there is a strong fit for an upcoming project
-              cycle.
-            </p>
-            <ButtonLink href={`mailto:${page.email}`} variant="secondary" fullWidth>
-              Email TFG
-            </ButtonLink>
-          </div>
-        </div>
-      </EditorialSection>
-
-      <EditorialSection className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>For Prospective Members</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
-            Financial Planning & Analysis As A Training Ground
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            {page.memberTrack.description}
-          </p>
-        </div>
-
-        <div className="section-block-gap">
-          <h3 className="mb-6 font-heading text-xl font-normal text-heading">Areas of Work</h3>
-          <div className="divide-y divide-card-border border-y border-card-border">
-            {page.memberTrack.areasOfWork.map((item) => (
-              <div key={item.title} className="py-6">
-                <h4 className="mb-2 font-heading text-base font-normal text-heading">{item.title}</h4>
-                <p className="text-sm leading-relaxed text-text/55">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="section-block-gap">
-          <h3 className="mb-6 font-heading text-xl font-normal text-heading">How Members Work</h3>
-          <div className="divide-y divide-card-border border-y border-card-border">
-            {page.memberTrack.roles.map((role) => (
-              <div key={role.title} className="py-5">
-                <h4 className="mb-1 font-heading text-base font-normal text-heading">{role.title}</h4>
-                <p className="text-sm leading-relaxed text-text/55">{role.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Skills Members Develop</h3>
-            <div className="text-stack">
-              {page.memberTrack.skills.map((skill) => (
-                <div key={skill} className="flex items-center gap-4 text-sm text-text">
-                  <span className="h-1 w-1 shrink-0 bg-brand-blue" />
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="mb-6 font-heading text-xl font-normal text-heading">Related Career Paths</h3>
-            <div className="divide-y divide-card-border surface-card overflow-hidden">
-              {page.memberTrack.careers.map((career) => (
-                <div
-                  key={career.role}
-                  className="flex flex-col gap-1 px-6 py-4 transition-colors duration-200 hover:bg-cream-hover sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-                >
-                  <span className="font-heading text-sm font-normal text-heading">{career.role}</span>
-                  <span className="font-mono text-[10px] text-text/40 sm:text-right">{career.detail}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </EditorialSection>
-
-      <EditorialSection className="border-editorial/5" border>
-        <div className="section-block-gap">
-          <EditorialLabel>Clients</EditorialLabel>
-          <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
-            Who We Work With
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text/55">
-            We partner with early-stage startups, student-run ventures, and small-to-medium
-            businesses that need financial clarity.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-px bg-editorial/10 md:grid-cols-4">
-          {page.clients.map((client) => (
-            <div
-              key={client.name}
-              className="flex flex-col items-center justify-center gap-4 bg-background p-8"
-            >
-              <div className="flex h-16 w-full items-center justify-center md:h-20">
-                <SiteImage
-                  src={client.image}
-                  alt={client.name}
-                  width={160}
-                  height={80}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
-              <span className="text-center font-mono text-[13px] tracking-[0.18em] uppercase text-text/50">
-                {client.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </EditorialSection>
-
-      <ApplyCtaBand
-        eyebrow="For Students"
-        title="Interested in Financial Planning & Analysis?"
-        description="Recruitment runs each academic quarter; applications are currently closed. The Financial Planning & Analysis track gives members structured exposure to consulting-style problem solving, corporate finance, and operator-level execution."
+      <PageHeroSplit
+        label="For Students / Financial Planning & Analysis"
+        title="A training ground for real business questions."
+        description="Build financial models, research companies, and learn to communicate a recommendation. FP&A turns classroom concepts into team-based practice."
+        media={<SiteImage src="/images/meetings/image1.png" alt="TFG students working together at a meeting" width={784} height={523} className="h-auto w-full object-cover" />}
       />
+      <EditorialSection id="training">
+        <EditorialLabel>Learn by doing</EditorialLabel>
+        <h2 className="mb-12 max-w-2xl font-heading text-4xl text-heading md:text-5xl">Three skills. Work you can show.</h2>
+        <div className="grid gap-10 lg:grid-cols-3">
+          {training.map((item, index) => (
+            <div key={item.title} className="border-t border-card-border pt-6">
+              <span className="ui-label text-xs text-gold">0{index + 1}</span>
+              <h3 className="my-5 font-heading text-2xl text-heading">{item.title}</h3>
+              <p className="mb-6 leading-relaxed text-text/70">{item.description}</p>
+              <p className="border-t border-card-border pt-4 text-sm leading-relaxed text-text/65">
+                <span className="font-medium text-heading">What you’ll make: </span>{item.output}
+              </p>
+            </div>
+          ))}
+        </div>
+      </EditorialSection>
+      <EditorialSection>
+        <div className="grid items-start gap-10 md:grid-cols-2">
+          <div>
+            <EditorialLabel>Keep exploring</EditorialLabel>
+            <h2 className="mb-6 font-heading text-3xl text-heading">Find your place in the team.</h2>
+            <ButtonLink href="/for-students" variant="secondary" arrow="right">The student experience</ButtonLink>
+          </div>
+          <div className="border-t border-card-border pt-6">
+            <h2 className="mb-4 font-heading text-2xl text-heading">Looking for project support?</h2>
+            <p className="mb-6 leading-relaxed text-text/70">Our client page covers services, project scope, and how to get in touch.</p>
+            <ButtonLink href="/for-clients" variant="secondary" arrow="right">Work with us</ButtonLink>
+          </div>
+        </div>
+      </EditorialSection>
     </SiteLayout>
   );
 }
