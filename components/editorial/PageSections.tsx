@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { applicationFormUrl } from "@/lib/content";
 
 type PageHeroProps = {
   label?: string;
@@ -185,14 +184,14 @@ export function ApplyCtaBand({
   eyebrow,
   title,
   description,
-  buttonLabel = "Apply Now",
-  href = applicationFormUrl,
+  buttonLabel,
+  href,
 }: {
   eyebrow?: string;
   title: string;
   description: string;
-  buttonLabel?: string;
-  href?: string;
+  buttonLabel: string;
+  href: string;
 }) {
   return (
     <section className="section-padding border-t border-editorial/6">

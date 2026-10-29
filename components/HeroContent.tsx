@@ -18,14 +18,14 @@ export function HeroContent() {
 
         <div className="hero-reveal flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-5">
           <ButtonLink
-            href="/recruitment"
+            href="/for-students"
             variant="primary"
             className="px-6 py-2.5 text-xs tracking-[0.2em]"
           >
-            Join our team
+            For students
           </ButtonLink>
           <ButtonLink
-            href="/advisory"
+            href="/for-clients"
             variant="secondary"
             className="px-6 py-2.5 text-xs tracking-[0.2em] text-navy"
           >

@@ -14,9 +14,15 @@ export const site = {
 } as const;
 
 export const divisionLinks = [
-    { label: "Asset Management", href: "/asset-management" },
-    { label: "Financial Planning & Analysis", href: "/advisory" },
-    { label: "Quantitative Finance", href: "/quant" },
+    { label: "Asset Management", href: "/about#asset-management" },
+    { label: "Financial Planning & Analysis", href: "/about#financial-planning-analysis" },
+    { label: "Quantitative Finance", href: "/about#quantitative-finance" },
+] as const;
+
+export const primaryLinks = [
+    { label: "About", href: "/about" },
+    { label: "For Clients", href: "/for-clients" },
+    { label: "For Students", href: "/for-students" },
 ] as const;
 
 export const memberLinks = [
@@ -64,7 +70,7 @@ export const mission = {
     paragraphs: [
         "Triton Trading Group is a nonprofit organization serving students at the University of California, San Diego. Our mission is to provide students with practical financial education and professional development through hands-on experience in investment research, financial analysis, quantitative finance, and business strategy.",
         "We carry out this mission through our primary programs in Asset Management, Financial Planning & Analysis, and Quantitative Finance. Members participate in structured training, investment and market research, financial modeling, quantitative strategy development, company projects, workshops, competitions, presentations, and other professional development opportunities.",
-        "Triton Trading Group owns and operates tritontradinggroup.org as the organization’s official website.",
+        "Visit tritonfinance.org, the organization’s official website.",
     ],
 } as const;
 
@@ -73,7 +79,7 @@ export const departments = {
     branches: [
         {
             department: "Asset Management",
-            href: "/asset-management",
+            href: "/about#asset-management",
             title: "Research public companies and defend investment ideas.",
             description:
                 "Members cover sectors, build valuation models, write investment memos, and present their conclusions to the investment committee.",
@@ -89,7 +95,7 @@ export const departments = {
         },
         {
             department: "Financial Planning & Analysis",
-            href: "/advisory",
+            href: "/about#financial-planning-analysis",
             title: "Help organizations answer finance and operating questions.",
             description:
                 "Members work on financial analysis, market research, business strategy, and systems projects for startups, student ventures, and organizations.",
@@ -106,7 +112,7 @@ export const departments = {
         },
         {
             department: "Quantitative Finance",
-            href: "/quant",
+            href: "/about#quantitative-finance",
             title: "Turn market questions into testable strategies.",
             description:
                 "Members use Python, financial data, and statistical methods to research, backtest, and evaluate systematic investment ideas.",
@@ -127,7 +133,7 @@ export const clients = {
     title: "Work with us",
     description:
         "Bring TTG a finance, strategy, operations, or systems question. We work with startups, student ventures, and organizations on scoped projects.",
-    href: "/advisory",
+    href: "/for-clients",
 } as const;
 
 export const network = {
@@ -208,26 +214,9 @@ export const community = {
     description:
         "Building more than portfolios — building the relationships, collaboration, and community that drive our success.",
     photos: [
-        { src: "/images/socials/GroupPicUsc.jpeg", alt: "TTG group at USC" },
-        { src: "/images/socials/GirlsUsc.JPG", alt: "TTG members at USC" },
-        {
-            src: "/images/socials/GuysPicUsc.JPG",
-            alt: "TTG members group photo",
-        },
-        { src: "/images/socials/sunsetCalm.JPG", alt: "TTG sunset gathering" },
-        { src: "/images/socials/beach.JPEG", alt: "TTG at the beach" },
-        { src: "/images/socials/hutPic.JPG", alt: "TTG team outing" },
-        { src: "/images/socials/poster.JPEG", alt: "TTG event poster" },
-        { src: "/images/socials/image1.png", alt: "TTG community event" },
-        { src: "/images/socials/group-dinner.png", alt: "TTG group dinner" },
-        {
-            src: "/images/socials/pool-gathering.png",
-            alt: "TTG members at a pool gathering",
-        },
-        {
-            src: "/images/socials/group-night.png",
-            alt: "TTG members together at night",
-        },
+        { src: "/images/brand/group_photoshoot.png", alt: "TTG members in professional attire" },
+        { src: "/images/meetings/image1.png", alt: "TTG members discussing work at a meeting" },
+        { src: "/images/meetings/image2.png", alt: "TTG members attending a classroom presentation" },
     ],
 } as const;
 
@@ -356,12 +345,12 @@ export const recruitment = {
 } as const;
 
 export const footer = {
-    email: "tritontradinggroup@ucsd.edu",
+    email: "contact@tritonfinance.org",
     description:
         "Nonprofit student organization serving students at the University of California, San Diego",
     address: "9500 Gilman Drive, La Jolla, CA 92093",
     ein: "41-2939437",
-    website: "tritontradinggroup.org",
+    website: "tritonfinance.org",
     social: [
         {
             label: "LinkedIn",
