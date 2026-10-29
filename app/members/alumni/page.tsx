@@ -24,7 +24,7 @@ export default function AlumniPage() {
         title="Are you a TFG alum?"
         description="Reach out if you'd like to be featured here or stay connected with current members through recruiting and mentorship."
         buttonLabel="Get In Touch"
-        href="mailto:tritontradinggroup@ucsd.edu"
+        href="mailto:contact@tritonfinance.org"
       />
     </SiteLayout>
   );

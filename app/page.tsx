@@ -1,54 +1,91 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { ClientsSection } from "@/components/ClientsSection";
-import { CommunitySection } from "@/components/CommunitySection";
-import { Departments } from "@/components/Departments";
 import { Hero } from "@/components/Hero";
-import { NetworkSection } from "@/components/NetworkSection";
-import { WhoWeAreSection } from "@/components/WhoWeAreSection";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionShell } from "@/components/ui/primitives";
-import { mission } from "@/lib/content";
+import { PartnerCard } from "@/components/PartnerCard";
+import { EditorialLabel } from "@/components/editorial/PageSections";
+import { advisoryPage as page } from "@/lib/pages/advisory";
+import { site } from "@/lib/content";
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+const title = "Financial Analysis & Project Support - Triton Finance Group";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  title,
+  description: site.hero.description,
+  openGraph: {
+    title,
+    description: site.hero.description,
+    url: "/",
+    siteName: site.name,
+    type: "website",
+    images: [{ url: "/images/brand/og-image.png", width: 1200, height: 630, alt: site.name }],
+  },
+};
 
 export default function HomePage() {
   return (
     <SiteLayout>
       <Hero />
-      <WhoWeAreSection />
-      <SectionShell id="mission">
-        <div className="layout-grid-gap-lg grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-start">
-          <h2 className="font-heading text-4xl font-normal leading-[1.05] text-heading md:text-5xl">
-            {mission.title}
-          </h2>
-          <div className="flex flex-col gap-6 text-base leading-loose text-text/75 md:gap-7 md:text-lg">
-            {mission.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-pretty">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+      <SectionShell id="services" className="scroll-mt-18 border-t border-border">
+        <EditorialLabel>Work with us</EditorialLabel>
+        <h2 className="mb-12 max-w-2xl font-heading text-4xl text-heading md:text-5xl">Focused support for your business.</h2>
+        <div className="grid gap-10 lg:grid-cols-3">
+          {[...page.services, page.automation].map((service, index) => (
+            <div key={service.title} className="border-t border-card-border pt-6">
+              <span className="ui-label text-xs text-gold">0{index + 1}</span>
+              <h3 className="my-5 font-heading text-2xl text-heading">{service.title}</h3>
+              <ul className="space-y-3 text-sm leading-relaxed text-text/70">
+                {service.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10">
+          <ButtonLink href="/for-clients" variant="secondary" arrow="right">Explore client services</ButtonLink>
         </div>
       </SectionShell>
-      <Departments />
-      <ClientsSection />
-      <NetworkSection />
-      <CommunitySection />
-      <section className="border-t border-border bg-navy">
-        <div className="site-container grid gap-10 py-20 md:grid-cols-[1fr_auto] md:items-end md:py-28">
-          <div className="max-w-2xl">
-            <p className="font-mono text-xs tracking-[0.24em] text-gold uppercase">Fall 2026 recruitment</p>
-            <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-cream md:text-6xl">
-              Build practical experience before you graduate.
-            </h2>
-            <p className="mt-6 max-w-xl text-base leading-loose text-cream/70 md:text-lg">
-              Study markets, work on client projects, and practice presenting your analysis.
-            </p>
+      <SectionShell id="clients" className="border-t border-border">
+        <EditorialLabel>Clients</EditorialLabel>
+        <h2 className="mb-10 font-heading text-4xl text-heading md:text-5xl">Who we work with.</h2>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          {page.clients.map((client) => <PartnerCard key={client.name} {...client} />)}
+        </div>
+      </SectionShell>
+      <SectionShell id="process" className="border-t border-border">
+        <EditorialLabel>From question to deliverable</EditorialLabel>
+        <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">How it works.</h2>
+        <div className="grid gap-10 lg:grid-cols-3">
+          {page.process.map((step) => (
+            <div key={step.step} className="border-t border-card-border pt-6">
+              <span className="ui-label text-xs text-gold">{step.step}</span>
+              <h3 className="my-5 font-heading text-2xl text-heading">{step.title}</h3>
+              <p className="leading-relaxed text-text/70">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </SectionShell>
+      <SectionShell id="why-us" className="border-t border-border">
+        <EditorialLabel>The TFG approach</EditorialLabel>
+        <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">Why choose us.</h2>
+        <div className="grid gap-10 md:grid-cols-2">
+          {page.whyUs.map((reason) => (
+            <div key={reason.title} className="border-t border-card-border pt-6">
+              <h3 className="mb-4 font-heading text-2xl text-heading">{reason.title}</h3>
+              <p className="max-w-lg leading-relaxed text-text/70">{reason.description}</p>
+            </div>
+          ))}
+        </div>
+      </SectionShell>
+      <section className="bg-navy">
+        <div className="site-container section-padding grid items-center gap-10 md:grid-cols-[1fr_auto]">
+          <div>
+            <p className="ui-label mb-5 text-xs uppercase text-gold-light">Get in touch</p>
+            <h2 className="font-heading text-4xl text-cream md:text-5xl">What are you working on?</h2>
+            <p className="mt-6 max-w-xl leading-relaxed text-cream/75">Share your organization, project goals, and timeline. We’ll discuss fit and agree on a clear scope.</p>
           </div>
-          <ButtonLink href="/recruitment" variant="gold" className="self-start md:self-auto">
-            View recruitment
-          </ButtonLink>
+          <ButtonLink href={`mailto:${page.email}`} variant="gold" arrow="right">Discuss a project</ButtonLink>
         </div>
       </section>
     </SiteLayout>

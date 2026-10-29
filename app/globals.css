@@ -1,29 +1,13 @@
 @import "tailwindcss";
 
 /*
- * Self-hosted fonts — add files to /public/fonts/ (see lib/theme.ts → fontFiles).
- * If files are absent, installed system copies of the same family names are used.
+ * Display font — add the licensed file to /public/fonts/ to self-host.
+ * Body copy uses installed Helvetica Neue, with one shared fallback stack.
  */
 @font-face {
   font-family: "Century Old Style Std";
   src: url("/fonts/CenturyOldStyleStd-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica LT Pro";
-  src: url("/fonts/HelveticaLTPro-Roman.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica LT Pro";
-  src: url("/fonts/HelveticaLTPro-Bold.woff2") format("woff2");
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -82,9 +66,10 @@
   --radius-lg: 0px;
   --radius-xl: 0px;
 
-  --font-sans: "Helvetica LT Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, sans-serif;
   --font-serif: var(--font-heading);
-  --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  /* Legacy font-mono utilities now use the same face as all other body copy. */
+  --font-mono: var(--font-sans);
 
   --animate-ticker: ticker 40s linear infinite;
   --animate-community-marquee: communityMarquee 75s linear infinite;
@@ -126,6 +111,7 @@ html {
 
 body {
   font-family: var(--font-sans);
+  font-kerning: normal;
   color: var(--color-text);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
@@ -160,7 +146,24 @@ body {
 }
 
 .font-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+}
+
+/* Shared tracking rules override old per-component tracking utilities. */
+.font-mono.uppercase,
+.ui-label {
+  letter-spacing: 0.06em;
+}
+
+.ui-button {
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
 }
 
 .hero-reveal {
