@@ -56,20 +56,17 @@ export const colors = {
 
 export const fonts = {
   /** Body copy */
-  sans: '"Helvetica LT Pro", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  sans: '"Helvetica Neue", Helvetica, sans-serif',
   /** Headings — Century Old Style Std regular (400) only */
   heading: '"Century Old Style Std", "Century Old Style", "Century Schoolbook", Georgia, serif',
-  mono: '"IBM Plex Mono", ui-monospace, monospace',
+  /** Legacy labels and footer share the body face. */
+  mono: '"Helvetica Neue", Helvetica, sans-serif',
 } as const;
 
-/** Local font files — drop matching files into /public/fonts/ to self-host */
+/** Licensed display font file; body text uses the installed system font stack. */
 export const fontFiles = {
   heading: {
     regular: "/fonts/CenturyOldStyleStd-Regular.woff2",
-  },
-  body: {
-    regular: "/fonts/HelveticaLTPro-Roman.woff2",
-    bold: "/fonts/HelveticaLTPro-Bold.woff2",
   },
 } as const;
 
@@ -86,12 +83,13 @@ export const fontSizes = {
 } as const;
 
 export const letterSpacing = {
-  label: "0.24em",
-  labelSm: "0.22em",
-  nav: "0.24em",
-  body: "0.08em",
-  ticker: "0.16em",
-  social: "0.12em",
+  label: "0.06em",
+  labelSm: "0.06em",
+  button: "0.04em",
+  nav: "normal",
+  body: "normal",
+  ticker: "0.04em",
+  social: "normal",
 } as const;
 
 export const borderRadius = {

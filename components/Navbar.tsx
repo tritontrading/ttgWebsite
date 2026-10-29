@@ -104,7 +104,7 @@ export function Navbar() {
             <div className="mt-4 flex gap-4">
               <Link
                 href="/donate"
-                className="inline-flex flex-1 items-center justify-center rounded-md border border-border bg-surface px-4 py-2 font-mono text-sm leading-none text-heading transition-all duration-200 hover:border-heading hover:bg-cream-hover"
+                className="ui-button inline-flex flex-1 items-center justify-center rounded-md border border-border bg-surface px-4 py-2 font-sans text-sm text-heading transition-colors duration-200 hover:border-heading hover:bg-cream-hover"
                 onClick={closeMenu}
               >
                 Donate

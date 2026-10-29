@@ -8,27 +8,21 @@ export const advisoryPage = {
   process: [
     {
       step: "01",
-      title: "Discovery",
+      title: "Scope",
       description:
-        "We learn your business, challenges, and goals before scoping anything.",
+        "Share your goals, data, and timeline. We agree on the question and deliverables.",
     },
     {
       step: "02",
-      title: "Diagnosis",
+      title: "Build",
       description:
-        "We assess your current state, gather data, and identify root causes.",
+        "A student team develops the analysis with a project lead and regular check-ins.",
     },
     {
       step: "03",
-      title: "Analysis & Strategy",
+      title: "Deliver",
       description:
-        "We build models, surface insights, and develop recommendations.",
-    },
-    {
-      step: "04",
-      title: "Delivery",
-      description:
-        "We present findings, support implementation, and hand off cleanly.",
+        "We present findings and hand over the models, recommendations, and documentation.",
     },
   ],
 
@@ -36,22 +30,22 @@ export const advisoryPage = {
     {
       title: "Built for Early-Stage",
       description:
-        "We understand startup constraints - constrained resources, evolving needs, and the pressure to execute quickly. Our process is designed around your reality.",
+        "Focused work designed around a small team’s priorities and resources.",
     },
     {
       title: "Custom-Tailored Work",
       description:
-        "Every engagement is scoped around your specific problem and goals.",
+        "A clear question, agreed scope, and deliverables you can put to use.",
     },
     {
-      title: "Structured Division Behind You",
+      title: "A Team, Not a Handoff",
       description:
-        "You get a team with defined roles and managed delivery - an engagement lead, senior analysts, and specialists all working toward your outcome.",
+        "A named project lead keeps the analysis and communication on track.",
     },
     {
-      title: "High-Impact, Accessible",
+      title: "A Useful Handoff",
       description:
-        "Professional-quality analysis delivered with the focus and care that early-stage companies deserve.",
+        "Models, findings, and documentation your team can keep working with.",
     },
   ],
 
@@ -61,21 +55,19 @@ export const advisoryPage = {
       items: [
         "Financial modeling & forecasting",
         "Cash flow and runway analysis",
-        "Unit economics and break-even",
-        "Valuation and comparables",
-        "Pricing and margin analysis",
-        "Scenario and sensitivity modeling",
+        "Unit economics and scenario planning",
       ],
     },
     {
       title: "Strategic Finance & Research",
       items: ["Market research and competitive analysis", "Go-to-market analysis", "Dashboards and financial reporting"],
     },
-    {
-      title: "Finance-Related Automation",
-      items: ["Financial reporting workflows", "Data pipelines for financial analysis", "Finance-related tooling and automation"],
-    },
   ],
+
+  automation: {
+    title: "Finance-Related Automation",
+    items: ["Financial reporting workflows", "Data pipelines for financial analysis", "Finance-related tooling and automation"],
+  },
 
   workWithUs: {
     title: "Work With Us",

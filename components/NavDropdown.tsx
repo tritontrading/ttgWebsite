@@ -64,9 +64,9 @@ export function NavDropdown({ label, items, onNavigate }: NavDropdownProps) {
           className={`relative -top-px h-2.5 w-2.5 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth="1.25"
         >
-          <path d="M2.5 4.5 6 8 9.5 4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m3.5 5 2.5 2.5L8.5 5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
 
@@ -119,9 +119,9 @@ export function MobileNavGroup({ label, items, onNavigate }: MobileNavGroupProps
           className={`relative -top-px h-2.5 w-2.5 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth="1.25"
         >
-          <path d="M2.5 4.5 6 8 9.5 4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m3.5 5 2.5 2.5L8.5 5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
       <div
