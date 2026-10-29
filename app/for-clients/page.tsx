@@ -6,7 +6,8 @@ import { PartnerCard } from "@/components/PartnerCard";
 import { advisoryPage as page } from "@/lib/pages/advisory";
 
 export const metadata: Metadata = {
-  title: "For Clients - Triton Trading Group",
+  alternates: { canonical: "/for-clients" },
+  title: "For Clients - Triton Finance Group",
   description: page.description,
 };
 
@@ -57,7 +58,7 @@ export default function ForClientsPage() {
             <h2 className="font-heading text-4xl text-heading md:text-5xl">Tell us what you’re working on.</h2>
             <p className="mt-6 leading-loose text-text/70">Share your organization, project goals, and timeline. We’ll review the fit and follow up about a scoped engagement.</p>
           </div>
-          <ButtonLink href={`mailto:${page.email}`} variant="primary">Email TTG</ButtonLink>
+          <ButtonLink href={`mailto:${page.email}`} variant="primary">Email TFG</ButtonLink>
         </div>
       </EditorialSection>
     </SiteLayout>

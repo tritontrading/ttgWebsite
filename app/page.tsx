@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ClientsSection } from "@/components/ClientsSection";
 import { CommunitySection } from "@/components/CommunitySection";
@@ -6,6 +7,8 @@ import { NetworkSection } from "@/components/NetworkSection";
 import { WhoWeAreSection } from "@/components/WhoWeAreSection";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionShell } from "@/components/ui/primitives";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function HomePage() {
   return (
@@ -19,7 +22,7 @@ export default function HomePage() {
             <p className="my-6 max-w-xl text-base leading-loose text-text/75">
               Explore our mission and three divisions, from company research and financial analysis to systematic investing.
             </p>
-            <ButtonLink href="/about" variant="secondary">About TTG</ButtonLink>
+            <ButtonLink href="/about" variant="secondary">About TFG</ButtonLink>
           </div>
           <div>
             <h2 className="font-heading text-4xl text-heading md:text-5xl">For students.</h2>

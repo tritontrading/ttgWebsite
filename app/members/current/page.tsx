@@ -6,7 +6,8 @@ import { TeamMembersSection } from "@/components/team/TeamMemberCard";
 import { boardDivisions, memberDivisions } from "@/lib/pages/members";
 
 export const metadata: Metadata = {
-  title: "Current Members - Triton Trading Group",
+  alternates: { canonical: "/members/current" },
+  title: "Current Members - Triton Finance Group",
 };
 
 export default function CurrentMembersPage() {
@@ -17,10 +18,10 @@ export default function CurrentMembersPage() {
           <>
             The People
             <br />
-            Behind TTG
+            Behind TFG
           </>
         }
-        description="Meet the students who lead TTG's teams and contribute to research, investment, and client projects."
+        description="Meet the students who lead TFG's teams and contribute to research, investment, and client projects."
         descriptionAlign="right"
         belowTitle={<MembersSectionNav />}
         className="!pb-16 md:!pb-20"

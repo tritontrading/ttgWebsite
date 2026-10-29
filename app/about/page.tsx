@@ -5,7 +5,8 @@ import { ButtonLink } from "@/components/ui/Button";
 import { departments, mission } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About - Triton Trading Group",
+  alternates: { canonical: "/about" },
+  title: "About - Triton Finance Group",
   description: "Our mission and divisions: Asset Management, Financial Planning & Analysis, and Quantitative Finance.",
 };
 
