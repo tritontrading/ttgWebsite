@@ -332,7 +332,7 @@ export const recruitment = {
 } as const;
 
 export const footer = {
-    email: "contact@tritonfinance.org",
+    email: "admin@tritonfinance.org",
     description:
         "Nonprofit student organization serving students at the University of California, San Diego",
     address: "9500 Gilman Drive, La Jolla, CA 92093",
