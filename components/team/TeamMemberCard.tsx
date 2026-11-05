@@ -21,7 +21,7 @@ function MemberName({ member }: { member: TeamMember }) {
           href={member.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="transition-colors duration-200 hover:text-brand-blue"
+          className="transition-colors duration-200 hover:text-text/50"
         >
           {member.name}
         </a>
@@ -42,7 +42,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
       <div className="relative aspect-2/3 w-full overflow-hidden border border-card-border bg-editorial-muted">
         {member.photoTba || !member.image ? (
           <div className="flex h-full items-center justify-center" aria-label={`Avatar for ${member.name}`}>
-            <span className="font-mono text-3xl uppercase tracking-widest text-text/40">
+            <span className="font-mono text-3xl tracking-widest text-text/40">
               {member.name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("")}
             </span>
           </div>
@@ -84,7 +84,7 @@ export function TeamGrid({
     >
       <div className="site-container">
         <div className={compactHeader ? "section-block-gap-compact" : "section-block-gap"}>
-          <span className="label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50">
+          <span className="label-gap block font-mono text-[13px] tracking-widest text-text/50">
             {label}
           </span>
           <div className="border-t border-editorial/6" />
@@ -108,7 +108,7 @@ function MemberCardGrid({ members }: { members: TeamMember[] }) {
 function MemberDirectory({ members }: { members: TeamMember[] }) {
   return (
     <div>
-      <div className="hidden grid-cols-[minmax(0,1fr)_minmax(12rem,0.65fr)] gap-8 border-y border-editorial/10 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-text/40 md:grid">
+      <div className="hidden grid-cols-[minmax(0,1fr)_minmax(12rem,0.65fr)] gap-8 border-y border-editorial/10 px-4 py-3 font-mono text-[10px] tracking-[0.18em] text-text/40 md:grid">
         <span>Name</span>
         <span>Role</span>
       </div>
@@ -144,7 +144,7 @@ export function TeamMembersSection({
     <section id={id} className="section-padding scroll-mt-24 border-b border-editorial/6">
       <div className="site-container">
         <div className="section-block-gap">
-          <span className="label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50">
+          <span className="label-gap block font-mono text-[13px] tracking-widest text-text/50">
             {label}
           </span>
           <div className="border-t border-editorial/6" />

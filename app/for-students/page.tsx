@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { PageHeroSplit, EditorialSection, EditorialLabel } from "@/components/editorial/PageSections";
+import { PageHeroSplit, EditorialSection } from "@/components/editorial/PageSections";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { ButtonLink } from "@/components/ui/Button";
 import { CommunitySection } from "@/components/CommunitySection";
@@ -20,7 +20,6 @@ export default function ForStudentsPage() {
         description="Learn alongside UC San Diego students through structured training, research, and real project experience."
         media={<SiteImage src="/images/meetings/image2.png" alt="TFG students in a training session" width={784} height={523} className="h-auto w-full object-cover" />} />
       <EditorialSection>
-        <EditorialLabel>The experience</EditorialLabel>
         <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">From learning to doing.</h2>
         <div className="layout-grid-gap-lg grid md:grid-cols-3">
           {[
@@ -37,7 +36,6 @@ export default function ForStudentsPage() {
         </div>
       </EditorialSection>
       <EditorialSection>
-        <EditorialLabel>Find your focus</EditorialLabel>
         <div className="divide-y divide-card-border border-y border-card-border">
           {departments.branches.map((branch) => (
             <div key={branch.href} className="grid gap-5 py-8 md:grid-cols-2">
@@ -47,7 +45,7 @@ export default function ForStudentsPage() {
                 <ButtonLink
                   href={branch.department === "Financial Planning & Analysis" ? "/advisory" : branch.href}
                   variant="secondary"
-                  arrow="right"
+
                 >
                   {branch.department === "Financial Planning & Analysis" ? "Explore FP&A training" : "Explore the division"}
                 </ButtonLink>
@@ -60,13 +58,11 @@ export default function ForStudentsPage() {
       <EditorialSection>
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <EditorialLabel>People & mentorship</EditorialLabel>
             <h2 className="font-heading text-4xl text-heading md:text-5xl">Meet the people behind the work.</h2>
             <p className="mt-6 max-w-xl leading-loose text-text/70">Get to know our members and explore the community built around shared curiosity and practical learning.</p>
           </div>
           <div className="flex flex-col gap-4">
-            <ButtonLink href="/members/current" variant="primary">Meet our members</ButtonLink>
-            <ButtonLink href="/community" variant="secondary">Our community</ButtonLink>
+            <ButtonLink href="/community" variant="primary">Meet our community</ButtonLink>
           </div>
         </div>
       </EditorialSection>

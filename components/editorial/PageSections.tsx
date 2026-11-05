@@ -36,7 +36,7 @@ export function PageHero({
           <div>
             {label ? (
               <span
-                className="page-hero-reveal label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50"
+                className="page-hero-reveal label-gap block font-mono text-[13px] tracking-widest text-text/50"
                 style={{ animationDelay: "0ms" }}
               >
                 {label}
@@ -92,7 +92,7 @@ export function PageHeroSplit({
         <div className="layout-grid-gap-lg grid grid-cols-1 items-center lg:grid-cols-2">
           <div>
             <span
-              className="page-hero-reveal label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50"
+              className="page-hero-reveal label-gap block font-mono text-[13px] tracking-widest text-text/50"
               style={{ animationDelay: "0ms" }}
             >
               {label}
@@ -124,7 +124,7 @@ export function PageHeroSplit({
 
 export function EditorialLabel({ children }: { children: ReactNode }) {
   return (
-    <span className="label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50">
+    <span className="label-gap block font-mono text-[13px] tracking-widest text-text/50">
       {children}
     </span>
   );
@@ -200,7 +200,7 @@ export function ApplyCtaBand({
       <div className="site-container flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div>
           {eyebrow ? (
-            <span className="label-gap block font-mono text-[13px] tracking-widest uppercase text-text/50">
+            <span className="label-gap block font-mono text-[13px] tracking-widest text-text/50">
               {eyebrow}
             </span>
           ) : null}
@@ -212,12 +212,12 @@ export function ApplyCtaBand({
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="ui-button w-full shrink-0 rounded-md border border-editorial px-8 py-4 text-center font-sans text-sm uppercase text-editorial transition-colors duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
+            className="ui-button w-full shrink-0 rounded-md border border-editorial px-6 py-3 text-center font-sans text-base text-editorial transition-colors duration-200 hover:bg-editorial hover:text-cream sm:w-auto"
           >
             {buttonLabel}
           </a>
         ) : (
-          <span className="ui-button w-full shrink-0 rounded-md border border-editorial/40 px-8 py-4 text-center font-sans text-sm uppercase text-text/50 sm:w-auto">
+          <span className="ui-button w-full shrink-0 rounded-md border border-editorial/40 px-6 py-3 text-center font-sans text-base text-text/50 sm:w-auto">
             {note}
           </span>
         )}

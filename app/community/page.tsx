@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import {
-  EditorialLabel,
   EditorialSection,
   PageHeroSplit,
 } from "@/components/editorial/PageSections";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { CommunityCarousel } from "@/components/CommunityCarousel";
+import { ButtonLink } from "@/components/ui/Button";
+import { memberLinks } from "@/lib/content";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/community" },
@@ -82,7 +83,6 @@ export default function CommunityPage() {
       <EditorialSection>
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <EditorialLabel>Community Gallery</EditorialLabel>
             <h2 className="font-heading text-3xl font-normal text-heading md:text-5xl">
               Community
             </h2>
@@ -92,17 +92,21 @@ export default function CommunityPage() {
           </p>
         </div>
         <CommunityCarousel />
+        <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
+          {memberLinks.slice(1).map((link) => (
+            <ButtonLink key={link.href} href={link.href} variant="secondary">{`${link.label} members`}</ButtonLink>
+          ))}
+        </div>
       </EditorialSection>
 
       <EditorialSection>
         <div className="grid grid-cols-1 layout-grid-gap-lg lg:grid-cols-2">
           <div>
-            <EditorialLabel>Rhythm Of The Group</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
-            <div className="divide-y divide-card-border surface-card overflow-hidden">
+            <div className="divide-y divide-card-border">
               {CADENCE.map((item, index) => (
                 <div key={item} className="flex items-start gap-4 px-6 py-6">
-                  <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] uppercase tracking-widest text-brand-blue">
+                  <span className="mt-0.5 w-6 shrink-0 font-mono text-[10px] tracking-widest text-text/50">
                     0{index + 1}
                   </span>
                   <span className="text-sm leading-relaxed text-text/70">{item}</span>
@@ -112,7 +116,6 @@ export default function CommunityPage() {
           </div>
 
           <div>
-            <EditorialLabel>Culture Snapshot</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <p className="mb-6 text-sm leading-relaxed text-text/55">
               Members show up because the work is real and so are the people doing it — technical
@@ -141,7 +144,6 @@ export default function CommunityPage() {
       <EditorialSection>
         <div className="grid grid-cols-1 items-center layout-grid-gap-lg lg:grid-cols-2">
           <div>
-            <EditorialLabel>Why It Matters</EditorialLabel>
             <div className="mb-8 border-t border-editorial/6" />
             <h2 className="mb-4 font-heading text-3xl font-normal text-heading md:text-4xl">
               Learn alongside other students.
@@ -153,7 +155,7 @@ export default function CommunityPage() {
             <div className="divide-y divide-card-border border-y border-card-border">
               {COMMUNITY_PILLARS.map((pillar) => (
                 <div key={pillar.title} className="py-4">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] uppercase text-brand-blue">
+                  <span className="mb-2 block font-mono text-[10px] tracking-[0.22em] text-text/50">
                     {pillar.title}
                   </span>
                   <p className="text-sm leading-relaxed text-text/55">{pillar.desc}</p>
@@ -165,7 +167,7 @@ export default function CommunityPage() {
           <div className="grid grid-cols-1 gap-px bg-editorial/10 sm:grid-cols-2">
             {TOUCHPOINTS.map((point) => (
               <div key={point.label} className="bg-background p-6 md:p-8">
-                <span className="mb-3 block font-mono text-[10px] tracking-[0.22em] uppercase text-brand-blue">
+                <span className="mb-3 block font-mono text-[10px] tracking-[0.22em] text-text/50">
                   {point.label}
                 </span>
                 <p className="text-sm leading-relaxed text-text/55">{point.detail}</p>

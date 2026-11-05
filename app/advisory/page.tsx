@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { PageHeroSplit, EditorialLabel, EditorialSection } from "@/components/editorial/PageSections";
+import { PageHeroSplit, EditorialSection } from "@/components/editorial/PageSections";
 import { ButtonLink } from "@/components/ui/Button";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { PartnerCard } from "@/components/PartnerCard";
+import { advisoryPage } from "@/lib/pages/advisory";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/advisory" },
@@ -38,7 +40,6 @@ export default function AdvisoryPage() {
         media={<SiteImage src="/images/meetings/image1.png" alt="TFG students working together at a meeting" width={784} height={523} className="h-auto w-full object-cover" />}
       />
       <EditorialSection id="training">
-        <EditorialLabel>Learn by doing</EditorialLabel>
         <h2 className="mb-12 max-w-2xl font-heading text-4xl text-heading md:text-5xl">Three skills. Work you can show.</h2>
         <div className="grid gap-10 lg:grid-cols-3">
           {training.map((item, index) => (
@@ -53,17 +54,22 @@ export default function AdvisoryPage() {
           ))}
         </div>
       </EditorialSection>
+      <EditorialSection id="clients">
+        <h2 className="mb-10 font-heading text-4xl text-heading md:text-5xl">Who we work with.</h2>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          {advisoryPage.clients.map((client) => <PartnerCard key={client.name} {...client} />)}
+        </div>
+      </EditorialSection>
       <EditorialSection>
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
-            <EditorialLabel>Keep exploring</EditorialLabel>
             <h2 className="mb-6 font-heading text-3xl text-heading">Find your place in the team.</h2>
-            <ButtonLink href="/for-students" variant="secondary" arrow="right">The student experience</ButtonLink>
+            <ButtonLink href="/for-students" variant="secondary">The student experience</ButtonLink>
           </div>
           <div className="border-t border-card-border pt-6">
             <h2 className="mb-4 font-heading text-2xl text-heading">Looking for project support?</h2>
             <p className="mb-6 leading-relaxed text-text/70">Our client page covers services, project scope, and how to get in touch.</p>
-            <ButtonLink href="/for-clients" variant="secondary" arrow="right">Work with us</ButtonLink>
+            <ButtonLink href="/for-clients" variant="secondary">Work with us</ButtonLink>
           </div>
         </div>
       </EditorialSection>

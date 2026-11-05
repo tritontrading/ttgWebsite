@@ -42,9 +42,6 @@
   --color-gold: #c79a3b;
   --color-gold-light: #efd8a4;
 
-  --color-accent-blue: #1f5eff;
-  --color-blue-light: #d0dcff;
-  --color-blue-hover-bg: #f4f7ff;
 
   --color-positive: #efd8a4;
   --color-negative: #ff9f7d;
@@ -53,7 +50,6 @@
   --color-editorial-muted: #eff0e7;
   --color-editorial-panel: #F1EEE8;
   --color-editorial-panel-alt: #F1EEE8;
-  --color-brand-blue: #0066ff;
   --color-card-border: #E3E0D9;
   --color-footer-bg: #F1EEE8;
   --color-footer-text: #272727;
@@ -150,7 +146,6 @@ body {
 }
 
 /* Shared tracking rules override old per-component tracking utilities. */
-.font-mono.uppercase,
 .ui-label {
   letter-spacing: 0.06em;
 }
@@ -243,64 +238,6 @@ button:focus-visible {
 
 .animate-community-marquee:hover {
   animation-play-state: paused;
-}
-
-.community-marquee {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  padding-inline: 2rem;
-  scrollbar-width: none;
-}
-
-.community-marquee::-webkit-scrollbar {
-  display: none;
-}
-
-.community-marquee:focus-visible {
-  outline: 2px solid rgba(13, 27, 61, 0.18);
-  outline-offset: 4px;
-}
-
-@media (min-width: 768px) {
-  .community-marquee {
-    padding-inline: 4rem;
-  }
-}
-
-.community-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-  padding-inline: 2rem;
-}
-
-@media (min-width: 768px) {
-  .community-dots {
-    margin-top: 1.5rem;
-    padding-inline: 4rem;
-  }
-}
-
-.community-dots button {
-  height: 8px;
-  width: 8px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--color-border);
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 200ms ease, transform 200ms ease;
-}
-
-.community-dots button.is-active {
-  background: var(--color-gold);
-  transform: scale(1.1);
-}
-
-.community-dots button:focus-visible {
-  outline: 2px solid rgba(13, 27, 61, 0.18);
-  outline-offset: 3px;
 }
 
 /*

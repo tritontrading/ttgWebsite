@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t border-footer-border bg-footer-bg px-8 py-16 text-footer-text md:px-16 md:py-24">
       <div className="site-container">
-        <div className="grid items-start gap-12 md:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
+        <div className="grid items-start gap-12 md:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1.2fr]">
           <div className="max-w-md">
             <span className="mb-4 block font-mono text-sm font-semibold text-footer-text">
               {site.name}
@@ -40,8 +40,7 @@ export function Footer() {
               {primaryLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-footer-text">{link.label}</Link>
               ))}
-              <Link href="/members/current" className="hover:text-footer-text">Members</Link>
-              <Link href="/community" className="hover:text-footer-text">Community</Link>
+              <Link href="/community" className="hover:text-footer-text">Members & community</Link>
               <span className="mt-4 font-semibold text-footer-text">Recruitment</span>
               <p className="max-w-56 text-xs leading-relaxed text-footer-text/80">
                 Applications are currently closed. Follow our social channels for future recruitment updates.
@@ -49,11 +48,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="min-w-0">
-            <span className="mb-4 block font-mono text-sm font-semibold text-footer-text">
+          <div className="min-w-0 md:col-span-2 xl:col-span-1 xl:justify-self-end">
+            <span className="mb-4 block font-mono text-sm font-semibold text-footer-text xl:text-right">
               Connect With Us
             </span>
-            <div className="grid gap-4">
+            <div className="grid min-w-56 gap-4">
               {footer.social.map((link) => (
                 <a
                   key={link.label}
@@ -63,20 +62,20 @@ export function Footer() {
                   className="flex items-baseline justify-between gap-4 border-b border-footer-border pb-3 font-mono text-sm text-footer-link transition-colors duration-200 hover:text-footer-text"
                 >
                   <span>{link.label}</span>
-                  <span className="text-xs text-footer-text/60 normal-case">{link.handle}</span>
+                  <span className="text-xs text-footer-text/60">{link.handle}</span>
                 </a>
               ))}
             </div>
           </div>
-
-          <div className="flex flex-col gap-3 text-left xl:text-right">
-            <span className="font-mono text-xs leading-relaxed text-footer-text/80">
-              Copyright {year} {site.legalName}. All rights reserved.
-            </span>
-            <span className="font-mono text-xs leading-relaxed text-footer-text/70">{footer.disclaimer}</span>
-            <a href="/disclaimer" className="font-mono text-xs underline">Website disclaimer</a>
-          </div>
         </div>
+
+        <div className="mt-16 flex flex-col gap-3 border-t border-footer-border pt-8 font-mono text-xs leading-relaxed text-footer-text/70 md:flex-row md:items-baseline md:justify-between">
+          <span>{footer.disclaimer}</span>
+          <a href="/disclaimer" className="underline">Website disclaimer</a>
+        </div>
+        <p className="mt-6 font-mono text-xs text-footer-text/60">
+          Copyright {year} {site.legalName}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

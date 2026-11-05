@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { PageHero, EditorialSection, EditorialLabel } from "@/components/editorial/PageSections";
+import { PageHero, EditorialSection } from "@/components/editorial/PageSections";
 import { ButtonLink } from "@/components/ui/Button";
 import { departments, mission } from "@/lib/content";
 
@@ -24,7 +24,6 @@ export default function AboutPage() {
         </div>
       </EditorialSection>
       <EditorialSection id="divisions">
-        <EditorialLabel>Our divisions</EditorialLabel>
         <h2 className="mb-12 max-w-3xl font-heading text-4xl text-heading md:text-5xl">{departments.headline}</h2>
         <div className="divide-y divide-card-border border-t border-card-border">
           {departments.branches.map((branch, index) => (
@@ -35,7 +34,7 @@ export default function AboutPage() {
                 <p className="text-base leading-loose text-text/75">{branch.description}</p>
                 {branch.department === "Financial Planning & Analysis" ? (
                   <div className="mt-6">
-                    <ButtonLink href="/advisory" variant="secondary" arrow="right">Student training</ButtonLink>
+                    <ButtonLink href="/advisory" variant="secondary">Student training</ButtonLink>
                   </div>
                 ) : null}
               </div>
@@ -49,7 +48,6 @@ export default function AboutPage() {
       <section className="bg-navy">
         <div className="site-container section-padding flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-gold">Work with us</p>
             <h2 className="font-heading text-4xl text-cream md:text-5xl">Bring a question. Build a solution.</h2>
             <p className="mt-6 max-w-xl leading-loose text-cream/70">Work with a student team on a focused finance, strategy, or systems project.</p>
           </div>

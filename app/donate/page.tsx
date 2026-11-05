@@ -23,13 +23,12 @@ export default function DonatePage() {
             <p className="max-w-xl text-base leading-relaxed text-text/65">{page.description}</p>
           </div>
           <div className="bg-navy p-8 md:p-12">
-            <p className="ui-label mb-10 text-sm uppercase text-gold-light">Give through GoFundMe</p>
             <h2 className="mb-6 font-heading text-3xl text-cream md:text-4xl">Back the next generation of finance talent.</h2>
             <p className="mb-8 leading-relaxed text-cream/75">Your contribution supports the resources behind student learning.</p>
             <ButtonLink
               href={page.goFundMeUrl}
               variant="gold"
-              arrow="external"
+
               className="w-full px-5"
             >
               Donate on GoFundMe
@@ -40,7 +39,6 @@ export default function DonatePage() {
       </section>
 
       <EditorialSection id="impact">
-        <EditorialLabel>Your impact</EditorialLabel>
         <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">Where your support goes.</h2>
         <div className="grid gap-10 md:grid-cols-2">
           {page.allocations.map((item, index) => (

@@ -6,9 +6,9 @@ export const site = {
     legalName: "Triton Trading Group",
     university: "University of California, San Diego",
     hero: {
-        headline: "Financial clarity for your next decision.",
+        headline: "Financial models, market research, and reporting for growing teams.",
         description:
-            "Financial modeling, market research, and reporting automation for startups, student ventures, and organizations. Work with a UC San Diego student team on a focused project.",
+            "We are a UC San Diego student team. We build financial models, research markets, and automate reporting for startups, student ventures, and organizations.",
         image: "/images/hero/asset-management.png",
         alt: "Triton Finance Group members at an information session",
     },
@@ -21,12 +21,13 @@ export const divisionLinks = [
 ] as const;
 
 export const primaryLinks = [
-    { label: "About", href: "/about" },
+    { label: "About", href: "/#about" },
     { label: "For Clients", href: "/for-clients" },
     { label: "For Students", href: "/for-students" },
 ] as const;
 
 export const memberLinks = [
+    { label: "Community", href: "/community" },
     { label: "Current", href: "/members/current" },
     { label: "Founders", href: "/members/founders" },
     { label: "Alumni", href: "/members/alumni" },
@@ -349,11 +350,6 @@ export const footer = {
             label: "Instagram",
             handle: "@tritonfinancegroup",
             href: "https://www.instagram.com/tritonfinancegroup",
-        },
-        {
-            label: "Reddit",
-            handle: "u/TritonTradingatUCSD",
-            href: "https://www.reddit.com/user/TritonTradingatUCSD/",
         },
     ],
     disclaimer:

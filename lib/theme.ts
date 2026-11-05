@@ -30,9 +30,6 @@ export const colors = {
   gold: "#c79a3b",
   goldLight: "#efd8a4",
 
-  blue: "#1f5eff",
-  blueLight: "#d0dcff",
-  blueHoverBg: "#f4f7ff",
 
   positive: "#efd8a4",
   negative: "#ff9f7d",
@@ -51,7 +48,6 @@ export const colors = {
   editorialMuted: "#eff0e7",
   editorialPanel: "#F1EEE8",
   editorialPanelAlt: "#F1EEE8",
-  brandBlue: "#0066ff",
 } as const;
 
 export const fonts = {

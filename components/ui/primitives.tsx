@@ -12,12 +12,12 @@ const variantStyles: Record<
   NonNullable<PlaceholderImageProps["variant"]>,
   { from: string; to: string; accent: string }
 > = {
-  hero: { from: "#1a2f5c", to: "#c79a3b", accent: "#1f5eff" },
+  hero: { from: "#1a2f5c", to: "#c79a3b", accent: "#0d1b3d" },
   meeting: { from: "#0d1b3d", to: "#2a4a8a", accent: "#c79a3b" },
-  tabling: { from: "#102347", to: "#5a4a2a", accent: "#1f5eff" },
-  quant: { from: "#0d1b3d", to: "#1f5eff", accent: "#c79a3b" },
+  tabling: { from: "#102347", to: "#5a4a2a", accent: "#0d1b3d" },
+  quant: { from: "#0d1b3d", to: "#0d1b3d", accent: "#c79a3b" },
   group: { from: "#1a2744", to: "#8b6a24", accent: "#efd8a4" },
-  logo: { from: colors.navy, to: colors.gold, accent: colors.blue },
+  logo: { from: colors.navy, to: colors.gold, accent: colors.navy },
 };
 
 export function PlaceholderImage({
@@ -47,7 +47,7 @@ export function PlaceholderImage({
         }}
       />
       <div
-        className="absolute inset-0 flex items-center justify-center font-mono text-xs tracking-[0.24em] uppercase text-gold-light/60"
+        className="absolute inset-0 flex items-center justify-center font-mono text-xs tracking-[0.24em] text-text/40"
         aria-hidden
       >
         Photo Placeholder
@@ -80,14 +80,6 @@ export function SectionShell({
         {children}
       </div>
     </section>
-  );
-}
-
-export function SectionLabel({ children }: { children: ReactNode }) {
-  return (
-    <span className="label-gap block font-mono text-xs tracking-[0.24em] uppercase text-gold">
-      {children}
-    </span>
   );
 }
 

@@ -13,7 +13,7 @@ export function ClientsSection() {
             <p className="mt-6 text-base leading-loose text-text/75">{clients.description}</p>
           </div>
 
-          <ButtonLink href={clients.href} arrow="right">
+          <ButtonLink href={clients.href}>
             Learn more
           </ButtonLink>
         </div>

@@ -20,7 +20,7 @@ export function PartnerCard({ name, image, initials, compact = false }: PartnerC
           <img src={image} alt={name} className="max-h-full max-w-full object-contain" />
         ) : (
           <div
-            className={`flex h-full w-full max-w-40 items-center justify-center border border-card-border bg-surface font-mono tracking-[0.16em] text-text/60 transition-colors duration-200 group-hover:text-accent-blue ${
+            className={`flex h-full w-full max-w-40 items-center justify-center font-mono tracking-[0.16em] text-text/60 transition-colors duration-200 ${
               compact ? "text-xs" : "text-sm"
             }`}
           >

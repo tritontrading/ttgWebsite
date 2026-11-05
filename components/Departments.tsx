@@ -29,7 +29,7 @@ export function Departments() {
 
               <div className="flex h-full flex-col content-block-gap-lg pt-8 md:pt-10">
                 <div className="text-stack">
-                  <span className="font-mono text-xs tracking-[0.22em] uppercase text-gold">
+                  <span className="font-mono text-xs tracking-[0.22em] text-text/50">
                     {branch.department}
                   </span>
                   <h3 className="font-heading text-3xl font-normal leading-snug text-heading">
@@ -42,14 +42,14 @@ export function Departments() {
                 <ul className="text-stack">
                   {branch.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-start gap-3 text-base leading-relaxed text-text">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-none bg-gold" />
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-none bg-heading" />
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
                 <div className="mt-auto border-t border-card-border pt-8">
-                  <span className="mb-3 block font-mono text-xs tracking-[0.22em] uppercase text-gold">
+                  <span className="mb-3 block font-mono text-xs tracking-[0.22em] text-text/50">
                     Careers
                   </span>
                   <span className="block font-mono text-sm leading-relaxed text-text/78">{branch.careers}</span>

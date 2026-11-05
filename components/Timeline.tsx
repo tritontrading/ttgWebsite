@@ -5,7 +5,6 @@ import { timeline } from "@/lib/content";
 import { SiteImage } from "@/components/ui/SiteImage";
 import {
   SectionDivider,
-  SectionLabel,
   SectionShell,
 } from "@/components/ui/primitives";
 
@@ -14,7 +13,7 @@ type TimelineStep = (typeof timeline.steps)[number];
 function TimelineContent({ step }: { step: TimelineStep }) {
   return (
     <>
-      <span className="mb-2 block font-mono text-[10px] tracking-[0.18em] uppercase text-text/40">
+      <span className="mb-2 block font-mono text-[10px] tracking-[0.18em] text-text/40">
         {step.id}
       </span>
       <h3 className="mb-4 font-heading text-xl font-normal text-heading">{step.title}</h3>
@@ -58,7 +57,7 @@ function TimelineMarker({
       <span
         className={`block transition-all duration-300 ${
           isActive
-            ? "h-[7px] w-[7px] bg-gold shadow-[0_0_0_3px_rgba(199,154,59,0.12)]"
+            ? "h-[7px] w-[7px] bg-navy"
             : "h-[5px] w-[5px] border border-text/20 bg-background group-hover:border-text/35"
         }`}
       />
@@ -67,7 +66,7 @@ function TimelineMarker({
           labelPosition === "left"
             ? "right-full mr-3 text-right"
             : "left-full ml-3 text-left"
-        } ${isActive ? "text-gold/80 opacity-100" : ""}`}
+        } ${isActive ? "text-navy opacity-100" : ""}`}
       >
         {step.title}
       </span>
@@ -110,7 +109,6 @@ export function Timeline() {
 
   return (
     <SectionShell id="timeline" narrow>
-      <SectionLabel>Member Journey</SectionLabel>
       <SectionDivider />
 
       <h2 className="section-block-gap font-heading text-4xl font-normal tracking-tight text-heading md:text-5xl">

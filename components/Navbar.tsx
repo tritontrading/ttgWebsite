@@ -49,11 +49,11 @@ export function Navbar() {
 
         <div className="hidden items-center gap-6 lg:flex xl:gap-10">
           {primaryLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold">
+            <Link key={link.href} href={link.href} className="font-mono text-sm text-text/72 transition-colors duration-200 hover:text-heading">
               {link.label}
             </Link>
           ))}
-          <NavDropdown label="Members" items={memberLinks} />
+          <NavDropdown label="Community" items={memberLinks} />
           <div className="flex items-center gap-4">
             <NavButtonLink href="/donate" variant="secondary">
               Donate
@@ -96,11 +96,11 @@ export function Navbar() {
         <div className="border-t border-border bg-background pb-6 pt-4">
           <div className="flex flex-col gap-4">
             {primaryLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={closeMenu} className="border-b border-border px-2 py-4 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold">
+              <Link key={link.href} href={link.href} onClick={closeMenu} className="border-b border-border px-2 py-4 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-heading">
                 {link.label}
               </Link>
             ))}
-            <MobileNavGroup label="Members" items={memberLinks} onNavigate={closeMenu} />
+            <MobileNavGroup label="Community" items={memberLinks} onNavigate={closeMenu} />
             <div className="mt-4 flex gap-4">
               <Link
                 href="/donate"

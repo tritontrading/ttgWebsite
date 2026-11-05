@@ -54,7 +54,7 @@ export function NavDropdown({ label, items, onNavigate }: NavDropdownProps) {
         type="button"
         aria-expanded={open}
         aria-haspopup="menu"
-        className="flex items-center gap-1.5 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-gold"
+        className="flex items-center gap-1.5 font-mono text-sm text-text/72 transition-colors duration-200 hover:text-heading"
         onClick={() => setOpen((value) => !value)}
       >
         {label}
@@ -80,7 +80,7 @@ export function NavDropdown({ label, items, onNavigate }: NavDropdownProps) {
               key={item.href}
               href={item.href}
               role="menuitem"
-              className="block border-b border-border px-4 py-3 font-mono text-sm text-text/72 transition-colors duration-200 last:border-b-0 hover:bg-cream-hover hover:text-gold"
+              className="block border-b border-border px-4 py-3 font-mono text-sm text-text/72 transition-colors duration-200 last:border-b-0 hover:bg-cream-hover hover:text-heading"
               onClick={() => {
                 close();
                 onNavigate?.();
@@ -134,7 +134,7 @@ export function MobileNavGroup({ label, items, onNavigate }: MobileNavGroupProps
             <Link
               key={item.href}
               href={item.href}
-              className="px-1 py-2 font-mono text-sm text-text/60 transition-colors duration-200 hover:text-gold"
+              className="px-1 py-2 font-mono text-sm text-text/60 transition-colors duration-200 hover:text-heading"
               onClick={() => {
                 setOpen(false);
                 onNavigate?.();

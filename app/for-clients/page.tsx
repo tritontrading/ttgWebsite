@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { PageHero, EditorialSection, EditorialLabel } from "@/components/editorial/PageSections";
+import { PageHero, EditorialSection } from "@/components/editorial/PageSections";
 import { ButtonLink } from "@/components/ui/Button";
 import { PartnerCard } from "@/components/PartnerCard";
 import { advisoryPage as page } from "@/lib/pages/advisory";
@@ -16,7 +16,7 @@ export default function ForClientsPage() {
     <SiteLayout>
       <PageHero label="For Clients" title="Work with us." description={page.description}>
         <div id="contact" className="mt-8 flex scroll-mt-24 flex-wrap items-center gap-5">
-          <ButtonLink href={`mailto:${page.email}`} arrow="right">Get in touch</ButtonLink>
+          <ButtonLink href={`mailto:${page.email}`}>Get in touch</ButtonLink>
           <p className="max-w-sm text-sm leading-relaxed text-text/65">Tell us your goals and timeline. We’ll start with a focused scope.</p>
         </div>
         <div id="services" className="mt-16 grid scroll-mt-24 gap-10 lg:mt-20 lg:grid-cols-3">
@@ -32,7 +32,6 @@ export default function ForClientsPage() {
         </div>
       </PageHero>
       <EditorialSection id="process">
-        <EditorialLabel>Our process</EditorialLabel>
         <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">How it works.</h2>
         <div className="divide-y divide-card-border border-y border-card-border">
           {page.process.map((step) => (
@@ -45,14 +44,12 @@ export default function ForClientsPage() {
         </div>
       </EditorialSection>
       <EditorialSection>
-        <EditorialLabel>Clients</EditorialLabel>
         <h2 className="mb-10 font-heading text-4xl text-heading md:text-5xl">Who we work with.</h2>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {page.clients.map((client) => <PartnerCard key={client.name} {...client} />)}
         </div>
       </EditorialSection>
       <EditorialSection id="why-us">
-        <EditorialLabel>The TFG approach</EditorialLabel>
         <h2 className="mb-12 font-heading text-4xl text-heading md:text-5xl">Why choose us.</h2>
         <div className="grid gap-10 md:grid-cols-2">
           {page.whyUs.map((reason) => (
