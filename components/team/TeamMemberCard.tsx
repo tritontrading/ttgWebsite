@@ -39,10 +39,10 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
 
   return (
     <div className="flex flex-col">
-      <div className="relative aspect-2/3 w-full overflow-hidden border border-card-border bg-editorial-muted">
+      <div className="relative size-28 shrink-0 overflow-hidden rounded-full border border-card-border bg-editorial-muted md:size-36">
         {member.photoTba || !member.image ? (
           <div className="flex h-full items-center justify-center" aria-label={`Avatar for ${member.name}`}>
-            <span className="font-mono text-3xl tracking-widest text-text/40">
+            <span className="font-mono text-2xl tracking-widest text-text/40">
               {member.name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("")}
             </span>
           </div>
@@ -52,7 +52,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             alt={member.name}
             fill
             className="object-cover object-top"
-            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+            sizes="144px"
           />
         )}
       </div>
